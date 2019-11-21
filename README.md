@@ -14,3 +14,6 @@ $ bundle exec rspec
 MySQL停止
 $ mysql.server stop
 ```
+
+heorku
+https://sleepy-peak-76812.herokuapp.com/ 

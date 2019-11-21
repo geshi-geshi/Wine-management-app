@@ -33,6 +33,6 @@ test:
 production:
   <<: *default
   # database: db/production.sqlite3
-  database: mysql_production
-  username: root
-  password:
+  database: <%= ENV['DB_NAME'] %> 
+  username: <%= ENV['DB_USERNAME'] %>
+  password: <%= ENV['DB_PASSWORD'] %>
