@@ -18,7 +18,7 @@ $ mysql.server stop
 ```
 
 heorku
-https://sleepy-peak-76812.herokuapp.com/ 
+https://damp-retreat-44547.herokuapp.com/ 
 
 herokuログ
 ```
