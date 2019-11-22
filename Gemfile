@@ -6,6 +6,9 @@ ruby '2.6.3'
 # herokuコンソールにエラーを表示
 gem 'rails_12factor', group: :production
 
+gem 'execjs'  
+gem 'therubyracer'
+
 gem 'mysql2'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
