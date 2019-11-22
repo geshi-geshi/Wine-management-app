@@ -19,3 +19,8 @@ $ mysql.server stop
 
 heorku
 https://sleepy-peak-76812.herokuapp.com/ 
+
+herokuログ
+```
+$ heroku logs | grep error
+```
