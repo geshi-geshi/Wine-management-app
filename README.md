@@ -8,6 +8,8 @@ $ source ~/.bash_profile
 MySQL起動
 $ mysql.server start
 
+$ rails db:create   
+
 RSpecを実行
 $ bundle exec rspec
 
