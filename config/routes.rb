@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   root 'users#top'
-  get 'users/new'
+  get '/signup', to: 'users#new'
+
   resources :users
 end
