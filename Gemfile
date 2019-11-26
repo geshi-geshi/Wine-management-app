@@ -11,6 +11,8 @@ gem 'jquery-ui-rails'
 gem 'rails', '~> 5.2.3'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3', group: [:development, :test]
+gem 'mysql2'
+
 
 #追加
 gem 'rails_12factor', group: :production
