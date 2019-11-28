@@ -163,6 +163,12 @@ input, textarea, select, .uneditable-input {
   margin: auto;
 }
 
+.form-inline {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+
 /* モーダルウインドウの位置調整 */
 
 .modal-dialog-center {
@@ -200,4 +206,22 @@ input, textarea, select, .uneditable-input {
 
 .notification {
   list-style: none;
+}
+
+/* ログインフォーム */
+
+.label-login {
+  margin-top: 5px;
+}
+
+.btn-login {
+  margin-top: 10px;
+}
+
+.checkbox-login {
+  width: auto;
+  margin-left: 25px;
+  span {
+      font-weight: normal;
+  }
 }
