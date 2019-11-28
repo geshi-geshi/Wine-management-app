@@ -11,6 +11,11 @@ module SessionsHelper
     end
   end
 
+  # 管理者ユーザー
+  def admin_user
+    redirect_to(root_url) unless  current_user.admin?
+  end
+
   # 現在ログイン中のユーザーがいればtrue、そうでなければfalseを返します。
   def logged_in?
     !current_user.nil?
