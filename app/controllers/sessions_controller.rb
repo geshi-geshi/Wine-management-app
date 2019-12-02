@@ -14,7 +14,9 @@ class SessionsController < ApplicationController
       else
         flash[:success] = 'ログインしました。'
       end
-      redirect_to(user)
+      # params[:session][:remember_me] == '1' ? remember(user) : forget(user)
+      redirect_back_or user
+      # redirect_to(user)
     else
       # flash.now:リダイレクトはしないがフラッシュを表示したい時
       flash.now[:danger] = '認証に失敗しました。'
@@ -23,7 +25,8 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    log_out
+    # ログイン中の場合のみログアウト処理を実行します。
+    log_out if logged_in?
     flash[:success] = 'ログアウトしました。'
     redirect_to root_url
   end
