@@ -7,6 +7,7 @@ class UsersController < ApplicationController
   # 管理者のみの機能
   before_action :admin_user, only:  [:index, :destroy]
 
+
   def index
     @users = User.paginate(page: params[:page])
   end
@@ -89,8 +90,13 @@ class UsersController < ApplicationController
     redirect_to(root_url) unless current_user?(@user)
    end
 
-   # システム管理権限所有かどうか判定します。
-   def admin_user
+  # システム管理権限所有かどうか判定します。
+  def admin_user
     redirect_to root_url unless current_user.admin?
+  end
+
+  # システム管理権限所有かどうか判定します。
+  def correct_user_or_admin_user
+    redirect_to root_url unless current_user.admin? || current_user?(@user)
   end
 end
