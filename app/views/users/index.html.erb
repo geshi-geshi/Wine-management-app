@@ -3,7 +3,10 @@
 
 <h1>ユーザー一覧</h1>
 <div class="col-md-10 col-md-offset-1">
-  <%= link_to "ユーザー新規登録", signup_path, class: "btn btn-default btn-basic-info" %>
+	<%= will_paginate %>
+	<%= link_to "ユーザー新規登録", signup_path, class: "btn btn-default btn-basic-info" %>
+
+	
   <table class="table table-condensed table-hover" id="table-users">
 	<% @users.each do |user| %>
   	<ul class="users">       
@@ -21,10 +24,10 @@
             <div class="panel-heading">
               <!--  編集ボタン・アコーディオン表示 -->
               <button type="button" class="btn btn-success" data-toggle="collapse" data-target="#collapseExample<%= user.id %>" aria-expanded="false" aria-controls="collapseExample">基本情報編集</button>
-              <div class="collapse" id="collapseExample<%= user.id %>">
+              <div class="collapse" id="collauser_pathpseExample<%= user.id %>">
                 <div class="row">
                   <div class="col-md-6 col-md-offset-3">     　
-                  <%= form_with(model: user, url: user_path(user), method: :patch) do |f| %>
+                  <%= form_with(model: user, url: (user), method: :patch) do |f| %>
 										<%= render 'shared/error_messages', object: user %>
 
 										<%= f.label :name, class: "label-#{yield(:class_text)}" %>
@@ -55,7 +58,7 @@
 		</li>
 		</ul>
 	<% end %><!-- @users.each do |user| の終わり -->
-
+<%= will_paginate %>
 
 <!--モーダルウインドウ表示-->
 <div id="edit-basic-info" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true"></div>
