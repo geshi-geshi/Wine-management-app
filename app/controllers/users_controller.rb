@@ -3,7 +3,7 @@ class UsersController < ApplicationController
   before_action :logged_in_user, only: [:index, :show, :edit, :update, :destroy]
 
   # ユーザー自身のみが情報を編集・更新できる
-  before_action :correct_user, only: [:edit]
+  before_action :correct_user, only: [:edit,:show]
   # 管理者のみの機能
   before_action :admin_user, only:  [:index, :destroy]
 
@@ -39,11 +39,20 @@ class UsersController < ApplicationController
 
   def update
     # @user = User.find(params[:id])
-    if @user.update_attributes(user_params)
-      flash[:success] = "ユーザー情報を更新しました。"
-      redirect_to @user
+    if current_user.admin?
+      if @user.update_attributes(user_params)
+        flash[:success] = "#{@user.name}さんの情報を更新しました。"
+        redirect_to users_url(@user)
+      else
+        render :edit      
+      end
     else
-      render :edit      
+      if @user.update_attributes(user_params)
+        flash[:success] = "ユーザー情報を更新しました。"
+        redirect_to @user
+      else
+        render :edit      
+      end
     end
   end
 

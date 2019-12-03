@@ -11,7 +11,7 @@
       <td><%= @user.email %></td>
     </tr>
   </table>
-  <% if current_user.admin? && !current_user?(@user) %>
+  <% if current_user.admin? %>
     <div class="center">
       <%= link_to "User一覧へ", users_path, class: "btn btn-lg btn-primary wine-btn" %>
     </div>
