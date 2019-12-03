@@ -11,8 +11,10 @@
       <td><%= @user.email %></td>
     </tr>
   </table>
-  <div class="center">
-    <li><%= link_to "編集", edit_user_path(current_user) %></li>
-    <%= link_to "ワイン一覧へ", '', class: "btn btn-lg btn-primary wine-btn" %>
-  </div>
+  <% if current_user.admin? && !current_user?(@user) %>
+    <div class="center">
+      <%= link_to "User一覧へ", users_path, class: "btn btn-lg btn-primary wine-btn" %>
+    </div>
+  <% end %>
+  
 </div>
