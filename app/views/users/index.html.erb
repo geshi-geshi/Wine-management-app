@@ -16,8 +16,8 @@
 		</tr>
 	<% @users.each do |user| %>
 		　<tr>
-				<td><%= user.name %></td>
-				<td><%= user.email %></td>
+				<td><span class="user-name"><%= user.name %></span></td>
+				<td><span class="user-email"><%= user.email %></span></td>
 				
 				<!-- 管理者の場合、削除編集ボタンを表示させる -->
 				<% if current_user.admin? && !current_user?(user) && user.email != "test@sample.com" %>
