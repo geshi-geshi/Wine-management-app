@@ -1,0 +1,62 @@
+<% provide(:title, 'All Wines') %>
+<% provide(:button_text, '更新') %>
+
+<h1>ワイン一覧</h1>
+	<%= link_to "ユーザー新規登録", signup_path, class: "btn btn-primary btn-new" %>	
+
+<div class="col-md-10 col-md-offset-1">
+	<%= will_paginate %>
+
+	<table class="table-bordered table-condensed">
+		<thead>
+		<tr>
+			<th>ワイン名称</th>
+			<th>色</th>
+			<th>分類</th>
+			<th>国/地方/地区</th>
+			<th>品種</th>
+			<th>外観</th>
+			<th>香り</th>
+			<th>味わい</th>
+			<th>生産年</th>
+			<th>アルコール度数</th>
+			<th>価格</th>
+			<th>詳細</th>
+		</tr>
+		</thead>
+		<tbody>
+			<% @wines.each do |wine| %>
+			　<tr>
+					<td><%= wine.name %></td>
+					<td><%= wine.color %></td>
+					<td><%= wine.classification %></td>
+					<td><%= wine.country %>/<%= wine.region %>/<%= wine.area %></td>
+					<td><%= wine.grape_variety %></td>
+					<td><%= wine.appearance %></td>
+					<td><%= wine.aroma %></td>
+					<td><%= wine.taste %></td>
+					<td><%= wine.production_year %>年</td>
+					<td><%= wine.alcohol_content %>%</td>
+					<td><%= wine.price %></td>
+					<td>
+					<!--  詳細ボタン・アコーディオン表示 -->
+						<div class="panel-group">
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<button type="button" class="btn btn-success" data-toggle="collapse" data-target="#collapseExample<%= wine.id %>" aria-expanded="false" aria-controls="collapseExample">詳細</button>
+									<div class="collapse" id="collapseExample<%= wine.id %>">
+										<div class="row">
+											<div class="col-md-6 col-md-offset-3">     	
+													<%= wine.detail %>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>					
+					</td>				
+				</tr>
+			<% end %>
+		</tbody>
+	</table>
+	<%= will_paginate %>
