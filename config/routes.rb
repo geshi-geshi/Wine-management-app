@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'wines/new'
   get 'sessions/new'
   root 'users#top'
   get '/signup', to: 'users#new'
