@@ -24,11 +24,11 @@ end
 Wine.create!(
     name: "ロマネ・コンティ",
     color: "赤",
-    classification: "フルボディ",
+    body: "フルボディ",
+    grape_variety: 12,
     country: "フランス",
     region: "ブルゴーニュ",
     area: "コートドール",
-    grape_variety: "ピノ・ノワール",
     appearance: "色の濃い赤、深みのある",
     aroma: "華やかで強いアロマはロマネ・コンティならでは、紅茶や土の香りなど複雑みもあり、官能的な余韻は非常に長く続きます",
     taste: "妖艶でエレガント、ピノノワールの味わいを全て凝縮したような風格ある味わいです",

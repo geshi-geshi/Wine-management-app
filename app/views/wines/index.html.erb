@@ -11,8 +11,7 @@
 		<thead>
 		<tr>
 			<th>ワイン名称</th>
-			<th>色</th>
-			<th>分類</th>
+			<th>色/ボディ</th>
 			<th>国/地方/地区</th>
 			<th>品種</th>
 			<th>外観</th>
@@ -28,10 +27,9 @@
 			<% @wines.each do |wine| %>
 			　<tr>
 					<td><%= wine.name %></td>
-					<td><%= wine.color %></td>
-					<td><%= wine.classification %></td>
-					<td><%= wine.country %>/<%= wine.region %>/<%= wine.area %></td>
+					<td><%= wine.color %>/<%= wine.body %></td>
 					<td><%= wine.grape_variety %></td>
+					<td><%= wine.country %>/<%= wine.region %>/<%= wine.area %></td>
 					<td><%= wine.appearance %></td>
 					<td><%= wine.aroma %></td>
 					<td><%= wine.taste %></td>

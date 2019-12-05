@@ -3,11 +3,11 @@ class CreateWines < ActiveRecord::Migration[5.2]
     create_table :wines do |t|
       t.string :name
       t.string :color
-      t.string :classification
+      t.string :body
       t.string :country
       t.string :region
       t.string :area
-      t.string :grape_variety
+      t.integer :grape_variety
       t.string :appearance
       t.string :aroma
       t.string :taste
