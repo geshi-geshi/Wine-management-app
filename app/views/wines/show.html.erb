@@ -1,12 +1,10 @@
 <div class="col-md-10 col-md-offset-1">
-	<!-- 管理者の場合、削除編集ボタンを表示させる -->
-		<%= link_to "編集", edit_wine_path(@wine), remote: true, class: "btn btn-success" %>
-		<%= link_to "削除", wine_path(@wine), method: :delete,
-								data: { confirm: "削除してよろしいですか？" }, class: "btn btn-danger" %>
-    <table class="table-bordered table-condensed">
+	<table class="table-bordered table-condensed">
+	
+		<table class="table table-bordered table-striped table-condensed">    
       <tbody>
         <tr>
-          <th>ワイン名称</th>
+          <th class="col-xs-2">ワイン名称</th>
           <td><%= @wine.name %></td>
         </tr>
         <tr>
@@ -70,14 +68,22 @@
         </tr>
         <tr>
           <th>詳細</th>
-          <td><%= @wine.detail %></td>
+          <td><%= simple_format(@wine.detail) %></td>
         </tr>
       </tbody>
-    </table>
-  </div>
-</div>
+				<!-- 管理者の場合、削除編集ボタンを表示させる -->
 
-<%= link_to "ワイン一覧へ", wines_path, class: "btn btn-success" %>
+				<%= link_to "削除", wine_path(@wine), method: :delete,
+								data: { confirm: "削除してよろしいですか？" }, class: "btn btn-danger wine-delete-btn" %>
+				<%= link_to "編集", edit_wine_path(@wine), remote: true, class: "btn btn-success wine-edit-btn" %>
+
+
+    </table>
+		<%= link_to "ワイン一覧へ", wines_path, class: "btn btn-success" %>
+
+	</div>
+</div>
+ 
 
 <!--モーダルウインドウ表示-->
 <div id="edit-wine" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true"></div>
