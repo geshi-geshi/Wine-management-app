@@ -8,6 +8,12 @@ class WinesController < ApplicationController
     @wine = Wine.new
   end
 
+  def show
+    @wine = Wine.find(params[:id])
+    @user = User.find(params[:id])
+
+  end
+
   def create
     @wine = Wine.new(wine_params)
     if @wine.save
@@ -15,6 +21,28 @@ class WinesController < ApplicationController
       redirect_to wines_url 
     else
       render :new
+    end
+  end
+
+  def edit
+    @wine = Wine.find(params[:id])
+  end
+
+  def update
+    @wine = Wine.find(params[:id])
+    if @wine.update_attributes(wine_params)
+      flash[:success] = "#{@wine.name}の情報を更新しました。"
+    else
+      flash[:danger] = "#{@wine.name}の更新に失敗しました。" + @base.errors.full_messages.join("。")
+    end
+    redirect_to wine_path(@wine)
+  end
+
+  def destroy
+    @wine = Wine.find(params[:id])
+    if @wine.destroy
+      flash[:success] = "#{@wine.name}を削除しました。"
+      redirect_to wines_url
     end
   end
 

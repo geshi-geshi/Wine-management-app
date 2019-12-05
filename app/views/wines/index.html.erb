@@ -5,76 +5,28 @@
 	<%= link_to "ワイン新規登録", new_wine_path, class: "btn btn-primary btn-new" %>	
 
 <div class="col-md-10 col-md-offset-1">
-	<%= will_paginate %>
-
 	<table class="table-bordered table-condensed">
 		<thead>
 		<tr>
 			<th>ワイン名称</th>
-			<th>色/ボディ</th>
-			<th>国/地方/地区</th>
+			<th>色</th>
 			<th>品種</th>
-			<th>外観</th>
-			<th>香り</th>
-			<th>味わい</th>
-			<th>生産年</th>
-			<th>アルコール度数</th>
-			<th>価格</th>
-			<th>詳細</th>
+			<th>国</th>
+		
+			<th></th>
 		</tr>
 		</thead>
 		<tbody>
 			<% @wines.each do |wine| %>
 			　<tr>
 					<td><%= wine.name %></td>
-					<td><%= wine.color %>
-						<% if wine.color.present? %>/<% end %>
-						<%= wine.body %>
-					</td>
+					<td><%= wine.color %></td>
 					<td><%= wine.grape_variety %></td>
-					<td>
-						<%= wine.country %>
-						<% if wine.region.present? %>/<% end %>
-						<%= wine.region %>
-						<% if wine.area.present? %>/<% end %>
-						<%= wine.area %></td>
-					<td><%= wine.appearance %></td>
-					<td><%= wine.aroma %></td>
-					<td><%= wine.taste %></td>
-					<td>
-						<%= wine.production_year %>
-						<% if wine.production_year.present? %>年<% end %>
+					<td><%= wine.country %><td>
+						<%= link_to "詳細画面へ", wine_path(wine), class: "btn btn-success" %>
 					</td>
-					<td>
-						<%= wine.alcohol_content %>
-						<% if wine.alcohol_content.present? %>%<% end %>
-					</td>
-					<td>
-						<%= wine.price %>
-						<% if wine.price.present? %>円<% end %>
-					</td>
-					</td>
-					<td>
-					<% if wine.detail.present? %>
-					<!--  詳細ボタン・アコーディオン表示 -->
-						<div class="panel-group">
-							<div class="panel panel-default">
-								<div class="panel-heading">
-									<button type="button" class="btn btn-info" data-toggle="collapse" data-target="#collapseExample<%= wine.id %>" aria-expanded="false" aria-controls="collapseExample">詳細</button>
-									<div class="collapse" id="collapseExample<%= wine.id %>">
-										<div class="row">
-											<div class="col-md-6 col-md-offset-3">     	
-													<%= wine.detail %>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>					
-					</td>			
-					<% end %>	
 				</tr>
 			<% end %>
 		</tbody>
 	</table>
-	<%= will_paginate %>
+

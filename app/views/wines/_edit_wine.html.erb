@@ -1,0 +1,71 @@
+<% provide(:title, 'wine') %>
+<% provide(:button_text, '編集') %>
+
+<div class="modal-dialog modal-lg modal-dialog-center">
+  <div class="modal-content">
+    <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+      <h1 class="modal-title">ワイン情報編集</h1>
+    </div>
+    <div class="modal-body">
+      <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+          <%= form_with(model: @wine, url: wine_path(@wine), local: true, method: :patch) do |f| %>
+            <%= render 'shared/error_messages', object: @wine %>
+
+            <%= f.label :name, class: "label-#{yield(:class_text)}" %>
+            <%= f.text_field :name, class: "form-control" %>
+
+            <%= f.label :color, class: "label-#{yield(:class_text)}" %>
+            <%= f.select :color, ['スパークリング', 'ロゼ', '白', '赤', 'オレンジ'], {include_blank: ''}, class: 'form-control' %>
+
+            <%= f.label :grape_variety, class: "label-#{yield(:class_text)}" %>
+            <%= f.select :grape_variety, Wine.grape_varieties.keys.to_a, {}, class: "form-control" %>
+
+            <%= f.label :body, class: "label-#{yield(:class_text)}" %>
+            <%= f.select :body, ['ライトボディ', 'ミディアムボディ', 'フルボディ'], {include_blank: ''}, class: 'form-control' %>
+
+            <%= f.label :country, class: "label-#{yield(:class_text)}" %>
+            <%= f.text_field :country, class: "form-control" %>
+
+            <%= f.label :region, class: "label-#{yield(:class_text)}" %>
+            <%= f.text_field :region, class: "form-control" %>
+
+            <%= f.label :area, class: "label-#{yield(:class_text)}" %>
+            <%= f.text_field :area, class: "form-control" %>
+
+            <%= f.label :appearance, class: "label-#{yield(:class_text)}" %>
+            <%= f.text_area :appearance, class: "form-control" %>
+
+            <%= f.label :aroma, class: "label-#{yield(:class_text)}" %>
+            <%= f.text_area :aroma, class: "form-control" %>
+
+            <%= f.label :taste, class: "label-#{yield(:class_text)}" %>
+            <%= f.text_area :taste, class: "form-control" %>
+
+            <%= f.label :production_year, class: "label-#{yield(:class_text)}" %>
+            <%= f.number_field :production_year, class: "form-control" %>
+
+            <%= f.label :alcohol_content, class: "label-#{yield(:class_text)}" %>
+            <%= f.number_field :alcohol_content, class: "form-control" %>
+
+            <%= f.label :price, class: "label-#{yield(:class_text)}" %>
+            <%= f.number_field :price, class: "form-control" %>
+
+            <%= f.label :detail, class: "label-#{yield(:class_text)}" %>
+            <%= f.text_area :detail, rows: 8, class: "form-control" %>
+
+            <div class="center">
+              <%= f.submit yield(:button_text), class: "btn btn-primary btn-#{yield(:class_text)}" %>
+              <button type="button" class="btn btn-default btn-<%= yield(:class_text) %>" data-dismiss="modal">
+                キャンセル
+              </button>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

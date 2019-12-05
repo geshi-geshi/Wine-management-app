@@ -41,7 +41,7 @@
   <%= f.number_field :price, class: "form-control" %>
 
   <%= f.label :detail, class: "label-#{yield(:class_text)}" %>
-  <%= f.text_area :detail, class: "form-control" %>
+  <%= f.text_area :detail, rows: 8, class: "form-control" %>
 
   <%= f.submit yield(:button_text), class: "btn btn-primary btn-block btn-#{yield(:class_text)}" %>
 <% end %>
