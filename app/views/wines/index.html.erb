@@ -27,21 +27,40 @@
 			<% @wines.each do |wine| %>
 			　<tr>
 					<td><%= wine.name %></td>
-					<td><%= wine.color %>/<%= wine.body %></td>
+					<td><%= wine.color %>
+						<% if wine.color.present? %>/<% end %>
+						<%= wine.body %>
+					</td>
 					<td><%= wine.grape_variety %></td>
-					<td><%= wine.country %>/<%= wine.region %>/<%= wine.area %></td>
+					<td>
+						<%= wine.country %>
+						<% if wine.region.present? %>/<% end %>
+						<%= wine.region %>
+						<% if wine.area.present? %>/<% end %>
+						<%= wine.area %></td>
 					<td><%= wine.appearance %></td>
 					<td><%= wine.aroma %></td>
 					<td><%= wine.taste %></td>
-					<td><%= wine.production_year %>年</td>
-					<td><%= wine.alcohol_content %>%</td>
-					<td><%= wine.price %></td>
 					<td>
+						<%= wine.production_year %>
+						<% if wine.production_year.present? %>年<% end %>
+					</td>
+					<td>
+						<%= wine.alcohol_content %>
+						<% if wine.alcohol_content.present? %>%<% end %>
+					</td>
+					<td>
+						<%= wine.price %>
+						<% if wine.price.present? %>円<% end %>
+					</td>
+					</td>
+					<td>
+					<% if wine.detail.present? %>
 					<!--  詳細ボタン・アコーディオン表示 -->
 						<div class="panel-group">
 							<div class="panel panel-default">
 								<div class="panel-heading">
-									<button type="button" class="btn btn-success" data-toggle="collapse" data-target="#collapseExample<%= wine.id %>" aria-expanded="false" aria-controls="collapseExample">詳細</button>
+									<button type="button" class="btn btn-info" data-toggle="collapse" data-target="#collapseExample<%= wine.id %>" aria-expanded="false" aria-controls="collapseExample">詳細</button>
 									<div class="collapse" id="collapseExample<%= wine.id %>">
 										<div class="row">
 											<div class="col-md-6 col-md-offset-3">     	
@@ -52,7 +71,8 @@
 								</div>
 							</div>
 						</div>					
-					</td>				
+					</td>			
+					<% end %>	
 				</tr>
 			<% end %>
 		</tbody>
