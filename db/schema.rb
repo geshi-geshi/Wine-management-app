@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_25_080041) do
+ActiveRecord::Schema.define(version: 2019_12_05_024645) do
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
@@ -20,6 +20,25 @@ ActiveRecord::Schema.define(version: 2019_11_25_080041) do
     t.datetime "updated_at", null: false
     t.string "password_digest"
     t.index ["email"], name: "index_users_on_email", unique: true
+  end
+
+  create_table "wines", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name"
+    t.string "color"
+    t.string "classification"
+    t.string "country"
+    t.string "region"
+    t.string "area"
+    t.string "grape_variety"
+    t.string "appearance"
+    t.string "aroma"
+    t.string "taste"
+    t.integer "production_year"
+    t.integer "alcohol_content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "price"
+    t.string "detail"
   end
 
 end
