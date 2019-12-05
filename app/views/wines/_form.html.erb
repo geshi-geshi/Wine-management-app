@@ -1,0 +1,47 @@
+<%= form_with(model: @wine, local: true) do |f| %>
+  <%= render 'shared/error_messages', object: @wine %>
+
+  <%= f.label :name, class: "label-#{yield(:class_text)}" %>
+  <%= f.text_field :name, class: "form-control" %>
+
+  <%= f.label :color, class: "label-#{yield(:class_text)}" %>
+  <%= f.email_field :color, class: "form-control" %>
+
+  <%= f.label :classification, class: "label-#{yield(:class_text)}" %>
+  <%= f.text_field :classification, class: "form-control" %>
+
+  <%= f.label :country, class: "label-#{yield(:class_text)}" %>
+  <%= f.text_field :country, class: "form-control" %>
+
+  <%= f.label :region, class: "label-#{yield(:class_text)}" %>
+  <%= f.text_field :region, class: "form-control" %>
+
+  <%= f.label :area, class: "label-#{yield(:class_text)}" %>
+  <%= f.text_field :area, class: "form-control" %>
+
+  <%= f.label :grape_variety, class: "label-#{yield(:class_text)}" %>
+  <%= f.text_field :grape_variety, class: "form-control" %>
+
+  <%= f.label :appearance, class: "label-#{yield(:class_text)}" %>
+  <%= f.text_field :appearance, class: "form-control" %>
+
+  <%= f.label :aroma, class: "label-#{yield(:class_text)}" %>
+  <%= f.text_field :aroma, class: "form-control" %>
+
+  <%= f.label :taste, class: "label-#{yield(:class_text)}" %>
+  <%= f.text_field :taste, class: "form-control" %>
+
+  <%= f.label :production_year, class: "label-#{yield(:class_text)}" %>
+  <%= f.number_field :production_year, class: "form-control" %>
+
+  <%= f.label :alcohol_content, class: "label-#{yield(:class_text)}" %>
+  <%= f.number_field :alcohol_content, class: "form-control" %>
+
+  <%= f.label :price, class: "label-#{yield(:class_text)}" %>
+  <%= f.number_field :price, class: "form-control" %>
+
+  <%= f.label :detail, class: "label-#{yield(:class_text)}" %>
+  <%= f.text_area :detail, class: "form-control" %>
+
+  <%= f.submit yield(:button_text), class: "btn btn-primary btn-block btn-#{yield(:class_text)}" %>
+<% end %>
