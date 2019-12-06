@@ -37,13 +37,13 @@
             <%= f.text_field :area, class: "form-control" %>
 
             <%= f.label :appearance, class: "label-#{yield(:class_text)}" %>
-            <%= f.text_area :appearance, class: "form-control" %>
+            <%= f.text_area :appearance, rows: 6, class: "form-control" %>
 
             <%= f.label :aroma, class: "label-#{yield(:class_text)}" %>
-            <%= f.text_area :aroma, class: "form-control" %>
+            <%= f.text_area :aroma, rows: 6, class: "form-control" %>
 
             <%= f.label :taste, class: "label-#{yield(:class_text)}" %>
-            <%= f.text_area :taste, class: "form-control" %>
+            <%= f.text_area :taste, rows: 6, class: "form-control" %>
 
             <%= f.label :production_year, class: "label-#{yield(:class_text)}" %>
             <%= f.number_field :production_year, class: "form-control" %>
