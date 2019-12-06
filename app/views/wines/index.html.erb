@@ -1,0 +1,35 @@
+<% provide(:title, 'All Wines') %>
+<% provide(:button_text, '更新') %>
+
+<h1>ワイン一覧</h1>
+<div class="col-md-10 col-md-offset-1">
+	<%= will_paginate %>
+	<% if logged_in? %>
+		<%= link_to "ワイン新規登録", new_wine_path, class: "btn btn-primary btn-new" %>	
+	<% end %>
+	<table class="table-bordered table-condensed">
+		<thead>
+		<tr>
+			<th>ワイン名称</th>
+			<th>色</th>
+			<th>品種</th>
+			<th>国</th>
+		
+			<th></th>
+		</tr>
+		</thead>
+		<tbody>
+			<% @wines.each do |wine| %>
+			　<tr>
+					<td><%= wine.name %></td>
+					<td><%= wine.color %></td>
+					<td><%= wine.grape_variety %></td>
+					<td><%= wine.country %><td>
+						<%= link_to "詳細画面へ", wine_path(wine), class: "btn btn-success" %>
+					</td>
+				</tr>
+			<% end %>
+		</tbody>
+	</table>
+	<%= will_paginate %>
+

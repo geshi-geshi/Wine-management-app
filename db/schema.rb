@@ -25,11 +25,11 @@ ActiveRecord::Schema.define(version: 2019_12_05_024645) do
   create_table "wines", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
     t.string "color"
-    t.string "classification"
+    t.string "body"
     t.string "country"
     t.string "region"
     t.string "area"
-    t.string "grape_variety"
+    t.integer "grape_variety"
     t.string "appearance"
     t.string "aroma"
     t.string "taste"

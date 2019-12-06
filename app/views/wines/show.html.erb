@@ -1,0 +1,88 @@
+<div class="col-md-10 col-md-offset-1">
+	<table class="table-bordered table-condensed">
+	
+		<table class="table table-bordered table-striped table-condensed">    
+      <tbody>
+        <tr>
+          <th class="col-xs-2">ワイン名称</th>
+          <td><%= @wine.name %></td>
+        </tr>
+        <tr>
+          <th>色</th>
+          <td><%= @wine.color %></td>
+        </tr>
+        <tr>
+          <th>ボディ</th>
+          <td><%= @wine.body %></td>
+        </tr>
+        <tr>
+          <th>国</th>
+          <td><%= @wine.country %></td>
+        </tr>
+        <tr>
+          <th>地方</th>
+          <td><%= @wine.region %></td>
+        </tr>
+        <tr>
+          <th>地区</th>
+          <td><%= @wine.area %></td>
+        </tr>
+        <tr>
+          <th>品種</th>
+          <td><%= @wine.grape_variety %></td>
+        </tr>
+        <tr>
+          <th>外観</th>
+          <td><%= simple_format(@wine.appearance) %></td>
+        </tr>
+        <tr>
+          <th>香り</th>
+          <td><%= simple_format(@wine.aroma) %></td>
+        </tr>
+        <tr>
+          <th>味わい</th>
+          <td><%= simple_format(@wine.taste) %></td>
+        </tr>
+        <tr>
+          <th>生産年</th>
+          <td>
+            <% if @wine.production_year.present? %>
+              <%= @wine.production_year %>年
+						<% end %>
+        </tr>
+        <tr>
+          <th>アルコール度数</th>
+          <td>
+						<% if @wine.alcohol_content.present? %>
+              <%= @wine.alcohol_content %>%
+						<% end %>
+					</td>
+        </tr>
+        <tr>
+          <th>価格</th>
+          <td>
+						<% if @wine.price.present? %>
+              <%= @wine.price %>円
+						<% end %>
+					</td>
+        </tr>
+        <tr>
+          <th>詳細</th>
+          <td><%= simple_format(@wine.detail) %></td>
+        </tr>
+      </tbody>
+				<!-- 管理者の場合、削除編集ボタンを表示させる -->
+        <% if logged_in? %>
+          <%= link_to "削除", wine_path(@wine), method: :delete,
+                  data: { confirm: "削除してよろしいですか？" }, class: "btn btn-danger wine-delete-btn" %>
+          <%= link_to "編集", edit_wine_path(@wine), remote: true, class: "btn btn-success wine-edit-btn" %>
+        <% end %>
+
+    </table>
+		<%= link_to "ワイン一覧へ", wines_path, class: "btn btn-primary" %>
+	</div>
+</div>
+ 
+
+<!--モーダルウインドウ表示-->
+<div id="edit-wine" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true"></div>

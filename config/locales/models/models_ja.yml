@@ -13,3 +13,23 @@ ja:
           password_confirmation: パスワード再入力
           created_at: 作成日
           updated_at: 更新日
+
+    models:
+      wine: ワイン
+    attributes:
+        wine:
+          id: ID
+          name: ワイン名称
+          color: 色
+          body: ボディ
+          country: 国
+          region: 地方
+          area: 地区
+          grape_variety: ブドウ品種
+          appearance: 外観
+          aroma: 香り
+          taste: 味わい
+          production_year: 生産年
+          alcohol_content: アルコール度数
+          price: 価格
+          detail: 詳細

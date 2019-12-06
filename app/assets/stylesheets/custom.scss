@@ -61,6 +61,8 @@ h1 {
   letter-spacing: -2px;
   margin-bottom: 30px;
   text-align: center;
+  font-family: serif;
+  font-style: italic;
 }
 
 h2 {
@@ -187,7 +189,15 @@ input, textarea, select, .uneditable-input {
 }
 
 .btn-new {
-  margin-left: 140px;
+  // margin-left: 140px;
+}
+
+.wine-edit-btn {
+  float: right;
+}
+
+.wine-delete-btn {
+  float: right;
 }
 
 /* モーダルウインドウの位置調整 */

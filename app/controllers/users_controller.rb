@@ -7,12 +7,11 @@ class UsersController < ApplicationController
   # 管理者のみの機能
   before_action :admin_user, only:  [:index, :destroy]
 
+  def top
+  end
 
   def index
     @users = User.paginate(page: params[:page])
-  end
-
-  def top
   end
 
   def new
