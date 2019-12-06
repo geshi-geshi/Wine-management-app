@@ -72,11 +72,11 @@
         </tr>
       </tbody>
 				<!-- 管理者の場合、削除編集ボタンを表示させる -->
-
-				<%= link_to "削除", wine_path(@wine), method: :delete,
-								data: { confirm: "削除してよろしいですか？" }, class: "btn btn-danger wine-delete-btn" %>
-				<%= link_to "編集", edit_wine_path(@wine), remote: true, class: "btn btn-success wine-edit-btn" %>
-
+        <% if logged_in? %>
+          <%= link_to "削除", wine_path(@wine), method: :delete,
+                  data: { confirm: "削除してよろしいですか？" }, class: "btn btn-danger wine-delete-btn" %>
+          <%= link_to "編集", edit_wine_path(@wine), remote: true, class: "btn btn-success wine-edit-btn" %>
+        <% end %>
 
     </table>
 		<%= link_to "ワイン一覧へ", wines_path, class: "btn btn-success" %>

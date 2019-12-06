@@ -1,4 +1,7 @@
 class WinesController < ApplicationController
+  # ログインしないとできない機能
+  before_action :logged_in_user, only: [:new, :edit, :update, :destroy]
+
 
   def index
     @wines = Wine.paginate(page: params[:page])
@@ -52,6 +55,12 @@ class WinesController < ApplicationController
     params.require(:wine).permit(:name, :color, :body, :country, :region, :area, :grape_variety, :appearance, :aroma, :taste, :production_year, :alcohol_content, :price, :detail)
   end
 
- 
+  def logged_in_user
+    unless logged_in?
+      store_location
+      flash[:danger] = "ログインしてください。"
+      redirect_to login_url
+    end
+  end
 
 end
