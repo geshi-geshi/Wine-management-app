@@ -4,7 +4,15 @@
 		<table class="table table-bordered table-striped table-condensed">    
       <tbody>
         <tr>
-          <th class="col-xs-2">ワイン名称</th>
+          <th class="col-xs-2" text-align="center" vertical-align="middle">画像</th>
+          <% if @wine.image? %>
+            <td><%= image_tag @wine.image.thumb.url %></td>
+          <% else %>
+            <td><%= image_tag "no-image.png", :size =>'200x160' %></td>
+          <% end %>
+        </tr>
+        <tr>
+          <th>ワイン名称</th>
           <td><%= @wine.name %></td>
         </tr>
         <tr>
