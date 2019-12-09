@@ -22,6 +22,9 @@ $ heroku run rails db:migrate:reset
 $ heroku run rails db:migrate
 $ heroku run rails db:seed
 
+ログ確認（リアルタイム）
+$ heroku logs --tail
+
 紐付け
 $ git remote add heroku https://git.heroku.com/protected-sands-79333.git
 ```
