@@ -2,11 +2,11 @@
   <%= render 'shared/error_messages', object: @wine %>
 
   <% if @wine.image? %>
-    <%= image_tag @wine.image.thumb.url %>
+    <%= image_tag @wine.image.thumb.url, id: 'img_prev', :size =>'200x200' %>
   <% else %>
-    <%= image_tag "no-image.png" %>
+    <%= image_tag "no-image.png", id: 'img_prev', :size =>'200x200' %>
   <% end %>
-    <%= f.file_field :image %>
+    <%= f.file_field :image, id: 'wine_img' %>
 
   <%= f.label :name, class: "label-#{yield(:class_text)}" %>
   <%= f.text_field :name, class: "form-control" %>
