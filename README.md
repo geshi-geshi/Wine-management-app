@@ -25,6 +25,12 @@ $ heroku run rails db:seed
 ログ確認（リアルタイム）
 $ heroku logs --tail
 
+HerokuのCLEARDB_DATABASE_URLを確認
+$ heroku config --app protected-sands-79333
+
+heroku DB接続
+$ mysql -u DB_USERNAME -p -h DB_HOSTNAME DB_NAME
+
 紐付け
 $ git remote add heroku https://git.heroku.com/protected-sands-79333.git
 ```
