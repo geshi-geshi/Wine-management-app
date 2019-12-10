@@ -15,6 +15,10 @@ gem 'carrierwave'
 #画像の加工
 gem 'rmagick'
 
+gem 'omniauth'
+gem 'omniauth-twitter'
+gem 'dotenv-rails' #環境変数を簡単に利用できるgem
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.3'
 # Use sqlite3 as the database for Active Record
