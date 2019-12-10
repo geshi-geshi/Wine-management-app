@@ -19,6 +19,10 @@ gem 'omniauth'
 gem 'omniauth-twitter'
 gem 'dotenv-rails' #環境変数を簡単に利用できるgem
 
+# ログインボタンのデザイン
+gem 'bootstrap-social-rails'
+gem 'font-awesome-rails'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.3'
 # Use sqlite3 as the database for Active Record

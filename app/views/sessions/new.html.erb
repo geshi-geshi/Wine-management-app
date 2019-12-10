@@ -15,8 +15,19 @@
           <%= f.submit "ログイン", class: "btn btn-primary btn-block btn-login" %>
         <% end %>
 
-         <!-- Twitterでログイン -->
-        <%= link_to 'Twitterでログイン', '/auth/twitter' %>
+        <!-- Twitterでログイン -->
+        <%= link_to '/auth/twitter', class: "btn btn-block btn-social btn-twitter" do %>
+          <span class="fa fa-twitter"></span> Twitterアカウントでログイン
+        <% end %> 
+
+        <!-- 
+        <%= link_to '/auth/facebook', class: "btn btn-block btn-social btn-facebook" do %>
+          <span class="fa fa-facebook"></span> Facebookアカウントでログイン
+        <% end %>
+        <%= link_to '/auth/google_oauth2', class: "btn btn-block btn-social btn-google" do %>
+          <span class="fa fa-google"></span> Googleアカウントでログイン
+        <% end %>
+        -->
 
         <!-- 簡単ログイン（管理権限） -->
         <%= form_with(scope: :session, url: login_path, local: true) do |f| %>
