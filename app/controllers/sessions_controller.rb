@@ -30,4 +30,18 @@ class SessionsController < ApplicationController
     flash[:success] = 'ログアウトしました。'
     redirect_to root_url
   end
+
+  def twitter
+    #request.env['omniauth.auth']はTwitter認証で得た情報を格納するもの
+    user = User.find_or_create_from_auth_hash(request.env['omniauth.auth'])
+    if user
+      log_in(user)
+      flash[:success] = 'ログインしました。'
+      redirect_back_or user
+    else
+      redirect_to root_path, notice: "失敗しました。"
+    end
+  end
+
+
 end

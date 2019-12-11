@@ -10,7 +10,9 @@ Rails.application.routes.draw do
   delete '/logout', to: 'sessions#destroy'
 
   # twitterでログイン
-  get 'auth/:provider/callback' => 'users#create_by_twitter'#このpathを通して認証が行われる。
+  get 'auth/:provider/callback', to: 'sessions#twitter'
+  # get  '/twitter_login', to: 'sessions#twitter'
+
 
   resources :users
   resources :wines
