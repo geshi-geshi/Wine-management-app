@@ -23,6 +23,8 @@ ActiveRecord::Schema.define(version: 2019_12_10_090608) do
     t.string "uid"
     t.string "username"
     t.string "image_url"
+    t.string "oauth_token"
+    t.string "oauth_expires_at"
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
