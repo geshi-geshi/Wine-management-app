@@ -32,15 +32,15 @@ class SessionsController < ApplicationController
   end
 
   def twitter
-    #request.env['omniauth.auth']はTwitter認証で得た情報を格納するもの
-    user = User.find_or_create_from_auth_hash(request.env['omniauth.auth'])
-    if user
-      log_in(user)
-      flash[:success] = 'ログインしました。'
-      redirect_back_or user
-    else
-      redirect_to root_path, notice: "失敗しました。"
-    end
+    user = User.find_or_create_from_auth(request.env['omniauth.auth'])
+    # byebug
+    # log_in(user)
+
+    session[:user_id] = user.id
+    
+    flash[:success] = "#{user.password}さんでログインしました"
+    # log_in(user)
+    redirect_to(user)
   end
 
 
