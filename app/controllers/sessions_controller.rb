@@ -50,7 +50,7 @@ class SessionsController < ApplicationController
       user = User.find_or_create_from_auth(request.env['omniauth.auth'])
       session[:user_id] = user.id
       flash[:success] = "facebook連携/#{user.name}さんでログインしました"
-      redirect_to user
+      redirect_to wines_url
     else
       redirect_to auth_failure_path
     end
