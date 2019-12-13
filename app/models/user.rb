@@ -6,8 +6,8 @@ class User < ApplicationRecord
                     format: { with: VALID_EMAIL_REGEX },
                     uniqueness: { case_sensitive: false }
                     has_secure_password validations: false
-  # on: :facebook_loginでパスワードのバリデーションを無視する
-  validates :password, presence: true, length: { minimum: 6 }, allow_nil: true, on: :facebook_login
+  # on: :sns_loginでパスワードのバリデーションを無視する
+  validates :password, presence: true, length: { minimum: 6 }, allow_nil: true, on: :sns_login
                   
 
   # twitter連携ログイン機能

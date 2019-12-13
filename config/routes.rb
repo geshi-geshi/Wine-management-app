@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   delete '/logout', to: 'sessions#destroy'
 
   # twitterでログイン
-  get 'auth/:provider/callback', to: 'sessions#facebook_login',    as: :auth_callback
+  get 'auth/:provider/callback', to: 'sessions#sns_login',    as: :auth_callback
   get '/auth/failure',         to: 'sessions#auth_failure',        as: :auth_failure
 
   # get  '/twitter_login', to: 'sessions#twitter'
