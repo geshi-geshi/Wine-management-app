@@ -15,8 +15,7 @@ class SessionsController < ApplicationController
         flash[:success] = 'ログインしました。'
       end
       # params[:session][:remember_me] == '1' ? remember(user) : forget(user)
-      redirect_back_or user
-      # redirect_to(user)
+      redirect_to wines_url
     else
       # flash.now:リダイレクトはしないがフラッシュを表示したい時
       flash.now[:danger] = '認証に失敗しました。'
@@ -30,19 +29,6 @@ class SessionsController < ApplicationController
     flash[:success] = 'ログアウトしました。'
     redirect_to root_url
   end
-
-  def twitter
-    user = User.find_or_create_from_auth(request.env['omniauth.auth'])
-    # byebug
-    # log_in(user)
-
-    session[:user_id] = user.id
-    
-    flash[:success] = "#{user.password}さんでログインしました"
-    # log_in(user)
-    redirect_to(user)
-  end
-
   
   def sns_login  
     auth = request.env['omniauth.auth']
@@ -59,7 +45,6 @@ class SessionsController < ApplicationController
       redirect_to auth_failure_path
     end
   end
-
   
   #認証に失敗した際の処理
   def auth_failure 

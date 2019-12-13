@@ -9,22 +9,6 @@ class User < ApplicationRecord
   # on: :sns_loginでパスワードのバリデーションを無視する
   validates :password, presence: true, length: { minimum: 6 }, allow_nil: true, on: :sns_login
                   
-
-  # twitter連携ログイン機能
-  # def self.find_or_create_from_auth(auth)
-  #   provider = auth[:provider]
-  #   uid = auth[:uid]
-  #   name = auth[:info][:name]
-  #   image_url = auth[:info][:image_url]
-
-  #   self.find_or_create_by(provider: provider, uid: uid) do |user|
-  #     user.id = uid
-  #     user.name = name
-  #     user.image_url = image_url
-  #     user.admin = false
-  #   end
-  # end
-
   def self.find_or_create_from_auth(auth)
     provider = auth[:provider]
     uid = auth[:uid]
