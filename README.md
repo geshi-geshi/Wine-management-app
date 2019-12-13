@@ -18,7 +18,7 @@ https://protected-sands-79333.herokuapp.com/
 
 ```
 $ git push heroku master
-$ heroku run rails db:migrate:reset
+$ heroku pg:reset DATABASE
 $ heroku run rails db:migrate
 $ heroku run rails db:seed
 
