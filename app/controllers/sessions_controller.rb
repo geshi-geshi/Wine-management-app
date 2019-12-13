@@ -43,17 +43,20 @@ class SessionsController < ApplicationController
     redirect_to(user)
   end
 
-  def facebook_login
-    @user = User.from_omniauth(request.env["omniauth.auth"])
-      result = @user.save(context: :facebook_login)
-      if result
-        log_in(@user)
-        redirect_to @user
-      else
-        redirect_to auth_failure_path
-      end
+  
+  def facebook_login  
+    auth = request.env['omniauth.auth']
+    if auth.present?
+      user = User.find_or_create_from_auth(request.env['omniauth.auth'])
+      session[:user_id] = user.id
+      flash[:success] = "#{user.name}さんでログインしました"
+      redirect_to user
+    else
+      redirect_to auth_failure_path
+    end
   end
 
+  
   #認証に失敗した際の処理
   def auth_failure 
     flash[:danger] = 'ログインできませんでした'
