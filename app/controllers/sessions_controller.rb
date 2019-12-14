@@ -39,6 +39,8 @@ class SessionsController < ApplicationController
         flash[:success] = "twitter連携/#{user.name}さんでログインしました"
       elsif  user.provider = "facebook"
         flash[:success] = "facebook連携/#{user.name}さんでログインしました"
+      else
+        flash[:danger] = "このアドレスは既に登録済みです"
       end
       redirect_to wines_url
     else
