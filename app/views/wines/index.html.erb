@@ -3,6 +3,7 @@
 
 <h1>ワイン一覧</h1>
 <div class="col-md-10 col-md-offset-1">
+ 	<%= render 'search_form' %>
 	<%= will_paginate %>
 	<% if logged_in? %>
 		<%= link_to "ワイン新規登録", new_wine_path, class: "btn btn-primary btn-new" %>	

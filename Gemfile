@@ -15,6 +15,8 @@ gem 'carrierwave'
 #画像の加工
 gem 'rmagick'
 
+gem 'ransack'
+
 gem 'omniauth'
 gem 'omniauth-twitter'
 gem 'omniauth-facebook'

@@ -4,7 +4,8 @@ class WinesController < ApplicationController
 
 
   def index
-    @wines = Wine.paginate(page: params[:page])
+    @q = Wine.ransack(params[:q])
+    @wines = @q.result(distinct: true).page(params[:page])
   end
 
   def new
