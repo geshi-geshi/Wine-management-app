@@ -11,8 +11,16 @@ class UsersController < ApplicationController
   end
 
   def index
-    @users = User.paginate(page: params[:page])
+    @q = User.ransack(params[:q])
+    @users = @q.result(distinct: true).page(params[:page])
   end
+
+  def search
+    @q = User.search(search_params)
+    @students = @q.result(distinct: true)
+  end
+
+  
 
   def new
     @user = User.new
@@ -78,6 +86,10 @@ class UsersController < ApplicationController
 
     def user_params
       params.require(:user).permit(:name, :email, :password, :password_confirmation)
+    end
+
+    def search_params
+      params.require(:q).permit!
     end
 
     # beforeフィルター

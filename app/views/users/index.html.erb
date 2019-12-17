@@ -2,10 +2,10 @@
 <% provide(:button_text, '更新') %>
 
 <h1>ユーザー一覧</h1>
-	<%= link_to "ユーザー新規登録", signup_path, class: "btn btn-primary btn-new" %>	
-
 <div class="col-md-10 col-md-offset-1">
+	<%= render 'search_form' %>
 	<%= will_paginate %>
+	<%= link_to "ユーザー新規登録", signup_path, class: "btn btn-primary btn-new" %>	
 
 	<table class="table-bordered table-condensed">
 		<tr>
