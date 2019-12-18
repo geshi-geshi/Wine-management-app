@@ -35,12 +35,13 @@ class SessionsController < ApplicationController
     if auth.present?
       user = User.find_or_create_from_auth(request.env['omniauth.auth'])
       session[:user_id] = user.id
-      if user.provider = "twitter"
-        flash[:success] = "twitter連携/#{user.name}さんでログインしました"
-      elsif  user.provider = "facebook"
-        flash[:success] = "facebook連携/#{user.name}さんでログインしました"
+      if user.provider = "twitter" || user.provider = "facebook" 
+        flash[:success] = "#{user.name}さんでログインしました"
+      # elsif  user.provider = "facebook"
+      #   flash[:success] = "facebook連携/#{user.name}さんでログインしました"
       else
-        flash[:danger] = "このアドレスは既に登録済みです"
+        # flash[:danger] = "このアドレスは既に登録済みです"
+        redirect_to auth_failure_path
       end
       redirect_to wines_url
     else

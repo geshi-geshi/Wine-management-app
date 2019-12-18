@@ -24,6 +24,7 @@ $ heroku run rails db:seed
 
 ログ確認（リアルタイム）
 $ heroku logs --tail
+heroku logs -t
 
 HerokuのCLEARDB_DATABASE_URLを確認
 $ heroku config --app protected-sands-79333
