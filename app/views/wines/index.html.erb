@@ -3,38 +3,45 @@
 
 <h1>ワイン一覧</h1>
 <div class="col-md-10 col-md-offset-1">
-	<%= will_paginate %>
+ 	<%= render 'search_form' %>
 	<% if logged_in? %>
 		<%= link_to "ワイン新規登録", new_wine_path, class: "btn btn-primary btn-new" %>	
 	<% end %>
-	<table class="table-bordered table-condensed">
-		<thead>
-		<tr>
-			<th></th>
-			<th>ワイン名称</th>
-			<th>色</th>
-			<th>品種</th>
-			<th>国</th>
-			<th></th>
-		</tr>
-		</thead>
-		<tbody>
-			<% @wines.each do |wine| %>
-			　<tr>
-			<% if wine.image? %>
-    		<td><%= image_tag wine.image.thumb.url %></td>
-			<% else %>
-				<td><%= image_tag "no-image.png", :size =>'200x160' %></td>
-			<% end %>
-					<td><%= wine.name %></td>
-					<td><%= wine.color %></td>
-					<td><%= wine.grape_variety %></td>
-					<td><%= wine.country %><td>
-						<%= link_to "詳細画面へ", wine_path(wine), class: "btn btn-success" %>
-					</td>
-				</tr>
-			<% end %>
-		</tbody>
-	</table>
-	<%= will_paginate %>
+	<% if @wines.empty? %>
+		<p class="empty">
+			見つかりません。もう一度確認して、検索してください。
+		</p>
+	<% else %>
+		<%= will_paginate %>
+		<table class="table-bordered table-condensed">
+			<thead>
+			<tr>
+				<th></th>
+				<th>ワイン名称</th>
+				<th>色</th>
+				<th>品種</th>
+				<th>国</th>
+				<th></th>
+			</tr>
+			</thead>
+			<tbody>
+				<% @wines.each do |wine| %>
+				　<tr>
+				<% if wine.image? %>
+					<td><%= image_tag wine.image.thumb.url %></td>
+				<% else %>
+					<td><%= image_tag "no-image.png", :size =>'200x160' %></td>
+				<% end %>
+						<td><%= wine.name %></td>
+						<td><%= wine.color %></td>
+						<td><%= wine.grape_variety %></td>
+						<td><%= wine.country %><td>
+							<%= link_to "詳細画面へ", wine_path(wine), class: "btn btn-success" %>
+						</td>
+					</tr>
+				<% end %>
+			</tbody>
+		</table>
+		<%= will_paginate %>
+	<% end %>
 

@@ -15,6 +15,8 @@ gem 'carrierwave'
 #画像の加工
 gem 'rmagick'
 
+gem 'ransack'
+
 gem 'omniauth'
 gem 'omniauth-twitter'
 gem 'omniauth-facebook'
@@ -27,7 +29,7 @@ gem 'font-awesome-rails'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.3'
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3', group: [:development, :test]
+# gem 'sqlite3', group: [:development, :test]
 gem 'mysql2'
 gem 'rails_12factor', group: :production
 

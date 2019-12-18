@@ -2,67 +2,73 @@
 <% provide(:button_text, '更新') %>
 
 <h1>ユーザー一覧</h1>
-	<%= link_to "ユーザー新規登録", signup_path, class: "btn btn-primary btn-new" %>	
-
 <div class="col-md-10 col-md-offset-1">
-	<%= will_paginate %>
+    <%= render 'search_form' %>
+	<% if @users.empty? %>
+	<p class="empty">
+		見つかりません。もう一度確認して、検索してください。
+	</p>
+	<% else %>
+		<%= will_paginate %>
+		<%= link_to "ユーザー新規登録", signup_path, class: "btn btn-primary btn-new" %>	
 
-	<table class="table-bordered table-condensed">
-		<tr>
-			<td>氏名</td>
-			<td>メールアドレス</td>
-			<td></td>
-			<td></td>
-		</tr>
-	<% @users.each do |user| %>
-		　<tr>
-				<td><span class="user-name"><%= user.name %></span></td>
-				<td><span class="user-email"><%= user.email %></span></td>
-				
-				<!-- 管理者の場合、削除編集ボタンを表示させる -->
-				<% if current_user.admin? && !current_user?(user) && user.email != "test@sample.com" %>
-					<td>
-						<!--  編集ボタン・アコーディオン表示 -->
-						<div class="panel-group">
-							<div class="panel panel-default">
-								<div class="panel-heading">
-									<button type="button" class="btn btn-success" data-toggle="collapse" data-target="#collapseExample<%= user.id %>" aria-expanded="false" aria-controls="collapseExample">編集</button>
-									<div class="collapse" id="collapseExample<%= user.id %>">
-										<div class="row">
-											<div class="col-md-6 col-md-offset-3">     
-												<%= form_with(model: user, url: user_path(user), method: :patch) do |f| %>　
-													<%= render 'shared/error_messages', object: user %>
+		<table class="table-bordered table-condensed">
+			<tr>
+				<td>氏名</td>
+				<td>メールアドレス</td>
+				<td></td>
+				<td></td>
+			</tr>
+		<% @users.each do |user| %>
+			　<tr>
+					<td><span class="user-name"><%= user.name %></span></td>
+					<td><span class="user-email"><%= user.email %></span></td>
+					
+					<!-- 管理者の場合、削除編集ボタンを表示させる -->
+					<% if current_user.admin? && !current_user?(user) && user.email != "test@sample.com" %>
+						<td>
+							<!--  編集ボタン・アコーディオン表示 -->
+							<div class="panel-group">
+								<div class="panel panel-default">
+									<div class="panel-heading">
+										<button type="button" class="btn btn-success" data-toggle="collapse" data-target="#collapseExample<%= user.id %>" aria-expanded="false" aria-controls="collapseExample">編集</button>
+										<div class="collapse" id="collapseExample<%= user.id %>">
+											<div class="row">
+												<div class="col-md-6 col-md-offset-3">     
+													<%= form_with(model: user, url: user_path(user), method: :patch) do |f| %>　
+														<%= render 'shared/error_messages', object: user %>
 
-													<%= f.label :name, class: "label-#{yield(:class_text)}" %>
-													<%= f.text_field :name, class: "form-control" %>
+														<%= f.label :name, class: "label-#{yield(:class_text)}" %>
+														<%= f.text_field :name, class: "form-control" %>
 
-													<%= f.label :email, class: "label-#{yield(:class_text)}" %>
-													<%= f.email_field :email, class: "form-control" %>
+														<%= f.label :email, class: "label-#{yield(:class_text)}" %>
+														<%= f.email_field :email, class: "form-control" %>
 
-												<div class="center">
-													<%= f.submit yield(:button_text), class: "btn btn-primary btn-basic-info" %>
-													<button type="button" class="btn btn-default btn-basic-info" data-dismiss="modal">
-														キャンセル
-													</button>
+													<div class="center">
+														<%= f.submit yield(:button_text), class: "btn btn-primary btn-basic-info" %>
+														<button type="button" class="btn btn-default btn-basic-info" data-dismiss="modal">
+															キャンセル
+														</button>
+													</div>
+													<% end %> <!-- form_withの終わり -->
 												</div>
-												<% end %> <!-- form_withの終わり -->
 											</div>
 										</div>
 									</div>
 								</div>
-							</div>
-						</div>					
-					</td>
-					<td><%= link_to "削除", user_path(user), method: :delete,
-							data: { confirm: "削除してよろしいですか？" }, class: "btn btn-danger" %></td>
-				<% else %>
-					<td>テストユーザーは編集できません</td>
-					<td>削除できません</td>
-				<% end %>	
-			</tr>
+							</div>					
+						</td>
+						<td><%= link_to "削除", user_path(user), method: :delete,
+								data: { confirm: "削除してよろしいですか？" }, class: "btn btn-danger" %></td>
+					<% else %>
+						<td>テストユーザーは編集できません</td>
+						<td>削除できません</td>
+					<% end %>	
+				</tr>
+		<% end %>
+		</table>
+		<%= will_paginate %>
 	<% end %>
-	</table>
-	<%= will_paginate %>
 
 <!--モーダルウインドウ表示-->
 <div id="edit-basic-info" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true"></div>
