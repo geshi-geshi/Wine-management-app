@@ -22,6 +22,9 @@ gem 'omniauth-twitter'
 gem 'omniauth-facebook'
 gem 'dotenv-rails' #環境変数を簡単に利用できるgem
 
+gem 'materialize-sass'
+gem 'material_icons'
+
 # ログインボタンのデザイン
 gem 'bootstrap-social-rails'
 gem 'font-awesome-rails'
