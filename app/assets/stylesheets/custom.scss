@@ -328,6 +328,14 @@ input, textarea, select, .uneditable-input {
   color: black;
 }
 
+.kochira {
+  font-weight: bold;
+  color: #CCFF99;
+  &:hover {
+    color: #009900;
+  }
+}
+
 
 /* TOP画面 */
 
