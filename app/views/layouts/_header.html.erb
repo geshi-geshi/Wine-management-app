@@ -33,16 +33,21 @@
             <ul class="dropdown-menu">
             <% if !current_user.admin? %>
                                           <!-- edit_user_path で現在ログイン中のユーザーIDをリソースに当てはめる-->
-              <li><%= link_to "マイページ", edit_user_path(current_user) %></li>
-              <% end %>
+              <li><%= link_to "マイページ", edit_user_path(current_user), class: "dropdown-menu_text" %></li>
               <li class="divider"></li>
+            <% end %>
               <li>
-                <%= link_to "ログアウト", logout_path, method: :delete %>
+                <%= link_to "ログアウト", logout_path, method: :delete, class: "dropdown-menu_text" %>
               </li>
             </ul>
           </li>
         <% else %>
-          <li><%= link_to "ログイン", login_path %></li>
+          <li>
+            <%= link_to login_path, class: "header_main" do %>
+              <i class="material-icons">input</i>
+              <span>ログイン</span>
+            <% end %>
+          </li>
         <% end %>
       </ul>
     </nav>
