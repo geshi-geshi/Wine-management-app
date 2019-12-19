@@ -3,18 +3,32 @@
     <%= link_to "Wine Management App", root_path, id: "logo" %>
     <nav>
       <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to "TOP", root_path %></li>
-        <li><%= link_to "Wines", wines_path %></li>
+        <li>
+          <%= link_to root_path, class: "header_main" do %>
+            <i class="material-icons">arrow_upward</i>
+            <span>TOP</span>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to wines_path, class: "header_main" do %>
+            <i class="material-icons">local_bar</i>
+            <span>Wines</span>
+          <% end %>
+        </li>
         <% if logged_in? %>
 
           <!-- 管理者のみ表示 -->
           <% if current_user.admin? %>
-            <li>
-              <i class="Small material-icons">people_alt</i><%= link_to "Users", users_path %></li>
+          <li>
+            <%= link_to users_path, class: "header_main" do %>
+              <i class="material-icons">people_alt</i>
+              <span>Users</span>
+            <% end %>
           <% end %>
           <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              Account <b class="caret"></b>
+            <a href="#" class="dropdown-toggle header_main" data-toggle="dropdown">
+            <i class="material-icons ">account_circle</i>
+              Account<b class="caret"></b>
             </a>
             <ul class="dropdown-menu">
             <% if !current_user.admin? %>

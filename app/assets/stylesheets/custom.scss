@@ -110,6 +110,16 @@ p {
   font-size: 1.3em;
 }
 
+.material-icons {
+  position: relative;
+  /* 値は調整してください */
+  top: 5px;
+  left: 5px;
+}
+
+.header_main {
+  top: -5px;
+}
 
 
 /* various */
@@ -314,10 +324,4 @@ input, textarea, select, .uneditable-input {
   margin: 20px 0;
   text-align: center;
 }
-
-
-
-
-
-
 
