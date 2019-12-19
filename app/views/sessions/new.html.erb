@@ -3,9 +3,9 @@
   <div class="container-fluid">
     <h1>ログイン</h1>
     <div class="row">
-      <div class="col-md-6 col-md-offset-3">
+      <div class="login_pass_area">
+        <a class="login-title">＜登録済アカウントでログイン＞</a>
         <%= form_with(scope: :session, url: login_path, local: true) do |f| %>
-
           <%= f.label :email, class: "label-login" %>
           <%= f.email_field :email, class: 'form-control' %>
 
@@ -14,7 +14,22 @@
 
           <%= f.submit "ログイン", class: "btn btn-primary btn-block btn-login" %>
         <% end %>
+        <!-- 簡単ログイン（管理権限） -->
+        <%= form_with(scope: :session, url: login_path, local: true) do |f| %>
+          <%= f.hidden_field :email ,value: "testadmin@sample.com" %>
+          <%= f.hidden_field :password ,value: "testpassword" %>
+          <%= f.submit "簡単ログイン（管理権限）", class: "btn btn-danger btn-login" %>
+        <% end %>
 
+        <!-- 簡単ログイン（一般権限） -->
+        <%= form_with(scope: :session, url: login_path, local: true) do |f| %>
+          <%= f.hidden_field :email ,value: "test@sample.com" %>
+          <%= f.hidden_field :password ,value: "testpassword" %>
+          <%= f.submit "簡単ログイン（一般権限）", class: "btn btn-warning mb-2 btn-login" %>
+        <% end %>
+      </div> 
+      <div class="login_sns_area">
+        <a class="login-title">＜お持ちのSNSアカウントでログイン＞</a>
         <!-- Twitterでログイン -->
         <%= link_to '/auth/twitter', class: "btn btn-block btn-social btn-twitter" do %>
           <span class="fa fa-twitter"></span> Twitterアカウントでログイン
@@ -32,24 +47,11 @@
           <span class="fa fa-google"></span> Googleアカウントでログイン
         <% end %>
         -->
-
-        <!-- 簡単ログイン（管理権限） -->
-        <%= form_with(scope: :session, url: login_path, local: true) do |f| %>
-          <%= f.hidden_field :email ,value: "testadmin@sample.com" %>
-          <%= f.hidden_field :password ,value: "testpassword" %>
-          <%= f.submit "簡単ログイン（管理権限）", class: "btn btn-danger" %>
-        <% end %>
-
-        <!-- 簡単ログイン（一般権限） -->
-        <%= form_with(scope: :session, url: login_path, local: true) do |f| %>
-          <%= f.hidden_field :email ,value: "test@sample.com" %>
-          <%= f.hidden_field :password ,value: "testpassword" %>
-          <%= f.submit "簡単ログイン（一般権限）", class: "btn btn-warning mb-2" %>
-        <% end %>
-        <p>
-          ユーザー登録がまだの場合は<%= link_to "こちら", signup_path %>
-        </p>
       </div>
+       
+    </div>
+    <div class="signup_text">
+      ユーザー登録がまだの場合は<%= link_to "こちら", signup_path %>
     </div>
   </div>
 </div>
