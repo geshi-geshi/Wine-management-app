@@ -110,7 +110,39 @@ p {
   font-size: 1.3em;
 }
 
+.material-icons {
+  position: relative;
+  /* 値は調整してください */
+  top: 5px;
+  left: 5px;
+}
 
+.header_main {
+  top: -5px;
+}
+
+.dropdown-menu {
+  background-color: #9041c3;
+}
+
+.dropdown-menu_text {
+  color: white !important;
+  font-weight: bold !important;
+  font-family: serif;
+  text-align: center;
+}
+
+.dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus {
+  background-color: #9b60c2;
+}
+
+.navbar-inverse .navbar-nav > .open > a, .navbar-inverse .navbar-nav > .open > a:hover, .navbar-inverse .navbar-nav > .open > a:focus {
+  background-color: #3e045c;
+}
+
+.navbar-right .dropdown-menu {
+  left: 0 !important;
+}
 
 /* various */
 
@@ -184,7 +216,7 @@ input, textarea, select, .uneditable-input {
   margin-bottom: 10px;
 }
 
-.wine-btn {
+.btn-wine {
   margin-top: 100px;
 }
 
@@ -314,10 +346,4 @@ input, textarea, select, .uneditable-input {
   margin: 20px 0;
   text-align: center;
 }
-
-
-
-
-
-
 
