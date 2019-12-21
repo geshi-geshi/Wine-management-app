@@ -274,7 +274,10 @@ input, textarea, select, .uneditable-input {
 /* ログインフォーム */
 
 .label-login {
+  color: black;
+  text-align: left;
   margin-top: 5px;
+
 }
 
 .btn-login {
@@ -324,8 +327,14 @@ input, textarea, select, .uneditable-input {
   color: black;
 }
 
-.label-login {
-  color: black;
+.panel-heading {
+  text-align: center;
+  font-weight: bold;
+}
+
+.btn-social {
+  margin-top: 30px;
+  margin-bottom: 49px;
 }
 
 
