@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   post   '/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
 
-  # twitterでログイン
+  # snsでログイン
   get 'auth/:provider/callback', to: 'sessions#sns_login',    as: :auth_callback
   get '/auth/failure',         to: 'sessions#auth_failure',        as: :auth_failure
 

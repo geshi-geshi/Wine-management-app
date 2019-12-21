@@ -20,6 +20,9 @@ gem 'ransack'
 gem 'omniauth'
 gem 'omniauth-twitter'
 gem 'omniauth-facebook'
+gem 'omniauth-google-oauth2'
+
+
 gem 'dotenv-rails' #環境変数を簡単に利用できるgem
 
 gem 'materialize-sass'
