@@ -2,16 +2,17 @@
 <% provide(:button_text, '更新') %>
 
 <h1>ユーザー一覧</h1>
-<div class="col-md-10 col-md-offset-1">
-    <%= render 'search_form' %><br>
+  <%= render 'search_form' %><br>
+
+	<div class="col-md-10 col-md-offset-1">
 	<% if @users.empty? %>
-	<div class="btn-new">
-			<%= link_to "ユーザー新規登録", signup_path, class: "btn btn-primary" %>	
-	</div>
-	<p class="empty">
-		検索結果が見つかりません。<br>
-		キーワードを入れなおし、もう一度検索してください。
-	</p>
+		<div class="btn-new">
+				<%= link_to "ユーザー新規登録", signup_path, class: "btn btn-primary" %>	
+		</div>
+		<p class="empty">
+			検索結果が見つかりません。<br>
+			キーワードを入れなおし、もう一度検索してください。
+		</p>
 	<% else %>
 		<div class="btn-new">
 			<%= link_to "ユーザー新規登録", signup_path, class: "btn btn-primary" %>	
@@ -59,7 +60,7 @@
 										</div>
 									</div>
 								</div>
-							</div>					
+							</div>
 						</td>
 						<td><%= link_to "削除", user_path(user), method: :delete,
 								data: { confirm: "削除してよろしいですか？" }, class: "btn btn-danger" %></td>
