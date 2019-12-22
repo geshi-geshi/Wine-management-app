@@ -3,16 +3,20 @@
 
 <h1>ユーザー一覧</h1>
 <div class="col-md-10 col-md-offset-1">
-    <%= render 'search_form' %>
+    <%= render 'search_form' %><br>
 	<% if @users.empty? %>
+	<div class=".btn-new">
+			<%= link_to "ユーザー新規登録", signup_path, class: "btn btn-primary" %>	
+	</div>
 	<p class="empty">
 		検索結果が見つかりません。<br>
 		キーワードを入れなおし、もう一度検索してください。
 	</p>
 	<% else %>
+		<div class=".btn-new">
+			<%= link_to "ユーザー新規登録", signup_path, class: "btn btn-primary" %>	
+		</div>
 		<%= will_paginate %>
-		<%= link_to "ユーザー新規登録", signup_path, class: "btn btn-primary btn-new" %>	
-
 		<table class="table-bordered table-condensed">
 			<tr>
 				<td>氏名</td>

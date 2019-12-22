@@ -1,7 +1,6 @@
 <% provide(:title, 'ワイン情報') %>
 <div class="col-md-10 col-md-offset-1">
-	<table class="table-bordered table-condensed">
-	
+	<table class="table-bordered table-condensed">	
 		<table class="table table-bordered table-striped table-condensed">    
       <tbody>
         <tr>
@@ -86,12 +85,10 @@
                   data: { confirm: "削除してよろしいですか？" }, class: "btn btn-danger wine-delete-btn" %>
           <%= link_to "編集", edit_wine_path(@wine), remote: true, class: "btn btn-success wine-edit-btn" %>
         <% end %>
-
     </table>
 		<%= link_to "ワイン一覧へ", wines_path, class: "btn btn-primary" %>
 	</div>
 </div>
- 
 
 <!--モーダルウインドウ表示-->
 <div id="edit-wine" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true"></div>
