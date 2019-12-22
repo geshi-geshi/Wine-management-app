@@ -5,7 +5,7 @@
 <div class="col-md-10 col-md-offset-1">
     <%= render 'search_form' %><br>
 	<% if @users.empty? %>
-	<div class=".btn-new">
+	<div class="btn-new">
 			<%= link_to "ユーザー新規登録", signup_path, class: "btn btn-primary" %>	
 	</div>
 	<p class="empty">
@@ -13,7 +13,7 @@
 		キーワードを入れなおし、もう一度検索してください。
 	</p>
 	<% else %>
-		<div class=".btn-new">
+		<div class="btn-new">
 			<%= link_to "ユーザー新規登録", signup_path, class: "btn btn-primary" %>	
 		</div>
 		<%= will_paginate %>

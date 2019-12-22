@@ -1,8 +1,24 @@
 <% provide(:title, 'ワイン情報') %>
+<h1>ワイン情報</h1>
 <div class="col-md-10 col-md-offset-1">
+<div class="btn-wine-index">
+<%= link_to "ワイン一覧へ", wines_path, class: "btn btn-primary" %><br>
+</div>
 	<table class="table-bordered table-condensed">	
 		<table class="table table-bordered table-striped table-condensed">    
       <tbody>
+        <tr>
+          <!-- 管理者の場合、削除編集ボタンを表示させる -->
+          <% if logged_in? %>
+          <th>
+            <%= link_to "編集", edit_wine_path(@wine), remote: true, class: "btn btn-success wine-edit-btn" %>
+          </th>
+          <th>
+            <%= link_to "削除", wine_path(@wine), method: :delete,
+                      data: { confirm: "削除してよろしいですか？" }, class: "btn btn-danger wine-delete-btn" %>         
+          </th>   
+          <% end %>
+        </tr>
         <tr>
           <th class="col-xs-2" text-align="center" vertical-align="middle">画像</th>
           <% if @wine.image? %>
@@ -79,14 +95,9 @@
           <td><%= simple_format(@wine.detail) %></td>
         </tr>
       </tbody>
-				<!-- 管理者の場合、削除編集ボタンを表示させる -->
-        <% if logged_in? %>
-          <%= link_to "削除", wine_path(@wine), method: :delete,
-                  data: { confirm: "削除してよろしいですか？" }, class: "btn btn-danger wine-delete-btn" %>
-          <%= link_to "編集", edit_wine_path(@wine), remote: true, class: "btn btn-success wine-edit-btn" %>
-        <% end %>
+				
     </table>
-		<%= link_to "ワイン一覧へ", wines_path, class: "btn btn-primary" %>
+		
 	</div>
 </div>
 
