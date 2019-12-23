@@ -292,10 +292,6 @@ input, textarea, select, .uneditable-input {
   margin-top: 10px;
 }
 
-.btn-twitter {
-  margin-top: 10px;
-}
-
 .checkbox-login {
   width: auto;
   margin-left: 25px;
@@ -347,6 +343,14 @@ input, textarea, select, .uneditable-input {
 .btn-social {
   margin-top: 30px;
   margin-bottom: 49px;
+}
+
+.kochira {
+  font-weight: bold;
+  color: #CCFF99;
+  &:hover {
+    color: #009900;
+  }
 }
 
 

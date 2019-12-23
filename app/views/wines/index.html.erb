@@ -42,7 +42,77 @@
 			<% end %>
 		</div>
 		<%= will_paginate %>
+<<<<<<< HEAD
 	<% end %>
 </div>
 
+=======
+		<table class="table-bordered table-condensed">
+			<thead>
+			<tr>
+				<th></th>
+				<th>ワイン名称</th>
+				<th>色</th>
+				<th>品種</th>
+				<th>国</th>
+				<th></th>
+			</tr>
+			</thead>
+			<tbody>
+				<% @wines.each do |wine| %>
+				 <div class="container">
+					<div class="row">
+						<div class="col-lg-4">
+							<div class="card">
+								<img class="card-img-top" src="images/notepc-wp.jpeg" alt="ライトコースのイメージ画像">
+								<div class="card-body">
+									<h4 class="card-title">ライトコース</h4>
+									<p class="card-text">ホームページ・ブログ開設など基礎を身に付けたい方向けコースです。</p>
+									<a href="#" class="btn btn-primary">詳細を見る</a>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-4">
+							<div class="card">
+								<img class="card-img-top" src="images/notepc-graph.jpeg" alt="スタンダードコースのイメージ画像">
+								<div class="card-body">
+									<h4 class="card-title">スダンダードコース</h4>
+									<p class="card-text">ホームページ作成・Web集客を一通り習得したい方向けです。</p>
+									<a href="#" class="btn btn-primary">詳細を見る</a>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-4">
+							<div class="card">
+								<img class="card-img-top" src="images//e-learning.jpeg" alt="プロフェッショナルコースのイメージ画像">
+								<div class="card-body">
+									<h4 class="card-title">プロフェッショナルコース</h4>
+									<p class="card-text">より制作技術をしっかり身につけたい方向けの徹底コースです。</p>
+									<a href="#" class="btn btn-primary">詳細を見る</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			
+				<tr>
+				<% if wine.image? %>
+					<td><%= image_tag wine.image.thumb.url %></td>
+				<% else %>
+					<td><%= image_tag "no-image.png", :size =>'200x160' %></td>
+				<% end %>
+						<td><%= wine.name %></td>
+						<td><%= wine.color %></td>
+						<td><%= wine.grape_variety %></td>
+						<td><%= wine.country %><td>
+							<%= link_to "詳細画面へ", wine_path(wine), class: "btn btn-success" %>
+						</td>
+					</tr>
+				<% end %>
+			</tbody>
+		</table>
+	<%= will_paginate %>
+	</div>
+<% end %>
+>>>>>>> 095a889eeaf30a02d9afe1459b0628312ccd172e
 
