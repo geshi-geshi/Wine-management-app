@@ -1,3 +1,5 @@
+<!-- ワイン登録のフォーム -->
+
 <%= form_with(model: @wine, local: true) do |f| %>
   <%= render 'shared/error_messages', object: @wine %>
 
@@ -9,7 +11,7 @@
     <%= f.file_field :image, id: 'wine_img' %>
 
   <%= f.label :name, class: "label-#{yield(:class_text)}" %>
-  <%= f.text_field :name, class: "form-control" %>
+  <%= f.text_field :name, placeholder: "必須項目です", class: "form-control" %>
 
   <%= f.label :color, class: "label-#{yield(:class_text)}" %>
   <%= f.select :color, ['スパークリング', 'ロゼ', '白', '赤', 'オレンジ'], {include_blank: ''}, class: 'form-control' %>

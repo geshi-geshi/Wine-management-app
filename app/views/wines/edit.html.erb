@@ -1,82 +1,20 @@
 <% provide(:title, 'ワイン編集') %>
-<% provide(:button_text, '編集') %>
+<% provide(:button_text, '更新') %>
 
-<h1>ワイン情報</h1>
+<h1>ワイン情報の編集</h1>
 <div class="col-md-10 col-md-offset-1">
   <div class="btn-header">
 		<%= link_to "一覧へ戻る", wines_path, class: "btn btn-primary btn-wine-index" %>
-		<%= link_to "削除", wine_path(@wine), method: :delete,
+		<%= link_to "このワインを削除する", wine_path(@wine), method: :delete,
                       data: { confirm: "削除してよろしいですか？" }, class: "btn btn-danger wine-delete-btn" %>        
 	</div>
 	<div class="panel panel-default">
 		<div class="panel-body">
 			<div class="row">
 				<div class="col-md-10 col-md-offset-1">
-					<%= form_with(model: @wine, url: wine_path(@wine), local: true, method: :patch) do |f| %>
-						<%= render 'shared/error_messages', object: @wine %>
-						<% if @wine.image? %>
-							<%= image_tag @wine.image.thumb.url, id: 'img_prev', :size =>'150x150' %>
-						<% else %>
-							<%= image_tag "no-image.png", id: 'img_prev', :size =>'200x150' %>
-						<% end %>
-						
-						<%= f.file_field :image, id: 'wine_img' %>
-
-						<%= f.label :name, class: "label-#{yield(:class_text)}" %>
-						<%= f.text_field :name, class: "form-control" %>
-
-						<%= f.label :color, class: "label-#{yield(:class_text)}" %>
-						<%= f.select :color, ['スパークリング', 'ロゼ', '白', '赤', 'オレンジ'], {include_blank: ''}, class: 'form-control' %>
-
-						<%= f.label :grape_variety, class: "label-#{yield(:class_text)}" %>
-						<%= f.select :grape_variety, Wine.grape_varieties.keys.to_a, {}, class: "form-control" %>
-
-						<%= f.label :body, class: "label-#{yield(:class_text)}" %>
-						<%= f.select :body, ['ライトボディ', 'ミディアムボディ', 'フルボディ'], {include_blank: ''}, class: 'form-control' %>
-
-						<%= f.label :country, class: "label-#{yield(:class_text)}" %>
-						<%= f.text_field :country, class: "form-control" %>
-
-						<%= f.label :region, class: "label-#{yield(:class_text)}" %>
-						<%= f.text_field :region, class: "form-control" %>
-
-						<%= f.label :area, class: "label-#{yield(:class_text)}" %>
-						<%= f.text_field :area, class: "form-control" %>
-
-						<%= f.label :appearance, class: "label-#{yield(:class_text)}" %>
-						<%= f.text_area :appearance, rows: 6, class: "form-control" %>
-
-						<%= f.label :aroma, class: "label-#{yield(:class_text)}" %>
-						<%= f.text_area :aroma, rows: 6, class: "form-control" %>
-
-						<%= f.label :taste, class: "label-#{yield(:class_text)}" %>
-						<%= f.text_area :taste, rows: 6, class: "form-control" %>
-
-						<%= f.label :production_year, class: "label-#{yield(:class_text)}" %>
-						<%= f.number_field :production_year, class: "form-control" %>
-
-						<%= f.label :alcohol_content, class: "label-#{yield(:class_text)}" %>
-						<%= f.number_field :alcohol_content, class: "form-control" %>
-
-						<%= f.label :price, class: "label-#{yield(:class_text)}" %>
-						<%= f.number_field :price, class: "form-control" %>
-
-						<%= f.label :detail, class: "label-#{yield(:class_text)}" %>
-						<%= f.text_area :detail, rows: 8, class: "form-control" %>
-
-						<div class="center">
-							<%= f.submit yield(:button_text), class: "btn btn-primary btn-#{yield(:class_text)}" %>
-							<button type="button" class="btn btn-default btn-<%= yield(:class_text) %>" data-dismiss="modal">
-								キャンセル
-							</button>
-						</div>
-					<% end %> <!-- form_with -->
-				</div> <!-- col-md-10 col-md-offset-1 -->
-			</div> <!-- row -->
-		</div> <!-- panel-body -->
-	</div> <!-- panel panel-default -->	
-</div> <!-- col-md-10 -->
-
-
-<!--モーダルウインドウ表示-->
-<%# <div id="edit-wine" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true"></div> %>
+					<%= render 'form_edit' %>
+				</div> 
+			</div> 
+		</div> 
+	</div> 
+</div> 
