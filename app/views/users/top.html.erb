@@ -5,14 +5,16 @@
     <p>このアプリケーションでは、<br>
         ユーザーの皆様が編集したワインの一覧を閲覧,検索できます。<br>
         ※ログインするとワインの編集ができます。</p>
-    <%= link_to wines_path, class: "btn btn-lg btn-primary btn-wine" do %>
-      <i class="material-icons">local_bar</i>
-      <span>ワイン一覧へ</span>
-    <% end %>
+    <% if !logged_in? %>
+      <%= link_to wines_path, class: "btn btn-lg btn-primary btn-wine" do %>
+        <i class="material-icons">local_bar</i>
+        <span>ワイン一覧へ</span>
+      <% end %>
 
-    <%= link_to login_path, class: "btn btn-lg btn-primary btn-wine" do %>
-      <i class="material-icons">input</i>
-      <span>ログイン</span>
+      <%= link_to login_path, class: "btn btn-lg btn-primary btn-wine" do %>
+        <i class="material-icons">input</i>
+        <span>ログイン</span>
+      <% end %>
     <% end %>
   </div>
 </div>
