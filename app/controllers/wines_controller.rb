@@ -39,7 +39,7 @@ class WinesController < ApplicationController
     else
       flash[:danger] = "#{@wine.name}の更新に失敗しました。" + @base.errors.full_messages.join("。")
     end
-    redirect_to wine_path(@wine)
+    redirect_to wines_url 
   end
 
   def destroy

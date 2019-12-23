@@ -112,7 +112,6 @@ p {
 
 .material-icons {
   position: relative;
-  /* 値は調整してください */
   top: 5px;
   left: 5px;
 }
@@ -194,18 +193,6 @@ input, textarea, select, .uneditable-input {
   }
 }
 
-/* Users index */
-
-.users {
-  list-style: none;
-  margin: 0;
-  li {
-    overflow: auto;
-    padding: 10px 0;
-    border-bottom: 1px solid $gray-lighter;
-  }
-}
-
 /* btn */
 
 .btn-attendances-update {
@@ -232,13 +219,26 @@ input, textarea, select, .uneditable-input {
   margin-bottom: 15px;
 }
 
+.wine-show-btn {
+  // text-align: center;
+}
+
 .wine-edit-btn {
-  float: left;
+  // float: right;
+}
+
+.btn-wine-area {
+  text-align: center;
 }
 
 .wine-delete-btn {
   float: right;
 }
+
+.close {
+  font-family: serif;
+}
+
 
 /* モーダルウインドウの位置調整 */
 
@@ -279,6 +279,7 @@ input, textarea, select, .uneditable-input {
   list-style: none;
 }
 
+
 /* ログインフォーム */
 
 .label-login {
@@ -289,10 +290,6 @@ input, textarea, select, .uneditable-input {
 }
 
 .btn-login {
-  margin-top: 10px;
-}
-
-.btn-twitter {
   margin-top: 10px;
 }
 
@@ -349,6 +346,14 @@ input, textarea, select, .uneditable-input {
   margin-bottom: 49px;
 }
 
+.kochira {
+  font-weight: bold;
+  color: #CCFF99;
+  &:hover {
+    color: #009900;
+  }
+}
+
 
 /* TOP画面 */
 
@@ -387,7 +392,17 @@ input, textarea, select, .uneditable-input {
   // text-shadow: 0px 5px 3px #555;
 }
 
-/* user */
+/* ユーザー一覧 */
+
+.users {
+  list-style: none;
+  margin: 0;
+  li {
+    overflow: auto;
+    padding: 10px 0;
+    border-bottom: 1px solid $gray-lighter;
+  }
+}
 
 .user-name {
   font-family: serif;
@@ -409,3 +424,36 @@ input, textarea, select, .uneditable-input {
   text-align: center;
 }
 
+
+/* ワイン一覧画面 */
+
+.card {
+  box-shadow:0px 0px 10px;
+  border: 1px solid#CCC;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  background: white;
+}
+
+.card-body {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.card-title {
+  // text-align: center;
+}
+
+.card-text {
+  // text-align: center;
+}
+
+.wines-index {
+  position: relative;
+  min-height: 100vh;
+  background-image: image-url("wines-index2.jpg");
+  background-position: center center;
+  background-color:rgba(255,255,255,0.95);
+  background-blend-mode:lighten;
+}

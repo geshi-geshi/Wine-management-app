@@ -1,13 +1,13 @@
 <div class="col-md-8 col-md-offset-2">
   <%= search_form_for @q do |f| %>
-    <%= f.search_field :name_cont, placeholder: "ワイン名を入力してください", class: "form-control" %>
+    <%= f.search_field :name_cont, placeholder: "ワイン名で検索", class: "form-control" %>
     <br />
-    <%= f.select :color_cont, ['スパークリング', 'ロゼ', '白', '赤', 'オレンジ'], {include_blank: 'ワインの色を選択してください'}, class: 'form-control' %>
+    <%= f.select :color_cont, ['スパークリング', 'ロゼ', '白', '赤', 'オレンジ'], {include_blank: 'ワインの種類で検索'}, class: 'form-control' %>
     <br />
-    <%= f.select :body_cont, ['ライトボディ', 'ミディアムボディ', 'フルボディ'], {include_blank: 'ボディを選択してください'}, class: 'form-control' %>
+    <%= f.select :body_cont, ['ライトボディ', 'ミディアムボディ', 'フルボディ'], {include_blank: 'ボディで検索'}, class: 'form-control' %>
     <br />
     <!-- eqはイコール -->
-    <%= f.search_field :production_year_eq, placeholder: "生産年を選択してください", class: "form-control" %>
+    <%= f.search_field :production_year_eq, placeholder: "生産年で検索（例: 2000）", class: "form-control" %>
 
     <%= f.submit "検索", class: "btn btn-primary" %>
   <% end %>
