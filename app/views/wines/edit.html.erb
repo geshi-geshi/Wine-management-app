@@ -4,7 +4,7 @@
 <h1>ワイン情報の編集</h1>
 <div class="col-md-10 col-md-offset-1">
   <div class="btn-header">
-		<%= link_to "一覧へ戻る", wines_path, class: "btn btn-primary btn-wine-index" %>
+		<%= link_to "<ワイン一覧へ", wines_path, class: "btn btn-default btn-wine-index" %>
 		<%= link_to "このワインを削除する", wine_path(@wine), method: :delete,
                       data: { confirm: "削除してよろしいですか？" }, class: "btn btn-danger wine-delete-btn" %>        
 	</div>
