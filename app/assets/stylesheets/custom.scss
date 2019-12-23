@@ -434,6 +434,7 @@ input, textarea, select, .uneditable-input {
   border: 1px solid#CCC;
   margin-top: 10px;
   margin-bottom: 10px;
+  background: white;
 }
 
 .card-body {
@@ -449,4 +450,16 @@ input, textarea, select, .uneditable-input {
 .card-text {
   // text-align: center;
 }
+
+.wines-index {
+  position: relative;
+  min-height: 100vh;
+  background-image: image-url("wines-index2.jpg");
+  // background-size: cover;
+  background-position: center center;
+  // background-repeat: no-repeat;
+  background-color:rgba(255,255,255,0.95);
+  background-blend-mode:lighten;
+}
+
 
