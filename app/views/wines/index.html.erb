@@ -3,50 +3,46 @@
 
 <h1>ワイン一覧</h1>
 <%= render 'search_form' %><br>
-
 <div class="col-md-10 col-md-offset-1">
-<% if logged_in? %>
-	<div class="">
-		<%= link_to "ワイン新規登録", new_wine_path, class: "btn btn-primary btn-new" %>	
-	</div>
-<% end %>
-<% if @wines.empty? %>
-	<p class="empty">
-		検索結果が見つかりません。<br>
-		キーワードを入れなおし、もう一度検索してください。
-	</p>
-<% else %>
+	<% if logged_in? %>
+		<div class="">
+			<%= link_to "ワイン新規登録", new_wine_path, class: "btn btn-primary btn-new" %>	
+		</div>
+	<% end %>
+	<% if @wines.empty? %>
+		<p class="empty">
+			検索結果が見つかりません。<br>
+			キーワードを入れなおし、もう一度検索してください。
+		</p>
+	<% else %>
 		<%= will_paginate %>
-		<table class="table-bordered table-condensed">
-			<thead>
-			<tr>
-				<th></th>
-				<th>ワイン名称</th>
-				<th>色</th>
-				<th>品種</th>
-				<th>国</th>
-				<th></th>
-			</tr>
-			</thead>
-			<tbody>
-				<% @wines.each do |wine| %>
-				　<tr>
-				<% if wine.image? %>
-					<td><%= image_tag wine.image.thumb.url %></td>
-				<% else %>
-					<td><%= image_tag "no-image.png", :size =>'200x160' %></td>
-				<% end %>
-						<td><%= wine.name %></td>
-						<td><%= wine.color %></td>
-						<td><%= wine.grape_variety %></td>
-						<td><%= wine.country %><td>
-							<%= link_to "詳細画面へ", wine_path(wine), class: "btn btn-success" %>
-						</td>
-					</tr>
-				<% end %>
-			</tbody>
-		</table>
-	<%= will_paginate %>
-	</div>
-<% end %>
+		<div class="row">
+			<% @wines.each do |wine| %>
+				<div class="col-lg-4">
+					<div class="card">
+						<div class="card-body">
+							<% if wine.image? %>
+								<%= image_tag wine.image.thumb.url %>
+							<% else %>
+								<%= image_tag "no-image.png", :size =>'200x160' %>
+							<% end %>
+							<h4 class="card-title">
+								<%= wine.name %>（<%= wine.color %>）
+				　		</h4>
+							<p class="card-text">
+								品種：<%= wine.grape_variety %>			
+							</p>
+							<p class="card-text">		
+								国：<%= wine.country %>							
+							</p>	
+							<%= link_to "詳細を見る", wine_path(wine), class: "btn btn-success" %>
+						</div> <!-- card-body -->
+					</div> <!-- card -->
+				</div>						
+			<% end %>
+		</div>
+		<%= will_paginate %>
+	<% end %>
+</div>
+
 
