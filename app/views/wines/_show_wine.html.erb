@@ -1,0 +1,103 @@
+<% provide(:title, 'ワイン情報') %>
+
+<div class="modal-dialog modal-lg modal-dialog-center">
+  <div class="modal-content">
+    <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;閉じる</span>
+      </button>
+      <h1 class="modal-title">ワイン情報</h1>
+    </div>
+    <div class="modal-body">
+      <div class="row">
+        <div class="col-md-12">
+          <table class="table-bordered table-condensed">	
+            <table class="table table-bordered table-striped table-condensed">    
+              <tbody>
+                <tr>
+                  <th class="col-xs-2" text-align="center" vertical-align="middle">画像</th>
+                  <% if @wine.image? %>
+                    <td><%= image_tag @wine.image.thumb.url %></td>
+                  <% else %>
+                    <td><%= image_tag "no-image.png", :size =>'200x160' %></td>
+                  <% end %>
+                </tr>
+                <tr>
+                  <th>ワイン名称</th>
+                  <td><%= @wine.name %></td>
+                </tr>
+                <tr>
+                  <th>色</th>
+                  <td><%= @wine.color %></td>
+                </tr>
+                <tr>
+                  <th>ボディ</th>
+                  <td><%= @wine.body %></td>
+                </tr>
+                <tr>
+                  <th>国</th>
+                  <td><%= @wine.country %></td>
+                </tr>
+                <tr>
+                  <th>地方</th>
+                  <td><%= @wine.region %></td>
+                </tr>
+                <tr>
+                  <th>地区</th>
+                  <td><%= @wine.area %></td>
+                </tr>
+                <tr>
+                  <th>品種</th>
+                  <td><%= @wine.grape_variety %></td>
+                </tr>
+                <tr>
+                  <th>外観</th>
+                  <td><%= simple_format(@wine.appearance) %></td>
+                </tr>
+                <tr>
+                  <th>香り</th>
+                  <td><%= simple_format(@wine.aroma) %></td>
+                </tr>
+                <tr>
+                  <th>味わい</th>
+                  <td><%= simple_format(@wine.taste) %></td>
+                </tr>
+                <tr>
+                  <th>生産年</th>
+                  <td>
+                    <% if @wine.production_year.present? %>
+                      <%= @wine.production_year %>年
+                    <% end %>
+                </tr>
+                <tr>
+                  <th>アルコール度数</th>
+                  <td>
+                    <% if @wine.alcohol_content.present? %>
+                      <%= @wine.alcohol_content %>%
+                    <% end %>
+                  </td>
+                </tr>
+                <tr>
+                  <th>価格</th>
+                  <td>
+                    <% if @wine.price.present? %>
+                      <%= @wine.price %>円
+                    <% end %>
+                  </td>
+                </tr>
+                <tr>
+                  <th>詳細</th>
+                  <td><%= simple_format(@wine.detail) %></td>
+                </tr>
+              </tbody>	
+            </table>
+          </table>
+        </div>
+       </div>
+      </div>
+    </div>
+	</div>
+</div>
+
+<!--モーダルウインドウ表示-->
+<div id="edit-wine" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true"></div>

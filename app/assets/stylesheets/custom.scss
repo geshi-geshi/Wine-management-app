@@ -232,13 +232,26 @@ input, textarea, select, .uneditable-input {
   margin-bottom: 15px;
 }
 
+.wine-show-btn {
+  // text-align: center;
+}
+
 .wine-edit-btn {
-  float: left;
+  // float: right;
+}
+
+.btn-wine-area {
+  text-align: center;
 }
 
 .wine-delete-btn {
   float: right;
 }
+
+.close {
+  font-family: serif;
+}
+
 
 /* モーダルウインドウの位置調整 */
 
