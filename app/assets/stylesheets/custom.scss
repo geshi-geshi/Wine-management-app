@@ -380,6 +380,10 @@ input, textarea, select, .uneditable-input {
   filter: saturate(80%);
 }
 
+.jumbotron {
+  margin-bottom: 0;
+}
+
 .jumbotron p {
   font-weight: bold;
 }
