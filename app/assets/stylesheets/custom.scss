@@ -112,7 +112,6 @@ p {
 
 .material-icons {
   position: relative;
-  /* 値は調整してください */
   top: 5px;
   left: 5px;
 }
@@ -191,18 +190,6 @@ input, textarea, select, .uneditable-input {
   @extend .has-error;
   .form-control {
     color: $state-danger-text;
-  }
-}
-
-/* Users index */
-
-.users {
-  list-style: none;
-  margin: 0;
-  li {
-    overflow: auto;
-    padding: 10px 0;
-    border-bottom: 1px solid $gray-lighter;
   }
 }
 
@@ -291,6 +278,7 @@ input, textarea, select, .uneditable-input {
 .notification {
   list-style: none;
 }
+
 
 /* ログインフォーム */
 
@@ -404,7 +392,17 @@ input, textarea, select, .uneditable-input {
   // text-shadow: 0px 5px 3px #555;
 }
 
-/* user */
+/* ユーザー一覧 */
+
+.users {
+  list-style: none;
+  margin: 0;
+  li {
+    overflow: auto;
+    padding: 10px 0;
+    border-bottom: 1px solid $gray-lighter;
+  }
+}
 
 .user-name {
   font-family: serif;
@@ -455,11 +453,7 @@ input, textarea, select, .uneditable-input {
   position: relative;
   min-height: 100vh;
   background-image: image-url("wines-index2.jpg");
-  // background-size: cover;
   background-position: center center;
-  // background-repeat: no-repeat;
   background-color:rgba(255,255,255,0.95);
   background-blend-mode:lighten;
 }
-
-
