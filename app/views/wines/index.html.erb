@@ -22,9 +22,9 @@
 					<div class="card">
 						<div class="card-body">
 							<% if wine.image? %>
-								<%= image_tag wine.image.thumb.url %>
+								<%= image_tag wine.image.thumb.url, :size =>'230x170'  %>
 							<% else %>
-								<%= image_tag "no-image.png", :size =>'200x160' %>
+								<%= image_tag "no-image.png", :size =>'230x170' %>
 							<% end %>
 							<h4 class="card-title">
 								<%= wine.name %>（<%= wine.color %>）
