@@ -7,7 +7,7 @@
     <%= f.select :body_cont, ['ライトボディ', 'ミディアムボディ', 'フルボディ'], {include_blank: 'ボディで検索'}, class: 'form-control' %>
     <br />
     <!-- eqはイコール -->
-    <%= f.search_field :production_year_eq, placeholder: "生産年で検索（例: 2000）", class: "form-control" %>
+    <%= f.number_field :production_year_eq, placeholder: "生産年で検索", class: "form-control" %>
 
     <%= f.submit "検索", class: "btn btn-primary" %>
   <% end %>
