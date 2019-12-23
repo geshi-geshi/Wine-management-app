@@ -88,7 +88,7 @@ p {
   color: white;
   text-transform: uppercase;
   letter-spacing: -1px;
-  padding-top: 12px;
+  padding-top: 14px;
   font-family: serif;
   font-style: italic;
   &:hover {
@@ -119,6 +119,8 @@ p {
 
 .header_main {
   top: -5px;
+  margin-left: 20px;
+  margin-right: 20px;
 }
 
 .dropdown-menu {
@@ -218,20 +220,20 @@ input, textarea, select, .uneditable-input {
 
 .btn-wine {
   margin-top: 100px;
-  padding-top: 5px;
-}
-
-.btn-sns {
-  margin-top: 3em;
-  margin-bottom: 2em;
+  margin-left: 70px;
+  font-size: 21px;
 }
 
 .btn-new {
-  // margin-left: 140px;
+  margin-top: 30px;
+}
+
+.btn-wine-index {
+  margin-bottom: 15px;
 }
 
 .wine-edit-btn {
-  float: right;
+  float: left;
 }
 
 .wine-delete-btn {
@@ -280,7 +282,10 @@ input, textarea, select, .uneditable-input {
 /* ログインフォーム */
 
 .label-login {
+  color: black;
+  text-align: left;
   margin-top: 5px;
+
 }
 
 .btn-login {
@@ -320,14 +325,24 @@ input, textarea, select, .uneditable-input {
   font-weight: bold;
 }
 
+.signup_text a {
+  color: #66FFCC;
+}
+
 .login-title {
   font-weight: bold;
   font-size: 18px;
   color: black;
 }
 
-.label-login {
-  color: black;
+.panel-heading {
+  text-align: center;
+  font-weight: bold;
+}
+
+.btn-social {
+  margin-top: 30px;
+  margin-bottom: 49px;
 }
 
 .kochira {

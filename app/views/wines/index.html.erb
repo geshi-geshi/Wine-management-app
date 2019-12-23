@@ -2,16 +2,20 @@
 <% provide(:button_text, '更新') %>
 
 <h1>ワイン一覧</h1>
+<%= render 'search_form' %><br>
+
 <div class="col-md-10 col-md-offset-1">
- 	<%= render 'search_form' %>
-	<% if logged_in? %>
+<% if logged_in? %>
+	<div class="">
 		<%= link_to "ワイン新規登録", new_wine_path, class: "btn btn-primary btn-new" %>	
-	<% end %>
-	<% if @wines.empty? %>
-		<p class="empty">
-			見つかりません。もう一度確認して、検索してください。
-		</p>
-	<% else %>
+	</div>
+<% end %>
+<% if @wines.empty? %>
+	<p class="empty">
+		検索結果が見つかりません。<br>
+		キーワードを入れなおし、もう一度検索してください。
+	</p>
+<% else %>
 		<%= will_paginate %>
 		<table class="table-bordered table-condensed">
 			<thead>
@@ -77,6 +81,7 @@
 				<% end %>
 			</tbody>
 		</table>
-		<%= will_paginate %>
-	<% end %>
+	<%= will_paginate %>
+	</div>
+<% end %>
 

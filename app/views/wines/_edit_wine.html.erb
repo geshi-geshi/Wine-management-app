@@ -11,14 +11,14 @@
     </div>
     <div class="modal-body">
       <div class="row">
-        <div class="col-md-6 col-md-offset-3">
+        <div class="col-md-8 col-md-offset-2">
           <%= form_with(model: @wine, url: wine_path(@wine), local: true, method: :patch) do |f| %>
             <%= render 'shared/error_messages', object: @wine %>
 
             <% if @wine.image? %>
               <%= image_tag @wine.image.thumb.url, id: 'img_prev', :size =>'150x150' %>
             <% else %>
-              <%= image_tag "no-image.png", id: 'img_prev', :size =>'150x150' %>
+              <%= image_tag "no-image.png", id: 'img_prev', :size =>'200x150' %>
             <% end %>
               <%= f.file_field :image, id: 'wine_img' %>
 

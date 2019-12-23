@@ -12,7 +12,7 @@
         <li>
           <%= link_to wines_path, class: "header_main" do %>
             <i class="material-icons">local_bar</i>
-            <span>Wines</span>
+            <span>ワイン一覧</span>
           <% end %>
         </li>
         <% if logged_in? %>
@@ -22,13 +22,13 @@
           <li>
             <%= link_to users_path, class: "header_main" do %>
               <i class="material-icons">people_alt</i>
-              <span>Users</span>
+              <span>ユーザ一覧</span>
             <% end %>
           <% end %>
           <li class="dropdown">
             <a href="#" class="dropdown-toggle header_main" data-toggle="dropdown">
             <i class="material-icons ">account_circle</i>
-              Account<b class="caret"></b>
+              <b class="caret"></b>
             </a>
             <ul class="dropdown-menu">
             <% if !current_user.admin? %>
