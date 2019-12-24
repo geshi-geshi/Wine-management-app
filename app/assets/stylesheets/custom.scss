@@ -150,12 +150,16 @@ p {
   float: right;
 }
 
-@media screen and ( max-width:378px) {
-  #logo {
-    // font-size: 1.5em;
 
+
+@media screen and ( max-width:767px) {
+  .navbar-nav {
+    float: none;
   }
-  
+  .navbar-inverse .navbar-nav > li > a {
+    padding-top: 4px;
+    font-size: 1em;
+  }
 }
 
 /* various */
