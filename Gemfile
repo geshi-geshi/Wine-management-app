@@ -32,6 +32,8 @@ gem 'material_icons'
 gem 'bootstrap-social-rails'
 gem 'font-awesome-rails'
 
+gem 'data-confirm-modal'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.3'
 # Use sqlite3 as the database for Active Record

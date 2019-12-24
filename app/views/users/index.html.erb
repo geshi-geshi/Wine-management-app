@@ -63,7 +63,11 @@
 							</div>
 						</td>
 						<td><%= link_to "削除", user_path(user), method: :delete,
-								data: { confirm: "削除してよろしいですか？" }, class: "btn btn-danger" %></td>
+								data: { confirm: "#{user.name}を削除して良いですか?",
+  							  			cancel: 'キャンセル',
+												commit: '削除する'}, title: 'ユーザーの削除', 
+								class: "btn btn-danger" %>
+						</td>
 					<% else %>
 						<td>テストユーザーは編集できません</td>
 						<td>削除できません</td>
