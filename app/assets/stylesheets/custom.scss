@@ -84,7 +84,7 @@ p {
 
 #logo {
   float: left;
-  font-size: 1.7em;
+  font-size: 1.54em;
   color: white;
   text-transform: uppercase;
   letter-spacing: -1px;
@@ -150,8 +150,9 @@ p {
   float: right;
 }
 
-@media screen and ( max-width:767px) {
+@media screen and ( max-width:378px) {
   #logo {
+    // font-size: 1.5em;
 
   }
   
