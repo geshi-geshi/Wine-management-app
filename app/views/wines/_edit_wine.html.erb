@@ -30,7 +30,7 @@
             <%= f.text_field :name, class: "form-control" %>
 
             <%= f.label :color, class: "label-#{yield(:class_text)}" %>
-            <%= f.select :color, ['スパークリング', 'ロゼ', '白', '赤', 'オレンジ'], {include_blank: ''}, class: 'form-control' %>
+            <%= f.select :color, ['スパークリング', 'ロゼ', '白', '赤', 'オレンジ'], {include_blank: '必須項目です'}, class: 'form-control' %>
 
             <%= f.label :grape_variety, class: "label-#{yield(:class_text)}" %>
             <%= f.select :grape_variety, Wine.grape_varieties.keys.to_a, {}, class: "form-control" %>

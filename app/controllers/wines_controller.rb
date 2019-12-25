@@ -36,10 +36,10 @@ class WinesController < ApplicationController
     @wine = Wine.find(params[:id])
     if @wine.update_attributes(wine_params)
       flash[:success] = "#{@wine.name}の情報を更新しました。"
+      redirect_to wines_url 
     else
-      flash[:danger] = "#{@wine.name}の更新に失敗しました。" + @base.errors.full_messages.join("。")
+      render :edit
     end
-    redirect_to wines_url 
   end
 
   def destroy
