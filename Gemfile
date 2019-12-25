@@ -10,8 +10,12 @@ gem 'jquery-rails'
 gem 'jquery-ui-rails'
 gem 'rails-i18n'
 gem 'faker'
-#画像アップロード
+
+# for image uploader with AWS S3
 gem 'carrierwave'
+gem 'fog'
+gem 'fog-aws'
+
 #画像の加工
 gem 'rmagick'
 
