@@ -18,6 +18,7 @@ gem 'fog-aws'
 
 #画像の加工
 gem 'rmagick'
+gem 'mini_magick'
 
 gem 'ransack'
 

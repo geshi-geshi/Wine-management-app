@@ -483,6 +483,10 @@ input, textarea, select, .uneditable-input {
   background-blend-mode:lighten;
 }
 
+.img-area {
+  min-height: 200px;
+}
+
 /* ワイン編集画面 */
 
 .panel-wine {

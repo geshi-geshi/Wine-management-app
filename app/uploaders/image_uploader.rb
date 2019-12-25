@@ -1,4 +1,7 @@
 class ImageUploader < CarrierWave::Uploader::Base
+  include CarrierWave::MiniMagick
+  include CarrierWave::RMagick
+
   # Include RMagick or MiniMagick support:
   # include CarrierWave::RMagick
   # include CarrierWave::MiniMagick
@@ -52,19 +55,17 @@ class ImageUploader < CarrierWave::Uploader::Base
     original_filename if original_filename
   end
 
-  # リサイズしたり画像形式を変更するのに必要
-  include CarrierWave::RMagick
  
- # 画像の上限を640x480にする
-  process :resize_to_limit => [200, 200]
+ # 画像の上限を設定
+  process :resize_to_limit => [220, 220]
  
   # 保存形式をJPGにする
   process :convert => 'jpg'
  
   # サムネイルを生成する設定
-  # version :thumb do
-  #   process :resize_to_limit => [250, 250]
-  # end
+  version :thumb do
+    process :resize_to_limit => [150, 150]
+  end
    
   # version :thumb150 do
   #   process :resize_to_limit => [150, 150]

@@ -3,9 +3,9 @@
 <%= form_with(model: @wine, url: wine_path(@wine), local: true, method: :patch) do |f| %>
 	<%= render 'shared/error_messages', object: @wine %>
 	<% if @wine.image? %>
-		<%= image_tag @wine.image.to_s, id: 'img_prev', :size =>'150x150' %>
+		<%= image_tag @wine.image.to_s, id: 'img_prev' %>
 	<% else %>
-		<%= image_tag "no-image.png", id: 'img_prev', :size =>'200x150' %>
+		<%= image_tag "no-image.png", id: 'img_prev' %>
 	<% end %>
 	
 	<%= f.file_field :image, id: 'wine_img' %>

@@ -22,11 +22,13 @@
 					<div class="col-lg-4">
 						<div class="card">
 							<div class="card-body">
-								<% if wine.image? %>
-									<%= image_tag wine.image.to_s, :size =>'230x170'  %>
-								<% else %>
-									<%= image_tag "no-image.png", :size =>'230x170' %>
-								<% end %>
+								<div class="img-area">
+									<% if wine.image? %>
+										<%= image_tag wine.image.to_s %>
+									<% else %>
+										<%= image_tag "no-image.png", :size =>'230x170' %>
+									<% end %>
+								</div>
 								<h4 class="card-title">
 									<%= wine.name %>（<%= wine.color %>）
 					　		</h4>
