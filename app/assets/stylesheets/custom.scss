@@ -458,6 +458,8 @@ input, textarea, select, .uneditable-input {
   margin-top: 10px;
   margin-bottom: 10px;
   background: white;
+  max-height: 420px;
+  min-height: 400px;
 }
 
 .card-body {
@@ -467,11 +469,13 @@ input, textarea, select, .uneditable-input {
 }
 
 .card-title {
-  // text-align: center;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 .card-text {
-  // text-align: center;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 .wines-index {
