@@ -1,11 +1,38 @@
 <div class="col-md-8 col-md-offset-2">
   <%= search_form_for @q do |f| %>
     <%= f.search_field :name_cont, placeholder: "ワイン名で検索", class: "form-control" %>
-    <br />
+    <br/>
     <%= f.select :color_cont, ['スパークリング', 'ロゼ', '白', '赤', 'オレンジ', '酒精強化', 'フレーヴァード'], {include_blank: '色/分類で検索'}, class: 'form-control' %>
-    <br />
+    <br/>
+    <%= f.select :country_cont,
+     [  
+        "フランス", 
+        "イタリア", 
+        "スペイン",
+        "ドイツ",
+        "ルクセンブルク",
+        "イギリス",
+        "スペイン",
+        "ポルトガル",
+        "オーストリア",
+        "ハンガリー",
+        "モルドバ",
+        "北アフリカ",
+        "アメリカ合衆国",
+        "カナダ",
+        "アルゼンチン",
+        "チリ",
+        "南アフリカ",
+        "オーストラリア",
+        "ニュージーランド",
+        "中国",
+        "日本",
+        "その他"
+      ], 
+     {include_blank: '国で検索'}, class: 'form-control' %>
+    <br/>
     <%= f.select :body_cont, ['ライトボディ', 'ミディアムボディ', 'フルボディ'], {include_blank: 'ボディで検索'}, class: 'form-control' %>
-    <br />
+    <br/>
     <!-- eqはイコール -->
     <%= f.number_field :production_year_eq, placeholder: "生産年で検索", class: "form-control" %>
 
