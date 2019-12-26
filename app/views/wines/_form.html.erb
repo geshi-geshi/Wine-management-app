@@ -14,7 +14,7 @@
   <%= f.text_field :name, placeholder: "必須項目です", class: "form-control", maxlength: 50 %>
 
   <%= f.label :color, class: "label-#{yield(:class_text)}" %>
-  <%= f.select :color, ['スパークリング', 'ロゼ', '白', '赤', 'オレンジ', '酒精強化', 'フレーヴァード'], {include_blank: '必須項目です'}, class: 'form-control' %>
+  <%= f.select :color, ['スパークリング', 'ロゼ', '白', '赤', 'オレンジ', '酒精強化', 'フレーヴァード', 'ノンアルコール'], {include_blank: '必須項目です'}, class: 'form-control' %>
 
   <%= f.label :grape_variety, class: "label-#{yield(:class_text)}" %>
   <%= f.select :grape_variety, Wine.grape_varieties.keys.to_a, {include_blank: '必須項目です'}, class: "form-control" %>
@@ -55,6 +55,9 @@
   <%= f.label :body, class: "label-#{yield(:class_text)}" %>
   <%= f.select :body, ['ライトボディ', 'ミディアムボディ', 'フルボディ'], {include_blank: ''}, class: 'form-control' %>
 
+  <%= f.label :producer, class: "label-#{yield(:class_text)}" %>
+  <%= f.text_field :producer, class: "form-control" %>
+
   <%= f.label :appearance, class: "label-#{yield(:class_text)}" %>
   <%= f.text_area :appearance, class: "form-control" %>
 
@@ -72,6 +75,9 @@
 
   <%= f.label :price, class: "label-#{yield(:class_text)}" %>
   <%= f.number_field :price, class: "form-control" %>
+
+  <%= f.label :capacity, class: "label-#{yield(:class_text)}" %>
+  <%= f.number_field :capacity, class: "form-control" %>
 
   <%= f.label :detail, class: "label-#{yield(:class_text)}" %>
   <%= f.text_area :detail, rows: 8, class: "form-control" %>
