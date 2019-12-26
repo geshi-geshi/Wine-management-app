@@ -232,10 +232,6 @@ input, textarea, select, .uneditable-input {
   font-size: 21px;
 }
 
-.btn-new {
-  margin-top: 30px;
-}
-
 .btn-wine-index {
   margin-bottom: 15px;
 }
@@ -258,6 +254,21 @@ input, textarea, select, .uneditable-input {
 
 .close {
   font-family: serif;
+}
+
+.btn-wine-new {
+  padding-top: 0;
+  padding-right: 16px;
+}
+
+.btn-wine-search {
+  margin-left: 60px;
+  padding-top: 0;
+  padding-right: 16px;
+}
+
+.btn-text {
+  font-size: 15.5px;
 }
 
 
@@ -491,6 +502,11 @@ input, textarea, select, .uneditable-input {
   min-height: 200px;
 }
 
+.search-form {
+  margin-top: 30px;
+}
+
+
 /* ワイン編集画面 */
 
 .panel-wine {
@@ -504,7 +520,6 @@ input, textarea, select, .uneditable-input {
 
 
 /*ページネーション自体のデザイン*/
-
 
 .pagination>li>a {          
   color: #696969;
