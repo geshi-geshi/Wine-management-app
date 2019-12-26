@@ -18,15 +18,17 @@ ja:
           id: ID
           name: ワイン名称
           color: 色/分類
-          body: ボディ
+          grape_variety: ブドウ品種   
           country: 国
           region: 地方
           area: 地区
-          grape_variety: ブドウ品種
+          body: ボディ
+          producer: 生産者
           appearance: 外観
           aroma: 香り
           taste: 味わい
           production_year: 生産年
           alcohol_content: アルコール度数
-          price: 価格
+          price: 価格（円）
+          capacity: 容量（ml）
           detail: 詳細

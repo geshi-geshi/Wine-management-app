@@ -53,6 +53,10 @@
                   <td><%= @wine.body %></td>
                 </tr>
                 <tr>
+                  <th>生産者</th>
+                  <td><%= @wine.producer %></td>
+                </tr>
+                <tr>
                   <th>外観</th>
                   <td><%= simple_format(@wine.appearance) %></td>
                 </tr>
@@ -84,6 +88,14 @@
                   <td>
                     <% if @wine.price.present? %>
                       <%= @wine.price %>円
+                    <% end %>
+                  </td>
+                </tr>
+                <tr>
+                <th>容量</th>
+                  <td>
+                    <% if @wine.capacity.present? %>
+                      <%= @wine.capacity %>ml
                     <% end %>
                   </td>
                 </tr>
