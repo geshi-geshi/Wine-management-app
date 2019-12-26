@@ -17,19 +17,43 @@
   <%= f.select :color, ['スパークリング', 'ロゼ', '白', '赤', 'オレンジ'], {include_blank: '必須項目です'}, class: 'form-control' %>
 
   <%= f.label :grape_variety, class: "label-#{yield(:class_text)}" %>
-  <%= f.select :grape_variety, Wine.grape_varieties.keys.to_a, {}, class: "form-control" %>
+  <%= f.select :grape_variety, Wine.grape_varieties.keys.to_a, {include_blank: '必須項目です'}, class: "form-control" %>
 
-  <%= f.label :body, class: "label-#{yield(:class_text)}" %>
-  <%= f.select :body, ['ライトボディ', 'ミディアムボディ', 'フルボディ'], {include_blank: ''}, class: 'form-control' %>
-
+  <!-- 国の選択肢 -->
   <%= f.label :country, class: "label-#{yield(:class_text)}" %>
-  <%= f.text_field :country, class: "form-control" %>
-
+  <%= f.select :country, [ 
+        "フランス", 
+        "イタリア", 
+        "スペイン",
+        "ドイツ",
+        "ルクセンブルク",
+        "イギリス",
+        "スペイン",
+        "ポルトガル",
+        "オーストリア",
+        "ハンガリー",
+        "モルドバ",
+        "北アフリカ",
+        "アメリカ合衆国",
+        "カナダ",
+        "アルゼンチン",
+        "チリ",
+        "南アフリカ",
+        "オーストラリア",
+        "ニュージーランド",
+        "中国",
+        "日本",
+        "その他"
+    ] , {include_blank: '必須項目です'}, class: 'form-control' %>
+  
   <%= f.label :region, class: "label-#{yield(:class_text)}" %>
   <%= f.text_field :region, class: "form-control" %>
 
   <%= f.label :area, class: "label-#{yield(:class_text)}" %>
   <%= f.text_field :area, class: "form-control" %>
+
+  <%= f.label :body, class: "label-#{yield(:class_text)}" %>
+  <%= f.select :body, ['ライトボディ', 'ミディアムボディ', 'フルボディ'], {include_blank: ''}, class: 'form-control' %>
 
   <%= f.label :appearance, class: "label-#{yield(:class_text)}" %>
   <%= f.text_area :appearance, class: "form-control" %>

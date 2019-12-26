@@ -33,24 +33,24 @@
                   <td><%= @wine.color %></td>
                 </tr>
                 <tr>
-                  <th>ボディ</th>
-                  <td><%= @wine.body %></td>
-                </tr>
-                <tr>
-                  <th>国</th>
-                  <td><%= @wine.country %></td>
-                </tr>
-                <tr>
-                  <th>地方</th>
-                  <td><%= @wine.region %></td>
-                </tr>
-                <tr>
-                  <th>地区</th>
-                  <td><%= @wine.area %></td>
-                </tr>
-                <tr>
                   <th>品種</th>
                   <td><%= @wine.grape_variety %></td>
+                </tr>
+                <tr>
+                  <th>国 / 地方 / 地区</th>
+                  <td>
+                    <%= @wine.country %>
+                    <% if @wine.region.present? %>
+                      / <%= @wine.region %>
+                    <% end %>
+                    <% if @wine.area.present? %>
+                      / <%= @wine.area %>
+                    <% end %>
+                  </td>
+                </tr>
+                <tr>
+                  <th>ボディ</th>
+                  <td><%= @wine.body %></td>
                 </tr>
                 <tr>
                   <th>外観</th>
