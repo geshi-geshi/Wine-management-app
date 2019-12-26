@@ -271,6 +271,10 @@ input, textarea, select, .uneditable-input {
   font-size: 15.5px;
 }
 
+.btn-user-delete {
+  margin-top: 20px;
+  width: 100%;
+}
 
 /* モーダルウインドウの位置調整 */
 
@@ -369,7 +373,7 @@ input, textarea, select, .uneditable-input {
 }
 
 .panel-heading {
-  text-align: center;
+  // text-align: center;
   font-weight: bold;
 }
 
@@ -428,6 +432,7 @@ input, textarea, select, .uneditable-input {
   // text-shadow: 0px 5px 3px #555;
 }
 
+
 /* ユーザー一覧 */
 
 .users {
@@ -448,16 +453,22 @@ input, textarea, select, .uneditable-input {
 }
 
 .user-email {
-  // font-family: serif;
-  // font-style: italic;
-  // font-weight: bold;
-  // font-size: 18px;
+
 }
 
 .empty {
   font-weight: bold;
   margin: 20px 0;
   text-align: center;
+}
+
+.panel-default > .panel-heading {
+  background-color: #fbfbfb;
+}
+
+.form-user-edit {
+  margin-top: 10px;
+  text-align: left;
 }
 
 
