@@ -17,7 +17,7 @@ ja:
         wine:
           id: ID
           name: ワイン名称
-          color: 色
+          color: 色/分類
           body: ボディ
           country: 国
           region: 地方

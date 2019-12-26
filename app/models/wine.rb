@@ -5,6 +5,7 @@ class Wine < ApplicationRecord
     validates :color, presence: true
     validates :grape_variety, presence: true
     validates :country, presence: true
+    validates :production_year, length: { maximum: 4 }
 
     # enum color: { "" => 0, "スパークリング" => 1, "ロゼ" => 2, "白" => 3, "赤" => 4, "オレンジ" => 5 }
     # enum body: { "" => 0, "ライトボディ" => 1, "ミディアムボディ" => 2, "フルボディ" => 3 }

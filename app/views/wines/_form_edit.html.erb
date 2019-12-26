@@ -11,10 +11,10 @@
 	<%= f.file_field :image, id: 'wine_img' %>
 
 	<%= f.label :name, class: "label-#{yield(:class_text)}" %>
-	<%= f.text_field :name, placeholder: "必須項目です", class: "form-control" %>
+	<%= f.text_field :name, placeholder: "必須項目です", class: "form-control", maxlength: 50 %>
 
 	<%= f.label :color, class: "label-#{yield(:class_text)}" %>
-	<%= f.select :color, ['スパークリング', 'ロゼ', '白', '赤', 'オレンジ'], {include_blank: '必須項目です'}, class: 'form-control' %>
+	<%= f.select :color, ['スパークリング', 'ロゼ', '白', '赤', 'オレンジ', '酒精強化', 'フレーヴァード'], {include_blank: '必須項目です'}, class: 'form-control' %>
 
 	<%= f.label :grape_variety, class: "label-#{yield(:class_text)}" %>
   <%= f.select :grape_variety, Wine.grape_varieties.keys.to_a, {include_blank: '必須項目です'}, class: "form-control" %>
