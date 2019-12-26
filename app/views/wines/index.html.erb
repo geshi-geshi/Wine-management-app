@@ -33,7 +33,13 @@
 									<%= wine.name %>（<%= wine.color %>）
 					　		</h4>
 								<p class="card-text">品種：<%= wine.grape_variety %><br>
-								国：<%= wine.country %></p> 
+								国：<%= wine.country %><br>
+								<% if wine.production_year.present? %>
+									生産年：<%= wine.production_year %>年
+								<% else %>
+									生産年：- 年
+								<% end %>
+								</p> 
 								<div class="btn-wine-area">
 									<%= link_to "詳細を見る", wine_path(wine), remote: true, class: "btn btn-success wine-show-btn" %>					
 									<% if logged_in? %>
