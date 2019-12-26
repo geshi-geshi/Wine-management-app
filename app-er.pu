@@ -1,0 +1,39 @@
+@startuml 
+
+package "Wine-management-app" {
+    entity "users" {
+      + id [PK]
+      ==
+      name
+      email
+      admin
+      password
+      password_digest
+      created_at
+      updated_at
+    }
+
+
+    entity "wines" {
+      + id [PK]
+      ==
+      name
+      color
+      body
+      country
+      region
+      area
+      grape_variety
+      appearance
+      aroma
+      taste
+      production_year
+      alcohol_content
+      recommended_shops
+      price
+      detail
+      image
+    }
+}
+
+@enduml
