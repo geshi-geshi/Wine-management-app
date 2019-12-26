@@ -26,9 +26,6 @@ $ heroku run rails db:seed
 $ heroku logs --tail
 heroku logs -t
 
-HerokuのCLEARDB_DATABASE_URLを確認
-$ heroku config --app protected-sands-79333
-
 heroku DB接続
 $ mysql -u DB_USERNAME -p -h DB_HOSTNAME DB_NAME
 

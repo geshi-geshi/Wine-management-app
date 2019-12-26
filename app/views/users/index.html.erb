@@ -1,28 +1,22 @@
-<% provide(:title, 'ユーザー一覧') %>
+<% provide(:title, 'ユーザ一覧') %>
 <% provide(:button_text, '更新') %>
+<% provide(:class_text, 'user') %>
 
-<h1>ユーザー一覧</h1>
+<h1>ユーザ一覧</h1>
   <%= render 'search_form' %><br>
 
 	<div class="col-md-10 col-md-offset-1">
 	<% if @users.empty? %>
-		<div class="btn-new">
-				<%= link_to "ユーザー新規登録", signup_path, class: "btn btn-primary" %>	
-		</div>
 		<p class="empty">
 			検索結果が見つかりません。<br>
 			キーワードを入れなおし、もう一度検索してください。
 		</p>
 	<% else %>
-		<div class="btn-new">
-			<%= link_to "ユーザー新規登録", signup_path, class: "btn btn-primary" %>	
-		</div>
 		<%= will_paginate %>
 		<table class="table-bordered table-condensed">
 			<tr>
 				<td>氏名</td>
 				<td>メールアドレス</td>
-				<td></td>
 				<td></td>
 			</tr>
 		<% @users.each do |user| %>
@@ -41,20 +35,22 @@
 										<div class="collapse" id="collapseExample<%= user.id %>">
 											<div class="row">
 												<div class="col-md-12">     
-													<%= form_with(model: user, url: user_path(user), method: :patch) do |f| %>　
+													<%= form_with(model: user, url: user_path(user), method: :patch, class: "form-user-edit") do |f| %>
 														<%= render 'shared/error_messages', object: user %>
 
 														<%= f.label :name, class: "label-#{yield(:class_text)}" %>
-														<%= f.text_field :name, class: "form-control" %>
+														<%= f.text_field :name, placeholder: "必須項目です", class: "form-control" %>
 
 														<%= f.label :email, class: "label-#{yield(:class_text)}" %>
-														<%= f.email_field :email, class: "form-control" %>
+														<%= f.email_field :email, placeholder: "必須項目です", class: "form-control" %>
 
 														<%= f.submit yield(:button_text), class: "btn btn-primary btn-edit-user" %>
-														<%# <button type="button" class="btn btn-default btn-basic-info btn-cancel" data-dismiss="modal">
-															キャンセル
-														</button> %>
 													<% end %> <!-- form_withの終わり -->
+													<%= link_to "ユーザーの削除", user_path(user), method: :delete,
+															data: { confirm: "#{user.name}さんを削除して良いですか?",
+  							  						cancel: 'キャンセル',
+															commit: '削除する'}, title: 'ユーザーの削除', 
+															class: "btn btn-danger btn-user-delete" %>
 												</div>
 											</div>
 										</div>
@@ -62,15 +58,8 @@
 								</div>
 							</div>
 						</td>
-						<td><%= link_to "削除", user_path(user), method: :delete,
-								data: { confirm: "#{user.name}を削除して良いですか?",
-  							  			cancel: 'キャンセル',
-												commit: '削除する'}, title: 'ユーザーの削除', 
-								class: "btn btn-danger" %>
-						</td>
 					<% else %>
 						<td>テストユーザーは編集できません</td>
-						<td>削除できません</td>
 					<% end %>	
 				</tr>
 		<% end %>

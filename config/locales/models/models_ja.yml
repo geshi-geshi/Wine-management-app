@@ -7,7 +7,7 @@ ja:
     attributes:
         user:
           id: ID
-          name: 名前
+          name: 氏名
           email: メールアドレス
           admin: 管理者
           password: パスワード
