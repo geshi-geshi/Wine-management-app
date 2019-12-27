@@ -15,8 +15,12 @@
 			<div class="row">
 				<% @wines.each do |wine| %>
 					<div class="col-lg-4">
-						<div class="card">
+						<div class="card">		
+							<% if logged_in? %>
+									<%= link_to "編集", edit_wine_path(wine), class: "btn btn-primary wine-edit-btn" %>
+							<% end %>
 							<div class="card-body">
+								
 								<div class="img-area">
 									<% if wine.image? %>
 										<%= image_tag wine.image.to_s %>
@@ -35,15 +39,13 @@
 									生産年：- 年
 								<% end %>
 								</p> 
-								<div class="btn-wine-area">
-									<%= link_to "詳細を見る", wine_path(wine), remote: true, class: "btn btn-success wine-show-btn" %>					
-									<% if logged_in? %>
-										<%= link_to "編集", edit_wine_path(wine), class: "btn btn-primary wine-edit-btn" %>
-									<% end %>
-									<%= link_to "楽天市場で検索", wines_rakuten_search_path(wine), class: "btn btn-success wine-show-btn" %>
+								<%# <div class="btn-wine-area"> %>
+									<%= link_to "ワインの詳細を見る", wine_path(wine), remote: true, class: "btn btn-info wine-show-btn" %>					
+									
+									<%= link_to "楽天市場で検索する", wines_rakuten_search_path(wine), class: "btn btn-success wine-rakuten-search-btn" %>
 
 									
-								</div>
+								<%# </div> %>
 							</div> <!-- card-body -->
 						</div> <!-- card -->
 					</div> <!-- col-lg-4 -->				
