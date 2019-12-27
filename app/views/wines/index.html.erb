@@ -1,6 +1,6 @@
 <% provide(:title, 'ワイン一覧') %>
 <% provide(:button_text, '更新') %>
-
+										
 <section class="wines-index">
 	<h1>ワイン一覧</h1>
 	<%= render 'search_form' %><br>
@@ -26,7 +26,7 @@
 								</div>
 								<h4 class="card-title">
 									<%= wine.name %>（<%= wine.color %>）
-					　		</h4>
+								</h4>
 								<p class="card-text">品種：<%= wine.grape_variety %><br>
 								国：<%= wine.country %><br>
 								<% if wine.production_year.present? %>
@@ -40,6 +40,9 @@
 									<% if logged_in? %>
 										<%= link_to "編集", edit_wine_path(wine), class: "btn btn-primary wine-edit-btn" %>
 									<% end %>
+									<%= link_to "楽天市場で検索", wines_rakuten_search_path(wine), class: "btn btn-success wine-show-btn" %>
+
+									
 								</div>
 							</div> <!-- card-body -->
 						</div> <!-- card -->

@@ -1,0 +1,19 @@
+
+
+  <h1><%= @wine.name %>の検索結果</h1>
+	<div class="col-md-10 col-md-offset-1">
+		<div class="btn-header">
+			<%= link_to "<ワイン一覧へ", wines_path, class: "btn btn-default btn-wine-index" %>
+		</div>
+
+		<% @items.each do |item| %>
+			<table class="table-bordered table-condensed">
+				<tr>
+					
+					<td><img src="<%= item['smallImageUrls'][0] %>"></td>
+					<td><a href="<%= item['itemUrl'] %>" target="_blank"><%= item['itemName'] %></a></td>
+					<td><%= item['itemPrice'] %>円</td>
+				</tr>
+			</table>
+		<% end %>
+	</div>

@@ -15,6 +15,8 @@ Rails.application.routes.draw do
 
   # get  '/twitter_login', to: 'sessions#twitter'
 
+  # 楽天での検索
+  get 'wines/:id/rakuten_search', to: 'wines#rakuten_search', as: :wines_rakuten_search
 
   resources :users
   resources :wines
