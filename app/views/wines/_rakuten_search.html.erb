@@ -14,15 +14,24 @@
       <div class="row">
         <div class="col-md-12">
           <table class="table-bordered table-condensed">	
-            <table class="table table-bordered table-striped table-condensed">    
-              <tbody>							
-									<% @items.each do |item| %>
-										<tr>					
-											<td><img src="<%= item['smallImageUrls'][0] %>"></td>
-											<td><a href="<%= item['itemUrl'] %>" target="_blank"><%= item['itemName'] %></a></td>
-											<td><%= item['itemPrice'] %>円</td>
-										</tr>
-									<% end %>
+            <table class="table table-bordered table-striped table-condensed"> 
+							<thead class="thead-dark">
+								<tr>
+									<th></th>
+									<th>楽天ページリンク</th>
+									<th>価格</th>
+									<th>ショップ</th>							
+								</tr>
+							</thead>   
+              <tbody>
+								<% @items.each do |item| %>
+									<tr>					
+										<td><img src="<%= item['smallImageUrls'][0] %>"></td>
+										<td><a href="<%= item['itemUrl'] %>" target="_blank"><%= item['itemName'] %></a></td>
+										<td><%= item['itemPrice'] %>円</td>
+										<td><a href="<%= item['shopUrl'] %>" target="_blank"><%= item['shopName'] %></a></td>									
+									</tr>
+								<% end %>
               </tbody>	
             </table>
           </table>
