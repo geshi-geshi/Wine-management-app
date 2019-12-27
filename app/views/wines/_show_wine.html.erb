@@ -8,7 +8,7 @@
       <button type="button" class="close" data-dismiss="modal" aria-label="Close">
         <span aria-hidden="true">&times;</span>
       </button>
-      <h1 class="modal-title"><%= @wine.name %>の詳細</h1>
+      <h2 class="modal-title"><%= @wine.name %>の詳細</h2>
     </div>
     <div class="modal-body">
       <div class="row">
@@ -83,14 +83,14 @@
                     <% end %>
                   </td>
                 </tr>
-                <tr>
+                <%# <tr>
                   <th>価格</th>
                   <td>
                     <% if @wine.price.present? %>
-                      <%= @wine.price %>円
-                    <% end %>
-                  </td>
-                </tr>
+                      <%# <%= @wine.price円 %>
+                    <%# <% end %>
+                  <%# </td> %>
+                <%# </tr>   %>
                 <tr>
                 <th>容量</th>
                   <td>
