@@ -91,14 +91,14 @@
                     <%# <% end %>
                   <%# </td> %>
                 <%# </tr>   %>
-                <tr>
+                <%# <tr>
                 <th>容量</th>
                   <td>
                     <% if @wine.capacity.present? %>
-                      <%= @wine.capacity %>ml
-                    <% end %>
-                  </td>
-                </tr>
+                      <%# <%= @wine.capacityml %>
+                    <%# <% end %>
+                  <%# </td> %>
+                <%# </tr> %> 
                 <tr>
                   <th>詳細</th>
                   <td><%= simple_format(@wine.detail) %></td>
