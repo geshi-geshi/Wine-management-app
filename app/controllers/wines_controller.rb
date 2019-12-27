@@ -6,7 +6,7 @@ class WinesController < ApplicationController
   def index
     @q = Wine.ransack(params[:q])
     @wines = @q.result(distinct: true).page(params[:page])
-    @items = RakutenWebService::Ichiba::Item.search(:keyword => @wine.name)
+    # @items = RakutenWebService::Ichiba::Item.search(:keyword => @wine.name)
   end
 
   def new
