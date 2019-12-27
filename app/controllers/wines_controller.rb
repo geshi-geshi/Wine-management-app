@@ -6,6 +6,7 @@ class WinesController < ApplicationController
   def index
     @q = Wine.ransack(params[:q])
     @wines = @q.result(distinct: true).page(params[:page])
+    # @items = RakutenWebService::Ichiba::Item.search(:keyword => @wine.name)
   end
 
   def new
@@ -15,7 +16,6 @@ class WinesController < ApplicationController
   def show
     @wine = Wine.find(params[:id])
     @user = User.find(params[:id])
-
   end
 
   def create
@@ -48,6 +48,11 @@ class WinesController < ApplicationController
       flash[:success] = "#{@wine.name}を削除しました。"
       redirect_to wines_url
     end
+  end
+
+  def rakuten_search
+    @wine = Wine.find(params[:id])
+    @items = RakutenWebService::Ichiba::Item.search(:keyword => @wine.name)
   end
 
   private

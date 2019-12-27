@@ -73,11 +73,12 @@
   <%= f.label :alcohol_content, class: "label-#{yield(:class_text)}" %>
   <%= f.number_field :alcohol_content, class: "form-control" %>
 
-  <%= f.label :price, class: "label-#{yield(:class_text)}" %>
-  <%= f.number_field :price, class: "form-control" %>
+  <%# <%= f.label :price, class: "label-#{yield(:class_text)}" %>
+  <%# <%= f.number_field :price, class: "form-control" %> 
 
-  <%= f.label :capacity, class: "label-#{yield(:class_text)}" %>
-  <%= f.number_field :capacity, class: "form-control" %>
+  <%# <%= f.label :capacity, class: "label-#{yield(:class_text)}" %>
+  <%# <%= f.select :capacity, [750, 375, 1500, 3000, 4500, 6000], class: 'form-control' %>
+
 
   <%= f.label :detail, class: "label-#{yield(:class_text)}" %>
   <%= f.text_area :detail, rows: 8, class: "form-control" %>

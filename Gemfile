@@ -27,7 +27,6 @@ gem 'omniauth-twitter'
 gem 'omniauth-facebook'
 gem 'omniauth-google-oauth2'
 
-
 gem 'dotenv-rails' #環境変数を簡単に利用できるgem
 
 gem 'materialize-sass'
@@ -38,6 +37,8 @@ gem 'bootstrap-social-rails'
 gem 'font-awesome-rails'
 
 gem 'data-confirm-modal'
+
+gem 'rakuten_web_service'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.3'

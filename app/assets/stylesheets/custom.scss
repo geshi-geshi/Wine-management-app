@@ -57,12 +57,12 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-  font-size: 3em;
+  font-size: 2.5em;
   letter-spacing: -2px;
   margin-bottom: 30px;
   text-align: center;
   font-family: serif;
-  font-style: italic;
+  // font-style: italic;
 }
 
 h2 {
@@ -236,12 +236,13 @@ input, textarea, select, .uneditable-input {
   margin-bottom: 15px;
 }
 
-.wine-show-btn {
-  // text-align: center;
+.wine-show-btn, .wine-rakuten-search-btn {
+  margin-bottom: 15px;
 }
 
 .wine-edit-btn {
-  // float: right;
+  float: right;
+  margin: 10px;
 }
 
 .btn-wine-area {
@@ -276,10 +277,18 @@ input, textarea, select, .uneditable-input {
   width: 100%;
 }
 
-/* モーダルウインドウの位置調整 */
+/* モーダルウインドウ */
 
 .modal-dialog-center {
   padding-top: 10%;
+}
+
+.modal-title {
+  font-size: 2em;
+  letter-spacing: -2px;
+  text-align: center;
+  font-family: serif;
+  // font-style: italic;
 }
 
 /* debug */
@@ -480,8 +489,8 @@ input, textarea, select, .uneditable-input {
   margin-top: 10px;
   margin-bottom: 10px;
   background: white;
-  max-height: 450px;
-  min-height: 450px;
+  max-height: 520px;
+  min-height: 520px;
 }
 
 .card-body {
@@ -511,6 +520,7 @@ input, textarea, select, .uneditable-input {
 
 .img-area {
   min-height: 200px;
+  margin-top: 4em;
 }
 
 .search-form {
