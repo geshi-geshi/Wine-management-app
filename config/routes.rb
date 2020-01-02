@@ -20,4 +20,13 @@ Rails.application.routes.draw do
 
   resources :users
   resources :wines
+
+  resources :favorites do
+    member do
+      post "add", to: "favorites#create"
+      delete '/add' => 'favorites#destroy'
+    end
+  end
+
+  resources :favorites, only: [:destroy]
 end
