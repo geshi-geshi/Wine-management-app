@@ -250,9 +250,6 @@ input, textarea, select, .uneditable-input {
   margin: 10px;
 }
 
-.material-icons.favorite-icon {
-  color: red;
-}
 
 .btn-wine-area {
   text-align: center;
@@ -576,4 +573,21 @@ input, textarea, select, .uneditable-input {
 /*ホバー時のデザイン*/
 .pagination>li>a:hover {        
   border-radius: 15px;
+}
+
+
+/* お気に入り一覧 */
+
+
+.material-icons.favorite-icon {
+  color: red;
+}
+
+.favorite-text {
+  color: red;
+  font-size: 8px;
+}
+
+.favorite-btn:hover {
+  text-decoration: none;
 }

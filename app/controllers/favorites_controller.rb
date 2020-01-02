@@ -1,8 +1,9 @@
 class FavoritesController < ApplicationController
+  before_action :logged_in_user, only: [:index, :create, :destroy]
+
   def index
-    user = current_user
-    # wine = Wine.find(params[:id])
-    favorites = user.favorites.find_by(user_id: user.id)
+    @user = current_user
+    @favorites = @user.favorites.find_by(user_id: @user.id)
     @q = Wine.ransack(params[:q])
     @wines = @q.result(distinct: true).page(params[:page])
 
@@ -31,6 +32,16 @@ class FavoritesController < ApplicationController
     else
       flash[:success] = 'お気に入りを解除できませんでした'
       redirect_to wines_url
+    end
+  end
+
+  private
+
+  def logged_in_user
+    unless logged_in?
+      store_location
+      flash[:danger] = "ログインしてください。"
+      redirect_to login_url
     end
   end
 end

@@ -21,12 +21,12 @@
 								<% if !Favorite.exists?(user_id:current_user.id,wine_id:wine.id) %>
 									<%= link_to add_favorite_path(wine), method: :post, class: "favorite-btn" do %>
 										<i class="material-icons favorite-icon">favorite_border</i>
-										<span></span>
+										<span class="favorite-text">お気に入り登録</span>
 									<% end %>
 								<% else %>
 									<%= link_to add_favorite_path(wine), method: :delete, class: "favorite-btn" do %>
 										<i class="material-icons favorite-icon">favorite</i>
-										<span></span>
+										<span class="favorite-text">お気に入りを解除</span>
 									<% end %>
 								<% end %>
 							<% end %>
