@@ -19,12 +19,12 @@
 							<% if logged_in? %>
 								<%= link_to "編集", edit_wine_path(wine), class: "btn btn-primary wine-edit-btn" %>
 								<% if !Favorite.exists?(user_id:current_user.id,wine_id:wine.id) %>
-									<%= link_to favorites_path(current_user), class: "favorite-btn" do %>
+									<%= link_to add_favorite_path(wine), method: :post, class: "favorite-btn" do %>
 										<i class="material-icons favorite-icon">favorite_border</i>
 										<span></span>
 									<% end %>
 								<% else %>
-									<%= link_to favorites_path(current_user), method: :delete, class: "favorite-btn" do %>
+									<%= link_to add_favorite_path(wine), method: :delete, class: "favorite-btn" do %>
 										<i class="material-icons favorite-icon">favorite</i>
 										<span></span>
 									<% end %>

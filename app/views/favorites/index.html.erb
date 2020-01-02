@@ -17,9 +17,9 @@
 						<div class="card">		
 							<% if logged_in? %>
 								<% if !Favorite.exists?(user_id:current_user.id,wine_id:wine.id) %>
-									<%= link_to "お気に入りに登録する",add_favorite_path(wine),method: :post %>
+									<%= link_to "お気に入りに登録する", add_favorite_path(wine), method: :post %>
 								<% else %>
-									<%= link_to "お気に入り解除",add_favorite_path(wine),method: :delete %>
+									<%= link_to "お気に入り解除", add_favorite_path(wine), method: :delete %>
 								<% end %>
 							<% end %>
 						
