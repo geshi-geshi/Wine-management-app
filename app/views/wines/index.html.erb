@@ -18,26 +18,28 @@
 						<div class="card">		
 							<% if logged_in? %>
 								<%= link_to "編集", edit_wine_path(wine), class: "btn btn-primary wine-edit-btn" %>
-								<% if !Favorite.exists?(user_id:current_user.id,wine_id:wine.id) %>
-									<!--
-									<div class="favorite-area">
-										<%= link_to add_favorite_path(wine), method: :post, class: "favorite-btn nomal" do %>
-											<i class="material-icons favorite-icon">favorite_border</i>
-											<span class="favorite-text"></span>
-										<% end %>
-									</div>
-									-->
-									<%= link_to "お気に入りに追加する", add_favorite_path(wine), method: :post, class: "btn btn-primary favorite-btn hover" %>
-								<% else %>
-									<!-- 
-									<div class="favorite-area">
-										<%= link_to add_favorite_path(wine), method: :delete, class: "favorite-btn nomal" do %>
-											<i class="material-icons favorite-icon">favorite</i>
-											<span class="favorite-text"></span>
-										<% end %>
-									</div>
-									-->
-									<span class="btn btn-default favorite-btn">追加済み</span>
+								<% if !current_user.admin? %>
+									<% if !Favorite.exists?(user_id:current_user.id,wine_id:wine.id) %>
+										<!--
+										<div class="favorite-area">
+											<%= link_to add_favorite_path(wine), method: :post, class: "favorite-btn nomal" do %>
+												<i class="material-icons favorite-icon">favorite_border</i>
+												<span class="favorite-text"></span>
+											<% end %>
+										</div>
+										-->
+										<%= link_to "お気に入りに追加する", add_favorite_path(wine), method: :post, class: "btn btn-primary favorite-btn hover" %>
+									<% else %>
+										<!-- 
+										<div class="favorite-area">
+											<%= link_to add_favorite_path(wine), method: :delete, class: "favorite-btn nomal" do %>
+												<i class="material-icons favorite-icon">favorite</i>
+												<span class="favorite-text"></span>
+											<% end %>
+										</div>
+										-->
+										<span class="btn btn-default favorite-btn">追加済み</span>
+									<% end %>
 								<% end %>
 							<% end %>
 						
