@@ -245,6 +245,13 @@ input, textarea, select, .uneditable-input {
   margin: 10px;
 }
 
+.favorite-btn {
+  float: left;
+  margin: 10px;
+  font-size: 10px;
+}
+
+
 .btn-wine-area {
   text-align: center;
 }
@@ -526,6 +533,18 @@ input, textarea, select, .uneditable-input {
   margin-top: 30px;
 }
 
+.favorite-area .hover{
+  display: none;
+}
+
+.favorite-area:hover .nomal{
+  display: none;
+}
+
+.favorite-area:hover .hover{
+  display: inline;
+}
+
 
 /* ワイン編集画面 */
 
@@ -567,4 +586,21 @@ input, textarea, select, .uneditable-input {
 /*ホバー時のデザイン*/
 .pagination>li>a:hover {        
   border-radius: 15px;
+}
+
+
+/* お気に入り一覧 */
+
+
+.material-icons.favorite-icon {
+  color: red;
+}
+
+.favorite-text {
+  color: red;
+  font-size: 8px;
+}
+
+.favorite-btn:hover {
+  text-decoration: none;
 }

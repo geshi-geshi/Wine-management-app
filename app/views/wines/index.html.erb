@@ -17,10 +17,33 @@
 					<div class="col-lg-4">
 						<div class="card">		
 							<% if logged_in? %>
-									<%= link_to "編集", edit_wine_path(wine), class: "btn btn-primary wine-edit-btn" %>
+								<%= link_to "編集", edit_wine_path(wine), class: "btn btn-primary wine-edit-btn" %>
+								<% if !current_user.admin? %>
+									<% if !Favorite.exists?(user_id:current_user.id,wine_id:wine.id) %>
+										<!--
+										<div class="favorite-area">
+											<%= link_to add_favorite_path(wine), method: :post, class: "favorite-btn nomal" do %>
+												<i class="material-icons favorite-icon">favorite_border</i>
+												<span class="favorite-text"></span>
+											<% end %>
+										</div>
+										-->
+										<%= link_to "お気に入りに追加する", add_favorite_path(wine), method: :post, class: "btn btn-primary favorite-btn hover" %>
+									<% else %>
+										<!-- 
+										<div class="favorite-area">
+											<%= link_to add_favorite_path(wine), method: :delete, class: "favorite-btn nomal" do %>
+												<i class="material-icons favorite-icon">favorite</i>
+												<span class="favorite-text"></span>
+											<% end %>
+										</div>
+										-->
+										<span class="btn btn-default favorite-btn">追加済み</span>
+									<% end %>
+								<% end %>
 							<% end %>
-							<div class="card-body">
-								
+						
+							<div class="card-body">						
 								<div class="img-area">
 									<% if wine.image? %>
 										<%= image_tag wine.image.to_s %>
@@ -39,15 +62,12 @@
 									生産年：- 年
 								<% end %>
 								</p> 
-								<%# <div class="btn-wine-area"> %>
 								 	<div class="wine-show-btn">
 										<%= link_to "ワインの詳細を見る", wine_path(wine), remote: true, class: "btn btn-info" %>					
 									</div>
 									<div class="wine-rakuten-search-btn">
 										<%= link_to "楽天市場で検索する", wines_rakuten_search_path(wine), remote: true, class: "btn btn-success" %>
-									</div>
-									
-								<%# </div> %>
+									</div>	
 							</div> <!-- card-body -->
 						</div> <!-- card -->
 					</div> <!-- col-lg-4 -->				
