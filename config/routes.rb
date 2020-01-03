@@ -13,8 +13,6 @@ Rails.application.routes.draw do
   get 'auth/:provider/callback', to: 'sessions#sns_login',    as: :auth_callback
   get '/auth/failure',         to: 'sessions#auth_failure',        as: :auth_failure
 
-  # get  '/twitter_login', to: 'sessions#twitter'
-
   # 楽天での検索
   get 'wines/:id/rakuten_search', to: 'wines#rakuten_search', as: :wines_rakuten_search
 

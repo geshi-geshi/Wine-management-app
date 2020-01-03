@@ -248,6 +248,7 @@ input, textarea, select, .uneditable-input {
 .favorite-btn {
   float: left;
   margin: 10px;
+  font-size: 10px;
 }
 
 
@@ -530,6 +531,18 @@ input, textarea, select, .uneditable-input {
 
 .search-form {
   margin-top: 30px;
+}
+
+.favorite-area .hover{
+  display: none;
+}
+
+.favorite-area:hover .nomal{
+  display: none;
+}
+
+.favorite-area:hover .hover{
+  display: inline;
 }
 
 

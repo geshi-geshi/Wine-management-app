@@ -6,18 +6,18 @@ class FavoritesController < ApplicationController
     @favorites = @user.favorites.find_by(user_id: @user.id)
     @q = Wine.ransack(params[:q])
     @wines = @q.result(distinct: true).page(params[:page])
-
   end
+  
   def create
     user = current_user
     wine = Wine.find(params[:id])
     favorite = Favorite.create(user_id: user.id, wine_id:wine.id)
 
     if favorite.save
-      flash[:success] = 'お気に入りに追加しました'
+      flash[:success] = "#{wine.name}をお気に入りに追加しました"
       redirect_to wines_url
     else
-      flash[:success] = 'お気に入りに追加できませんでした'
+      flash[:success] = "#{wine.name}をお気に入りに追加できませんでした"
       redirect_to wines_url
     end
   end
@@ -27,11 +27,11 @@ class FavoritesController < ApplicationController
     wine = Wine.find(params[:id])
     if favorite=Favorite.find_by(user_id: user.id, wine_id:wine.id)
       favorite.delete
-      flash[:success] = 'お気に入りを解除しました'
-      redirect_to wines_url
+      flash[:success] = "#{wine.name}をお気に入りから解除しました"
+      redirect_to favorites_url
     else
       flash[:success] = 'お気に入りを解除できませんでした'
-      redirect_to wines_url
+      redirect_to favorites_url
     end
   end
 

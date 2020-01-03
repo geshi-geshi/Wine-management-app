@@ -1,9 +1,9 @@
-<% provide(:title, 'ワイン一覧') %>
+<% provide(:title, 'お気に入りワイン一覧') %>
 <% provide(:button_text, '更新') %>
 										
 <section class="wines-index">
-	<h1>ワイン一覧</h1>
-	<%= render 'search_form' %><br>
+	<h1>お気に入りワイン一覧</h1>
+	<%= render 'favorites/search_form' %><br>
 	<div class="col-md-10 col-md-offset-1">
 		<% if @wines.empty? %>
 			<p class="empty">
@@ -14,23 +14,11 @@
 			<div class="row">
 				<% @user.favorites.each do |favorite| %>
 					<div class="col-lg-4">
-						<div class="card">		
+						<div class="card">
 							<% if logged_in? %>
-								<% if !Favorite.exists?(user_id:current_user.id,wine_id:favorite.wine.id) %>
-									<%= link_to add_favorite_path(wine), method: :post, class: "favorite-btn" do %>
-										<i class="material-icons favorite-icon">favorite_border</i>
-										<span></span>
-									<% end %>
-								<% else %>
-									<%= link_to add_favorite_path(favorite.wine), method: :delete, class: "favorite-btn" do %>
-										<i class="material-icons favorite-icon">favorite</i>
-										<span></span>
-									<% end %>
-								<% end %>
+								<%= link_to "お気に入りを解除する", add_favorite_path(favorite.wine), method: :delete, class: "btn btn-danger favorite-btn hover" %>								
 							<% end %>
-						
 							<div class="card-body">
-								
 								<div class="img-area">
 									<% if favorite.wine.image? %>
 										<%= image_tag wine.image.to_s %>
