@@ -4,6 +4,7 @@ class FavoritesController < ApplicationController
   def index
     @user = current_user
     @favorites = @user.favorites.find_by(user_id: @user.id)
+    @favorites_count = @user.favorites.where(user_id: @user.id).count
     @q = Wine.ransack(params[:q])
     @wines = @q.result(distinct: true).page(params[:page])
   end

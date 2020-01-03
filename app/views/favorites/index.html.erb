@@ -2,8 +2,8 @@
 <% provide(:button_text, '更新') %>
 										
 <section class="wines-index">
-	<h1>お気に入りワイン一覧</h1>
-	<%= render 'favorites/search_form' %><br>
+	<h1>お気に入りワイン</h1>
+	<h2><%= @favorites_count %>件あります</h2>
 	<div class="col-md-10 col-md-offset-1">
 		<% if @wines.empty? %>
 			<p class="empty">
