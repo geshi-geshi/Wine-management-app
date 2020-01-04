@@ -1,6 +1,4 @@
 class FavoritesController < ApplicationController
-end
-class FavoritesController < ApplicationController
   before_action :logged_in_user, only: [:index, :create, :destroy]
 
   def index
