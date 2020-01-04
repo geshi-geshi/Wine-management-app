@@ -8,7 +8,7 @@ class FavoritesController < ApplicationController
     @q = Wine.ransack(params[:q])
     @wines = @q.result(distinct: true).page(params[:page])
   end
-  
+
   def create
     user = current_user
     wine = Wine.find(params[:id])
