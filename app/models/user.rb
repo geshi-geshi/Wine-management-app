@@ -1,4 +1,7 @@
 class User < ApplicationRecord
+  has_many :favorites, dependent: :destroy #この行を追記することで関連付くイベントが削除されるとclipも削除されます。
+  has_many :wines, through: :favorites
+  
   before_save :email_downcase, unless: :uid?
   validates :name, presence: true, unless: :uid?, length: { maximum: 50 }
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
