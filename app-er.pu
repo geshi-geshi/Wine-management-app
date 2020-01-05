@@ -33,7 +33,21 @@ package "Wine-management-app" {
       price
       detail
       image
+      created_at
+      updated_at
+    }
+
+    entity "favorites" {
+      + id [PK]
+      ==
+      user_id [FK]
+      wine_id [FK]
+      created_at
+      updated_at
     }
 }
+
+users -ri-{ favorites
+wines -le-{ favorites
 
 @enduml

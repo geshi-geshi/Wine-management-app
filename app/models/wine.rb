@@ -1,5 +1,6 @@
 class Wine < ApplicationRecord
     has_many :favorites
+    # favoriteモデルを経由してuserテーブルと繋がる
     has_many :users, through: :favorites
 
     mount_uploader :image, ImageUploader
