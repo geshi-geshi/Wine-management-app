@@ -21,7 +21,7 @@ class WinesController < ApplicationController
   def create
     @wine = Wine.new(wine_params)
     if @wine.save
-      flash[:success] = 'ワインを新規登録しました。'
+      flash[:success] = "#{@wine.name}を登録しました。"
       redirect_to wines_url 
     else
       render :new

@@ -18,7 +18,7 @@ ja:
           id: ID
           name: ワイン名称
           color: 色/分類
-          grape_variety: ブドウ品種   
+          grape_variety: 主要品種   
           country: 国
           region: 地方
           area: 地区
