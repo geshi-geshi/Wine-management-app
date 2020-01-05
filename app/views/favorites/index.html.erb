@@ -3,7 +3,13 @@
 										
 <section class="wines-index">
 	<h1>お気に入りワイン</h1>
-	<h2><%= @favorites_count %>件あります</h2>
+	<h2>
+		<% if @favorites_count == 0 %>
+			お気に入りはありません
+		<% else %>
+			<%= @favorites_count %>件あります
+		<% end %>
+	</h2>
 	<div class="col-md-10 col-md-offset-1">
 		<% if @wines.empty? %>
 			<p class="empty">
