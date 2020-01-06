@@ -9,6 +9,8 @@ package "Wine-management-app" {
       admin
       password
       password_digest
+      provider
+      uid
       created_at
       updated_at
     }
