@@ -51,16 +51,18 @@
 										<%= image_tag "no-image.png", :size =>'230x170' %>
 									<% end %>
 								</div>
-								<h4 class="card-title">
-									<%= wine.name %>（<%= wine.color %>）
-								</h4>
-								<p class="card-text">主要品種：<%= wine.grape_variety %><br>
-								国：<%= wine.country %><br>
-								<% if wine.production_year.present? %>
-									生産年：<%= wine.production_year %>年
-								<% else %>
-									生産年：- 年
-								<% end %>
+								<div class="text-area">
+									<h4 class="card-title">
+										<%= wine.name %>（<%= wine.color %>）
+									</h4>
+									<p class="card-text">主要品種：<%= wine.grape_variety %><br>
+									国：<%= wine.country %><br>
+									<% if wine.production_year.present? %>
+										生産年：<%= wine.production_year %>年
+									<% else %>
+										生産年：- 年
+									<% end %>
+								</div>
 								</p> 
 								 	<div class="wine-show-btn">
 										<%= link_to "ワインの詳細を見る", wine_path(wine), remote: true, class: "btn btn-info" %>					
