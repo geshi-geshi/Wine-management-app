@@ -461,14 +461,14 @@ input, textarea, select, .uneditable-input {
 }
 
 .user-name {
-  font-family: serif;
+  // font-family: serif;
   // font-style: italic;
   font-weight: bold;
-  font-size: 18px;
+  font-size: 17px;
 }
 
-.user-email {
-
+.font-serif {
+  // font-family: serif;
 }
 
 .empty {
@@ -484,6 +484,27 @@ input, textarea, select, .uneditable-input {
 .form-user-edit {
   margin-top: 10px;
   text-align: left;
+}
+
+.user-table {
+  box-shadow: 0px 0px 5px;
+}
+
+.user-tr {
+  box-shadow: 0px 0px 3px;
+}
+
+.user-edit-area {
+  min-width: 250px;
+}
+
+.btn-edit-user {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.panel-group {
+  margin-bottom: 0px;
 }
 
 
