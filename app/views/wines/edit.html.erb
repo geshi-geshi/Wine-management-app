@@ -1,7 +1,7 @@
 <% provide(:title, 'ワイン編集') %>
 <% provide(:button_text, '更新') %>
 
-<h1>ワイン情報の編集</h1>
+<h1><%= @wine.name %>の編集</h1>
 <div class="col-md-10 col-md-offset-1">
   <div class="btn-header">
 		<%= link_to "<ワイン一覧へ", wines_path, class: "btn btn-default btn-wine-index" %>
