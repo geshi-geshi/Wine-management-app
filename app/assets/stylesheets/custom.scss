@@ -632,7 +632,7 @@ input, textarea, select, .uneditable-input {
 }
 
 
-.favorite-btn:hover {
+.favorite-btn:hover, .favorite-btn:active, .favorite-btn:focus {
   text-decoration: none;
   background-color: #ff0057;
   border-color: #ff0057;

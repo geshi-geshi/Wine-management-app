@@ -22,7 +22,7 @@
 					<div class="col-lg-4">
 						<div class="card">
 							<% if logged_in? %>
-								<%= link_to "お気に入りを解除する", add_favorite_path(favorite.wine), method: :delete, class: "btn btn-danger favorite-btn hover" %>								
+								<%= link_to "お気に入りを解除する", add_favorite_path(favorite.wine), method: :delete, class: "btn favorite-btn hover" %>								
 							<% end %>
 							<div class="card-body">
 								<div class="img-area">
