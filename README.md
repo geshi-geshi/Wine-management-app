@@ -1,4 +1,22 @@
-# README
+# ワイン管理アプリ
+https://wine-management-app.herokuapp.com/
+
+## 概要
+ワインの登録編集削除機能、検索機能、お気に入り機能を備えたアプリ
+
+## 環境
+Ruby 2.5.1
+Ruby on Rails 5.2.3
+Rspec 3.9
+
+## 機能一覧
+ユーザー登録機能、ログイン機能
+お気に入り機能
+ページネーション機能(will_paginate)
+検索機能(ransack)
+画像アップロード(s3)
+ワインCRUD機能
+楽天市場検索(楽天api)
 
 ```
 $ source ~/.bash_profile
