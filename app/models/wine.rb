@@ -1,5 +1,5 @@
 class Wine < ApplicationRecord
-    has_many :favorites
+    has_many :favorites, dependent: :destroy #この行を追記することで関連付くイベントが削除されるとclipも削除されます。
     # favoriteモデルを経由してuserテーブルと繋がる
     has_many :users, through: :favorites
 
