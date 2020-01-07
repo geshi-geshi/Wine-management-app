@@ -33,7 +33,7 @@
 									<% end %>
 								</div>
 								<h4 class="card-title">
-									<%= favorite.wine.name %>（<%= favorite.wine.color %>）
+									<%= favorite.wine.name.truncate(50) %>（<%= favorite.wine.color %>）
 								</h4>
 								<p class="card-text">主要品種：<%= favorite.wine.grape_variety %><br>
 								国：<%= favorite.wine.country %><br>

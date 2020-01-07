@@ -27,8 +27,8 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       log_in @user # 保存成功後、ログインします。
-      flash[:success] = '新規作成に成功しました。'
-      redirect_to @user # redirect_to user_url(@user)と同様
+      flash[:success] = "#{@user.name}さんが登録されました。"
+      redirect_to wines_url
     else
       render :new
     end
@@ -70,7 +70,7 @@ class UsersController < ApplicationController
 
   def destroy
     @user.destroy
-    flash[:success] = "#{@user.name}のデータを削除しました。"
+    flash[:success] = "#{@user.name}さんのデータを削除しました。"
     redirect_to users_url
   end
 
