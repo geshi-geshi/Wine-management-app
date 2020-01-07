@@ -6,10 +6,16 @@ class Wine < ApplicationRecord
 
 	mount_uploader :image, ImageUploader
 	
-	validates :name, presence: true, length: { maximum: 50 }
+	validates :name, presence: true, length: { maximum: 100 }
 	validates :color, presence: true
 	validates :grape_variety, presence: true
 	validates :country, presence: true
+	validates :region, length: { maximum: 50 }
+	validates :area, length: { maximum: 50 }
+	validates :producer, length: { maximum: 100 }
+	validates :appearance, length: { maximum: 200 }
+	validates :aroma, length: { maximum: 200 }
+	validates :taste, length: { maximum: 200 }
 	validates :production_year, length: { maximum: 4 }
 
 	# enum color: { "" => 0, "スパークリング" => 1, "ロゼ" => 2, "白" => 3, "赤" => 4, "オレンジ" => 5 }

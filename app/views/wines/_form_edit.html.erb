@@ -11,13 +11,13 @@
 	<%= f.file_field :image, id: 'wine_img' %>
 
 	<%= f.label :name, class: "label-#{yield(:class_text)}" %>
-	<%= f.text_field :name, placeholder: "必須項目です", class: "form-control", maxlength: 50 %>
+	<%= f.text_field :name, placeholder: "必須項目です", class: "form-control", maxlength: 100, required: 'required' %>
 
 	<%= f.label :color, class: "label-#{yield(:class_text)}" %>
 	<%= f.select :color, ['スパークリング', 'ロゼ', '白', '赤', 'オレンジ', '酒精強化', 'フレーヴァード', 'ノンアルコール'], {include_blank: '必須項目です'}, class: 'form-control' %>
 
 	<%= f.label :grape_variety, class: "label-#{yield(:class_text)}" %>
-  <%= f.select :grape_variety, Wine.grape_varieties.keys.to_a, {include_blank: '必須項目です'}, class: "form-control" %>
+	<%= f.select :grape_variety, Wine.grape_varieties.keys.to_a, {include_blank: '必須項目です'}, class: "form-control" %>
 
 	<!-- 国の選択肢 -->
 	<%= f.label :country, class: "label-#{yield(:class_text)}" %>
@@ -47,28 +47,28 @@
 		] , {include_blank: '必須項目です'}, class: 'form-control' %>
 
 	<%= f.label :region, class: "label-#{yield(:class_text)}" %>
-	<%= f.text_field :region, class: "form-control" %>
+	<%= f.text_field :region, class: "form-control", maxlength: 50 %>
 
 	<%= f.label :area, class: "label-#{yield(:class_text)}" %>
-	<%= f.text_field :area, class: "form-control" %>
+	<%= f.text_field :area, class: "form-control", maxlength: 50 %>
 
 	<%= f.label :body, class: "label-#{yield(:class_text)}" %>
 	<%= f.select :body, ['ライトボディ', 'ミディアムボディ', 'フルボディ'], {include_blank: ''}, class: 'form-control' %>
 
 	<%= f.label :producer, class: "label-#{yield(:class_text)}" %>
-	<%= f.text_field :producer, class: "form-control" %>
+	<%= f.text_field :producer, class: "form-control", maxlength: 100 %>
 
 	<%= f.label :appearance, class: "label-#{yield(:class_text)}" %>
-	<%= f.text_area :appearance, rows: 6, class: "form-control" %>
+	<%= f.text_area :appearance, rows: 4, class: "form-control", maxlength: 200 %>
 
 	<%= f.label :aroma, class: "label-#{yield(:class_text)}" %>
-	<%= f.text_area :aroma, rows: 6, class: "form-control" %>
+	<%= f.text_area :aroma, rows: 4, class: "form-control", maxlength: 200 %>
 
 	<%= f.label :taste, class: "label-#{yield(:class_text)}" %>
-	<%= f.text_area :taste, rows: 6, class: "form-control" %>
+	<%= f.text_area :taste, rows: 4, class: "form-control", maxlength: 200 %>
 
 	<%= f.label :production_year, class: "label-#{yield(:class_text)}" %>
-	<%= f.number_field :production_year, class: "form-control" %>
+	<%= f.number_field :production_year, class: "form-control", maxlength: 4 %>
 
 	<%= f.label :alcohol_content, class: "label-#{yield(:class_text)}" %>
 	<%= f.number_field :alcohol_content, class: "form-control" %>
@@ -80,7 +80,7 @@
 	<%# <%= f.number_field :capacity, class: "form-control" %>
 
 	<%= f.label :detail, class: "label-#{yield(:class_text)}" %>
-	<%= f.text_area :detail, rows: 8, class: "form-control" %>
+	<%= f.text_area :detail, rows: 6, class: "form-control", maxlength: 255 %>
 
 	<div class="center">
 		<%= f.submit yield(:button_text), class: "btn btn-primary btn-#{yield(:class_text)}" %>
