@@ -13,7 +13,6 @@ gem 'faker'
 
 # for image uploader with AWS S3
 gem 'carrierwave'
-gem 'fog'
 gem 'fog-aws'
 
 #画像の加工
