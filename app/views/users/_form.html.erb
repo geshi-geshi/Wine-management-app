@@ -2,16 +2,16 @@
   <%= render 'shared/error_messages', object: @user %>
 
   <%= f.label :name, class: "label-#{yield(:class_text)}" %>
-  <%= f.text_field :name, class: "form-control", required: 'required' %>
+  <%= f.text_field :name, class: "form-control", maxlength: 50, required: 'required' %>
 
   <%= f.label :email, class: "label-#{yield(:class_text)}" %>
-  <%= f.email_field :email, class: "form-control", required: 'required' %>
+  <%= f.email_field :email, class: "form-control", maxlength: 100, required: 'required' %>
 
   <%= f.label :password, class: "label-#{yield(:class_text)}" %>
-  <%= f.password_field :password, class: "form-control", required: 'required' %>
+  <%= f.password_field :password, class: "form-control", minlength: 6, required: 'required' %>
 
   <%= f.label :password_confirmation, class: "label-#{yield(:class_text)}" %>
-  <%= f.password_field :password_confirmation, class: "form-control", required: 'required' %>
+  <%= f.password_field :password_confirmation, class: "form-control", minlength: 6, required: 'required' %>
 
   <%= f.submit yield(:button_text), class: "btn btn-primary btn-block btn-#{yield(:class_text)}" %>
 <% end %>
