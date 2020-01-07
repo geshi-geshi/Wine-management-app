@@ -1,11 +1,12 @@
 class User < ApplicationRecord
-  has_many :favorites, dependent: :destroy #この行を追記することで関連付くイベントが削除されるとclipも削除されます。
+	#この行を追記することで関連付くイベントが削除されるとfavoritesも削除される
+  has_many :favorites, dependent: :destroy 
   has_many :wines, through: :favorites
   
   before_save :email_downcase, unless: :uid?
   validates :name, presence: true, unless: :uid?, length: { maximum: 50 }
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
-  validates :email, presence: true, unless: :uid?, length: { maximum: 255 },
+  validates :email, presence: true, unless: :uid?, length: { maximum: 100 },
                     format: { with: VALID_EMAIL_REGEX },
                     uniqueness: { case_sensitive: false }
                     has_secure_password validations: false
