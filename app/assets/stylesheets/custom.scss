@@ -510,8 +510,8 @@ input, textarea, select, .uneditable-input {
   margin-top: 10px;
   margin-bottom: 10px;
   background: white;
-  max-height: 520px;
-  min-height: 520px;
+  max-height: 540px;
+  min-height: 540px;
 }
 
 .card-body {
@@ -523,6 +523,7 @@ input, textarea, select, .uneditable-input {
 .card-title {
   padding-left: 10px;
   padding-right: 10px;
+  min-height: 55px;
 }
 
 .card-text {

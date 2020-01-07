@@ -53,7 +53,8 @@
 								</div>
 								<div class="text-area">
 									<h4 class="card-title">
-										<%= wine.name %>（<%= wine.color %>）
+										<!-- 50文字まで表示させる -->
+										<%= wine.name.truncate(50) %>（<%= wine.color %>）
 									</h4>
 									<p class="card-text">主要品種：<%= wine.grape_variety %><br>
 									国：<%= wine.country %><br>
