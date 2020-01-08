@@ -9,12 +9,14 @@ https://wine-management-app.herokuapp.com/
 - Ruby on Rails 5.2.3
 - Rspec 3.9
 - Mysql 5.7
+- GitHub
 - heroku
 - AWS
   - EC2
   - S3
+  - VPC
 
-## 機能一覧
+## 機能一覧、使用gem
 - ユーザー登録機能、ログイン機能
 - お気に入り機能
 - ページネーション機能(will_paginate)
@@ -24,6 +26,8 @@ https://wine-management-app.herokuapp.com/
 - 楽天市場検索(楽天API/rakuten_web_service)
 - SNSログイン機能(omniauth-twitter/facebook/google-oauth2)
 
+## 備考
+ブランチ分けてプルリクベースで本番を意識して開発しました。
 
 
 ```
