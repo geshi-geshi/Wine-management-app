@@ -1,27 +1,28 @@
 <% provide(:title, 'ワイン編集') %>
 <% provide(:button_text, '更新') %>
 
-<h1><%= @wine.name %>の編集</h1>
-<div class="col-md-10 col-md-offset-1">
-  <div class="btn-header">
-		<%= link_to "<ワイン一覧へ", wines_path, class: "btn btn-default btn-wine-index" %>
-		<%= link_to "このワインを削除する", wine_path(@wine), method: :delete,
-                      data: { confirm: "#{@wine.name}を削除して良いですか?",
-  							  						cancel: 'キャンセル',
-															commit: '削除する'}, title: 'ワインの削除', 
-											class: "btn btn-danger wine-delete-btn" %>        
-	</div>
-	<div class="panel panel-default panel-wine">
-		<div class="panel-body">
-			<div class="row">
-				<div class="col-md-10 col-md-offset-1 form-wine">
-					<%= render 'form_edit' %>
-				</div> 
-			</div> 
-		</div> 
-	</div> 
-</div> 
-
+<section class="users-index">
+  <h1><%= @wine.name %>の編集</h1>
+  <div class="col-md-10 col-md-offset-1">
+    <div class="btn-header">
+      <%= link_to "<ワイン一覧へ", wines_path, class: "btn btn-default btn-wine-index" %>
+      <%= link_to "このワインを削除する", wine_path(@wine), method: :delete,
+                        data: { confirm: "#{@wine.name}を削除して良いですか?",
+                                cancel: 'キャンセル',
+                                commit: '削除する'}, title: 'ワインの削除', 
+                        class: "btn btn-danger wine-delete-btn" %>        
+    </div>
+    <div class="panel panel-default panel-wine">
+      <div class="panel-body">
+        <div class="row">
+          <div class="col-md-10 col-md-offset-1 form-wine">
+            <%= render 'form_edit' %>
+          </div> 
+        </div> 
+      </div> 
+    </div> 
+  </div> 
+</section>
 
 <script type="text/javascript">
   $(function() {

@@ -1,22 +1,24 @@
 <% provide(:title, 'ワイン登録') %>
 <% provide(:class_text, 'signup') %>
 <% provide(:button_text, '新規登録') %>
-<h1>ワイン登録</h1>
 
-<div class="col-md-10 col-md-offset-1">
-  <div class="btn-header">
-		<%= link_to "<ワイン一覧へ", wines_path, class: "btn btn-default btn-wine-index" %>
-	</div>
-  <div class="panel panel-default panel-wine">
-    <div class="panel-body">
-      <div class="row">
-        <div class="col-md-10 col-md-offset-1 form-wine">
-          <%= render 'form' %>
+<section class="users-index">
+  <h1>ワイン登録</h1>
+  <div class="col-md-10 col-md-offset-1">
+    <div class="btn-header">
+      <%= link_to "<ワイン一覧へ", wines_path, class: "btn btn-default btn-wine-index" %>
+    </div>
+    <div class="panel panel-default panel-wine">
+      <div class="panel-body">
+        <div class="row">
+          <div class="col-md-10 col-md-offset-1 form-wine">
+            <%= render 'form' %>
+          </div>
         </div>
       </div>
     </div>
   </div>
-</div>
+</section>
 
 <script type="text/javascript">
   $(function() {
