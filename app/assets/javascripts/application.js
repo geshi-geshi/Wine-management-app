@@ -16,3 +16,8 @@
 //= require turbolinks
 //= require_tree .
 //= require data-confirm-modal
+
+// flashメッセージの表示時間
+$(function(){
+  setTimeout("$('.alert-area').fadeOut('slow')", 4000) 
+})

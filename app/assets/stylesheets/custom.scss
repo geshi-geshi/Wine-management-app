@@ -399,6 +399,12 @@ input, textarea, select, .uneditable-input {
   }
 }
 
+/* flash メッセージ */
+
+.alert-area {
+  z-index: 10;
+  position: fixed;
+}
 
 /* TOP画面 */
 
@@ -410,7 +416,6 @@ input, textarea, select, .uneditable-input {
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
-  
 }
 
 .jumbotron-top {
