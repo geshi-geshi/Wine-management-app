@@ -16,7 +16,33 @@
     <%= search_form_for @q do |f| %>
       <%= f.search_field :name_cont, placeholder: "ワイン名で検索", class: "form-control" %>
       <br/>
-      <%= f.select :color_cont, ['スパークリング', 'ロゼ', '白', '赤', 'オレンジ', '酒精強化', 'フレーヴァード'], {include_blank: '色/分類で検索'}, class: 'form-control' %>
+
+      <div class="form-group">
+        <%= f.label :color, "色/分類で検索", class: "control-label" %><br>
+        <div class="checkbox-inline">
+          <%= f.check_box :color_true_any, {multiple: true}, "スパークリング" %>スパークリング
+        </div>
+        <div class="checkbox-inline">
+          <%= f.check_box :color_true_any, {multiple: true}, "白" %>白
+        </div>
+        <div class="checkbox-inline">
+          <%= f.check_box :color_true_any, {multiple: true}, "赤" %>赤
+        </div>
+        <div class="checkbox-inline">
+          <%= f.check_box :color_eq_any, {multiple: true}, "オレンジ" %>オレンジ
+        </div>
+        <div class="checkbox-inline">
+          <%= f.check_box :color_eq_any, {multiple: true}, "酒精強化" %>酒精強化
+        </div>
+        <div class="checkbox-inline">
+          <%= f.check_box :color_eq_any, {multiple: true}, "フレーヴァード" %>フレーヴァード
+        </div>
+        <div class="checkbox-inline">
+          <%= f.check_box :color_eq_any, {multiple: true}, "ノンアルコール" %>ノンアルコール
+        </div>
+      </div>
+
+
       <br/>
       <%= f.select :country_cont,
       [  
