@@ -12,9 +12,10 @@ https://wine-management-app.herokuapp.com/
 - GitHub
 - heroku
 - AWS
-  - EC2
-  - S3
   - VPC
+  - EC2 
+  - RDS
+  - S3
 
 ## 機能一覧、使用gem
 - ユーザー登録機能、ログイン機能
