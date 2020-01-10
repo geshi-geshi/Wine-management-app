@@ -12,6 +12,7 @@ https://wine-management-app.herokuapp.com/
 - GitHub
 - heroku
 - Nginx
+- Unicorn
 - AWS
   - VPC
   - EC2 
@@ -22,16 +23,21 @@ https://wine-management-app.herokuapp.com/
 - JQuery
 
 ## 機能一覧、使用gem
-- ユーザー登録機能、ログイン機能
+- ユーザー登録機能、ログイン機能(bcrypt)
 - お気に入り機能
 - ページネーション機能(will_paginate)
 - 検索機能(ransack)
-- 画像アップロード(S3)
+- 画像アップロード(S3/fog-aws/carrierwave/rmagick/mini_magick)
 - ワインCRUD機能
 - 楽天市場検索(楽天API/rakuten_web_service)
-- SNSログイン機能(omniauth-twitter/facebook/google-oauth2)
+- SNSログイン機能(omniauth-twitter/facebook/google-oauth2/bootstrap-social-rails)
 
 ## 備考
+
+- テスト周り(rails-controller-testing/factory_bot_rails/database_cleaner)
+- UI周り(materialize-sass/material_icons/font-awesome-rails/data-confirm-modal)
+
+
 ブランチ分けてプルリクベースで本番を意識して開発しました。
 
 
