@@ -11,6 +11,9 @@
 				キーワードを入れなおし、もう一度検索してください。
 			</p>
 		<% else %>
+			<div class="wines-count">
+				<%= @wines.count %>件あります
+			</div>
 			<%= will_paginate %>
 			<div class="row">
 				<% @wines.each do |wine| %>
