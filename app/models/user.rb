@@ -9,7 +9,8 @@ class User < ApplicationRecord
   validates :email, presence: true, unless: :uid?, length: { maximum: 100 },
                     format: { with: VALID_EMAIL_REGEX },
                     uniqueness: { case_sensitive: false }
-                    has_secure_password validations: false
+  has_secure_password
+
   # on: :sns_loginでパスワードのバリデーションを無視する
   validates :password, presence: true, length: { minimum: 6 }, allow_nil: true, on: :sns_login
                   
