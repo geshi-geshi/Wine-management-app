@@ -11,11 +11,15 @@ https://wine-management-app.herokuapp.com/
 - Mysql 5.7
 - GitHub
 - heroku
+- Nginx
 - AWS
   - VPC
   - EC2 
   - RDS
   - S3
+- scss
+- bootstrap
+- JQuery
 
 ## 機能一覧、使用gem
 - ユーザー登録機能、ログイン機能
