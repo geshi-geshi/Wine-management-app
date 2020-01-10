@@ -20,25 +20,26 @@
       <div class="form-group">
         <%= f.label :color, "色/分類で検索", class: "control-label" %><br>
         <div class="checkbox-inline">
-          <%= f.check_box :color_true_any, {multiple: true}, "スパークリング" %>スパークリング
+          <!--  { multiple: true }で復数選択できるようにする -->
+          <%= f.check_box :color_eq_any, {multiple: true}, checked_value = "スパークリング", unchecked_value = "" %>スパークリング
         </div>
         <div class="checkbox-inline">
-          <%= f.check_box :color_true_any, {multiple: true}, "白" %>白
+          <%= f.check_box :color_eq_any, {multiple: true}, checked_value = "白", unchecked_value = "" %>白
         </div>
         <div class="checkbox-inline">
-          <%= f.check_box :color_true_any, {multiple: true}, "赤" %>赤
+          <%= f.check_box :color_eq_any, {multiple: true}, checked_value = "赤", unchecked_value = "" %>赤
         </div>
         <div class="checkbox-inline">
-          <%= f.check_box :color_eq_any, {multiple: true}, "オレンジ" %>オレンジ
+          <%= f.check_box :color_eq_any, {multiple: true}, checked_value = "オレンジ", unchecked_value = "" %>オレンジ
         </div>
         <div class="checkbox-inline">
-          <%= f.check_box :color_eq_any, {multiple: true}, "酒精強化" %>酒精強化
+          <%= f.check_box :color_eq_any, {multiple: true}, checked_value = "酒精強化", unchecked_value = "" %>酒精強化
         </div>
         <div class="checkbox-inline">
-          <%= f.check_box :color_eq_any, {multiple: true}, "フレーヴァード" %>フレーヴァード
+          <%= f.check_box :color_eq_any, {multiple: true}, checked_value = "フレーヴァード", unchecked_value = "" %>フレーヴァード
         </div>
         <div class="checkbox-inline">
-          <%= f.check_box :color_eq_any, {multiple: true}, "ノンアルコール" %>ノンアルコール
+          <%= f.check_box :color_eq_any, {multiple: true}, checked_value = "ノンアルコール", unchecked_value = "" %>ノンアルコール
         </div>
       </div>
 
