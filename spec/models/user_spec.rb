@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  let(:user) { User.new(name: "サンプルユーザー", email: "email@sample.com", password:"password", password_confirmation: "password")}
+  let(:user) { create(:user) }
   
   it 'nameとemail、passwordとpassword_confirmationが存在すれば登録できること' do
     expect(user).to be_valid
@@ -57,6 +57,4 @@ RSpec.describe User, type: :model do
     expect(test_user.errors[:password_confirmation]).to include("とパスワードの入力が一致しません")
   end
 
-
-  
 end

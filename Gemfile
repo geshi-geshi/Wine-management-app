@@ -10,34 +10,24 @@ gem 'jquery-rails'
 gem 'jquery-ui-rails'
 gem 'rails-i18n'
 gem 'faker'
-
-# for image uploader with AWS S3
 gem 'carrierwave'
 gem 'fog-aws'
-
-#画像の加工
 gem 'rmagick'
 gem 'mini_magick'
-
 gem 'ransack'
-
 gem 'omniauth'
 gem 'omniauth-twitter'
 gem 'omniauth-facebook'
 gem 'omniauth-google-oauth2'
-
-gem 'dotenv-rails' #環境変数を簡単に利用できるgem
-
+gem 'dotenv-rails'
 gem 'materialize-sass'
 gem 'material_icons'
-
-# ログインボタンのデザイン
 gem 'bootstrap-social-rails'
 gem 'font-awesome-rails'
-
 gem 'data-confirm-modal'
-
 gem 'rakuten_web_service'
+gem 'rails-controller-testing'
+
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.3'
@@ -96,6 +86,8 @@ group :test do
   gem 'selenium-webdriver'
   # Easy installation and use of chromedriver to run system tests with Chrome
   gem 'chromedriver-helper'
+  gem 'factory_bot_rails'
+  gem 'database_cleaner'
 end
 
 group :production, :staging do
