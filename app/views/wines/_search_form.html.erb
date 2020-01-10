@@ -43,35 +43,71 @@
         </div>
       </div>
 
-
+      <div class="form-group">
+        <%= f.label :country, "国で検索", class: "control-label" %><br>
+        <div class="checkbox-inline">
+          <%= f.check_box :country_eq_any, {multiple: true}, checked_value = "フランス", unchecked_value = "" %>フランス
+        </div>
+        <div class="checkbox-inline">
+          <%= f.check_box :country_eq_any, {multiple: true}, checked_value = "イタリア", unchecked_value = "" %>イタリア
+        </div>
+        <div class="checkbox-inline">
+          <%= f.check_box :country_eq_any, {multiple: true}, checked_value = "スペイン", unchecked_value = "" %>スペイン
+        </div>
+        <div class="checkbox-inline">
+          <%= f.check_box :country_eq_any, {multiple: true}, checked_value = "ドイツ", unchecked_value = "" %>ドイツ
+        </div>
+        <div class="checkbox-inline">
+          <%= f.check_box :country_eq_any, {multiple: true}, checked_value = "ルクセンブルク", unchecked_value = "" %>ルクセンブルク
+        </div>
+        <div class="checkbox-inline">
+          <%= f.check_box :country_eq_any, {multiple: true}, checked_value = "イギリス", unchecked_value = "" %>イギリス
+        </div>
+        <div class="checkbox-inline">
+          <%= f.check_box :country_eq_any, {multiple: true}, checked_value = "ポルトガル", unchecked_value = "" %>ポルトガル
+        </div>
+        <div class="checkbox-inline">
+          <%= f.check_box :country_eq_any, {multiple: true}, checked_value = "オーストリア", unchecked_value = "" %>オーストリア
+        </div>
+        <div class="checkbox-inline">
+          <%= f.check_box :country_eq_any, {multiple: true}, checked_value = "ハンガリー", unchecked_value = "" %>ハンガリー
+        </div>
+        <div class="checkbox-inline">
+          <%= f.check_box :country_eq_any, {multiple: true}, checked_value = "モルドバ", unchecked_value = "" %>モルドバ
+        </div>
+        <div class="checkbox-inline">
+          <%= f.check_box :country_eq_any, {multiple: true}, checked_value = "北アフリカ", unchecked_value = "" %>北アフリカ
+        </div>
+        <div class="checkbox-inline">
+          <%= f.check_box :country_eq_any, {multiple: true}, checked_value = "アメリカ合衆国", unchecked_value = "" %>アメリカ合衆国
+        </div>
+        <div class="checkbox-inline">
+          <%= f.check_box :country_eq_any, {multiple: true}, checked_value = "カナダ", unchecked_value = "" %>カナダ
+        </div>
+        <div class="checkbox-inline">
+          <%= f.check_box :country_eq_any, {multiple: true}, checked_value = "アルゼンチン", unchecked_value = "" %>アルゼンチン
+        </div>
+        <div class="checkbox-inline">
+          <%= f.check_box :country_eq_any, {multiple: true}, checked_value = "南アフリカ", unchecked_value = "" %>南アフリカ
+        </div>
+        <div class="checkbox-inline">
+          <%= f.check_box :country_eq_any, {multiple: true}, checked_value = "オーストラリア", unchecked_value = "" %>オーストラリア
+        </div>
+        <div class="checkbox-inline">
+          <%= f.check_box :country_eq_any, {multiple: true}, checked_value = "ニュージーランド", unchecked_value = "" %>ニュージーランド
+        </div>
+        <div class="checkbox-inline">
+          <%= f.check_box :country_eq_any, {multiple: true}, checked_value = "中国", unchecked_value = "" %>中国
+        </div>
+        <div class="checkbox-inline">
+          <%= f.check_box :country_eq_any, {multiple: true}, checked_value = "日本", unchecked_value = "" %>日本
+        </div>
+        <div class="checkbox-inline">
+          <%= f.check_box :country_eq_any, {multiple: true}, checked_value = "その他", unchecked_value = "" %>その他
+        </div>
+      </div>
       <br/>
-      <%= f.select :country_cont,
-      [  
-          "フランス", 
-          "イタリア", 
-          "スペイン",
-          "ドイツ",
-          "ルクセンブルク",
-          "イギリス",
-          "スペイン",
-          "ポルトガル",
-          "オーストリア",
-          "ハンガリー",
-          "モルドバ",
-          "北アフリカ",
-          "アメリカ合衆国",
-          "カナダ",
-          "アルゼンチン",
-          "チリ",
-          "南アフリカ",
-          "オーストラリア",
-          "ニュージーランド",
-          "中国",
-          "日本",
-          "その他"
-        ], 
-      {include_blank: '国で検索'}, class: 'form-control' %>
-      <br/>
+      
       <%= f.select :body_cont, ['ライトボディ', 'ミディアムボディ', 'フルボディ'], {include_blank: 'ボディで検索'}, class: 'form-control' %>
       <br/>
       <!-- eqはイコール -->
