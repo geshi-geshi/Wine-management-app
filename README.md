@@ -1,6 +1,9 @@
 # ワイン管理アプリ
 https://wine-management-app.herokuapp.com/
 
+<img width="1237" alt="read me" src="https://user-images.githubusercontent.com/44439885/72314333-deaa7800-36d1-11ea-9887-950669c9cf1a.png">
+
+
 ## 概要
 ワインの登録編集削除機能、検索機能、お気に入り機能を備えたアプリ
 
@@ -41,37 +44,4 @@ git hubのissueを利用し、タスクを管理しながら開発しました�
 
 ブランチ分けてプルリクベースで本番を意識して開発しました。
 
-
-
-```
-$ source ~/.bash_profile
-
-MySQL起動
-$ mysql.server start
-
-RSpecを実行
-$ bundle exec rspec
-
-MySQL停止
-$ mysql.server stop
-```
-
-heroku
-https://wine-management-app.herokuapp.com/
-
-```
-$ git push heroku master
-$ heroku run rails db:migrate
-$ heroku run rails db:seed
-
-ログ確認（リアルタイム）
-$ heroku logs --tail
-heroku logs -t
-
-heroku DB接続
-$ mysql -u DB_USERNAME -p -h DB_HOSTNAME DB_NAME
-
-紐付け
-$ git remote add heroku https://git.heroku.com/wine-management-app.git
-```
 
