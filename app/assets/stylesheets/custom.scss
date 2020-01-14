@@ -370,6 +370,8 @@ input, textarea, select, .uneditable-input {
   font-size: 20px;
   margin-top: 18px;
   font-weight: bold;
+  text-shadow: 0 0 0.05em #b507af, 0 0 0.1em #b507af, 0 0 0.15em #b507af, 0 0 0.3em #b507af;
+  filter: saturate(80%);
 }
 
 .signup_text a {
