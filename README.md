@@ -37,8 +37,10 @@ https://wine-management-app.herokuapp.com/
 - テスト周り(rails-controller-testing/factory_bot_rails/database_cleaner)
 - UI周り(materialize-sass/material_icons/font-awesome-rails/data-confirm-modal)
 
+git hubのissueを利用し、タスクを管理しながら開発しました。
 
 ブランチ分けてプルリクベースで本番を意識して開発しました。
+
 
 
 ```

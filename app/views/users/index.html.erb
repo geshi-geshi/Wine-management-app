@@ -4,8 +4,11 @@
 
 <section class="users-index">
 	<h1>ユーザ一覧</h1>
-		<%= render 'search_form' %><br>
-		<div class="col-md-10 col-md-offset-1">
+	<div class="users-count">
+		<%= @users.count %>名表示
+	</div>
+	<%= render 'search_form' %><br>
+	<div class="col-md-10 col-md-offset-1">
 		<% if @users.empty? %>
 			<p class="empty">
 				検索結果が見つかりません。<br>
@@ -19,7 +22,7 @@
 					<td class="font-serif">メールアドレス</td>
 					<td class="user-edit-area"></td>
 				</tr>
-			<% @users.each do |user| %>
+				<% @users.each do |user| %>
 				　<tr class="user-tr">
 						<td><span class="user-name"><%= user.name %></span></td>
 						<td><span class="font-serif"><%= user.email %></span></td>
@@ -64,8 +67,9 @@
 							<td class="font-serif">テストユーザーは編集できません</td>
 						<% end %>	
 					</tr>
-			<% end %>
+				<% end %>
 			</table>
 			<%= will_paginate %>
 		<% end %>
+	</div>
 </section>

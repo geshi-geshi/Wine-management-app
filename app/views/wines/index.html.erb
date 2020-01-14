@@ -3,6 +3,9 @@
 										
 <section class="wines-index">
 	<h1>ワイン一覧</h1>
+	<div class="wines-count">
+		<%= @wines.count %>件表示
+	</div>
 	<%= render 'search_form' %><br>
 	<div class="col-md-10 col-md-offset-1">
 		<% if @wines.empty? %>
@@ -11,9 +14,6 @@
 				キーワードを入れなおし、もう一度検索してください。
 			</p>
 		<% else %>
-			<div class="wines-count">
-				<%= @wines.count %>件あります
-			</div>
 			<%= will_paginate %>
 			<div class="row">
 				<% @wines.each do |wine| %>
@@ -23,29 +23,12 @@
 								<%= link_to "編集", edit_wine_path(wine), class: "btn btn-primary wine-edit-btn" %>
 								<% if !current_user.admin? %>
 									<% if !Favorite.exists?(user_id:current_user.id,wine_id:wine.id) %>
-										<!--
-										<div class="favorite-area">
-											<%= link_to add_favorite_path(wine), method: :post, class: "favorite-btn nomal" do %>
-												<i class="material-icons favorite-icon">favorite_border</i>
-												<span class="favorite-text"></span>
-											<% end %>
-										</div>
-										-->
 										<%= link_to "お気に入りに追加", add_favorite_path(wine), method: :post, class: "btn favorite-btn hover" %>
 									<% else %>
-										<!-- 
-										<div class="favorite-area">
-											<%= link_to add_favorite_path(wine), method: :delete, class: "favorite-btn nomal" do %>
-												<i class="material-icons favorite-icon">favorite</i>
-												<span class="favorite-text"></span>
-											<% end %>
-										</div>
-										-->
 										<span class="btn btn-default favorite-btn2">追加済み</span>
 									<% end %>
 								<% end %>
-							<% end %>
-						
+							<% end %>				
 							<div class="card-body">						
 								<div class="img-area">
 									<% if wine.image? %>
