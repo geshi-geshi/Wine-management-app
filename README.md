@@ -3,6 +3,8 @@ https://wine-management-app.herokuapp.com/
 
 <img width="1237" alt="read me" src="https://user-images.githubusercontent.com/44439885/72314333-deaa7800-36d1-11ea-9887-950669c9cf1a.png">
 
+※テストユーザーを用意し、簡単ログインボタンを用意していますので、すぐにログインできます
+
 
 ## 概要
 ワインの登録編集削除機能、検索機能、お気に入り機能を備えたアプリ
