@@ -1,35 +1,36 @@
 <% provide(:title, "TOP") %>
 <div class="jumbotron jumbotron-extend jumbotron-top">
   <div class="container-fluid">
-    <h1>ワイン管理アプリ</h1>
-    <p>このアプリケーションでは、<br>
-        ユーザーの皆様が編集したワインの一覧を閲覧,検索できます。<br>
-        ※ログインするとワインの編集,お気に入り登録ができます。</p>
-    
-    <!-- ログインしていない場合 -->
-    <% if !logged_in? %>
-      <%= link_to wines_path, class: "btn btn-lg btn-primary btn-wine" do %>
-        <i class="material-icons">local_bar</i>
-        <span>ワイン一覧へ</span>
-      <% end %>
-
-      <%= link_to login_path, class: "btn btn-lg btn-primary btn-wine" do %>
-        <i class="material-icons">input</i>
-        <span>ログイン</span>
-      <% end %>
-
-    <!-- ログイン済みの場合 -->
-    <% else %>
-      <%= link_to wines_path, class: "btn btn-lg btn-primary btn-wine" do %>
-        <i class="material-icons">local_bar</i>
-        <span>ワイン一覧へ</span>
-      <% end %>
+    <div class="top-contents">
+      <h1>ワイン管理アプリ</h1>
+      <p>このアプリケーションでは、<br>
+          ユーザーの皆様が編集したワインの一覧を閲覧,検索できます。<br>
+          ※ログインするとワインの編集,お気に入り登録ができます。</p>
       
-      <%= link_to "", class: "btn btn-lg btn-primary btn-wine", disabled: :disabled do %>
-        <i class="material-icons">input</i>
-        <span>ログイン済みです</span>
-      <% end %>
-    <% end %>
+      <!-- ログインしていない場合 -->
+      <% if !logged_in? %>
+        <%= link_to wines_path, class: "btn btn-lg btn-primary btn-wine" do %>
+          <i class="material-icons">local_bar</i>
+          <span>ワイン一覧へ</span>
+        <% end %>
 
+        <%= link_to login_path, class: "btn btn-lg btn-primary btn-wine" do %>
+          <i class="material-icons">input</i>
+          <span>ログイン</span>
+        <% end %>
+
+      <!-- ログイン済みの場合 -->
+      <% else %>
+        <%= link_to wines_path, class: "btn btn-lg btn-primary btn-wine" do %>
+          <i class="material-icons">local_bar</i>
+          <span>ワイン一覧へ</span>
+        <% end %>
+        
+        <%= link_to "", class: "btn btn-lg btn-primary btn-wine", disabled: :disabled do %>
+          <i class="material-icons">input</i>
+          <span>ログイン済みです</span>
+        <% end %>
+      <% end %>
+    </div>
   </div>
 </div>
