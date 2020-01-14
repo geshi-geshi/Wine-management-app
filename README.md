@@ -1,7 +1,7 @@
 # ワイン管理アプリ
 https://wine-management-app.herokuapp.com/
 
-<img width="1237" alt="read me" src="https://user-images.githubusercontent.com/44439885/72314333-deaa7800-36d1-11ea-9887-950669c9cf1a.png">
+<img width="1239" alt="read me" src="https://user-images.githubusercontent.com/44439885/72330829-8471dd00-36fa-11ea-8df8-73356addc125.png">
 
 ※テストユーザーを用意し、簡単ログインボタンを用意していますので、すぐにログインできます
 
