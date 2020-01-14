@@ -1,5 +1,5 @@
 <% provide(:title, "編集") %>
-<% provide(:class_text, 'user--edit') %>
+<% provide(:class_text, 'user-edit') %>
 <% provide(:button_text, '更新') %>
 
 <section class="users-index">
@@ -9,7 +9,11 @@
       <div class="panel-body">
         <div class="row">
           <div class="col-md-8 col-md-offset-2 user-form-area">
-            <%= render 'form' %>
+            <% if @user.email == "test@sample.com" %>
+              <h2>テストユーザーは変更できません</h2>
+            <% else %>
+              <%= render 'form' %>
+            <% end %>
           </div>
         </div>
       </div>
