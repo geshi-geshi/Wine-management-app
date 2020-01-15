@@ -12,7 +12,7 @@ class SessionsController < ApplicationController
       elsif user.email == "test@sample.com"
         flash[:success] = '一般権限のテストユーザーでログインしました。' 
       else
-        flash[:success] = 'ログインしました。'
+        flash[:success] =  "#{user.name}さんでログインしました。"
       end
       # params[:session][:remember_me] == '1' ? remember(user) : forget(user)
       redirect_to wines_url

@@ -9,11 +9,15 @@ class User < ApplicationRecord
   validates :email, presence: true, unless: :uid?, length: { maximum: 100 },
                     format: { with: VALID_EMAIL_REGEX },
                     uniqueness: { case_sensitive: false }
-  has_secure_password
+  has_secure_password validations: false
 
   # on: :sns_loginでパスワードのバリデーションを無視する
   validates :password, presence: true, length: { minimum: 6 }, allow_nil: true, on: :sns_login
                   
+  validate(on: :update) do |record|
+    record.errors.add(:password, :blank) unless record.password_digest.present?
+  end
+  
   def self.find_or_create_from_auth(auth)
     provider = auth[:provider]
     uid = auth[:uid]
