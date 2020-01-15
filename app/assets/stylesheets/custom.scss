@@ -572,7 +572,7 @@ input{
   border: 1px solid#CCC;
   margin-top: 10px;
   margin-bottom: 10px;
-  background: white;
+  background-color: #f6f3f6;
   max-height: 540px;
   min-height: 540px;
 }
@@ -696,8 +696,8 @@ input{
   float: left;
   margin: 10px;
   font-size: 10px;
-  background-color: #ff007a;
-  border-color: #ff007a;
+  background-color: #f40a9d;
+  border-color: #f40a9d;
   color: #fff;
 }
 
@@ -710,7 +710,7 @@ input{
 
 .favorite-btn:hover, .favorite-btn:active, .favorite-btn:focus {
   text-decoration: none;
-  background-color: #ff0057;
-  border-color: #ff0057;
+  background-color: #ff0089;
+  border-color: #ff0089;
   color: #fff;
 }
