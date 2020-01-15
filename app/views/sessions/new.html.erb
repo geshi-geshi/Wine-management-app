@@ -39,18 +39,21 @@
             <div class="panel-body text-right">
               <%# <div class="login_sns_area"> %>
             <%# <a class="login-title">＜お持ちのSNSアカウントでログイン＞</a> %>
-            <!-- Twitterでログイン -->
-            <%= link_to '/auth/twitter', class: "btn btn-block btn-social btn-twitter" do %>
-              <span class="fa fa-twitter"></span> Twitterアカウントでログイン
-            <% end %> 
-            <!-- Facebookでログイン -->
-            <%= link_to '/auth/facebook', class: "btn btn-block btn-social btn-facebook" do %>
-              <span class="fa fa-facebook"></span> Facebookアカウントでログイン
-            <% end %> 
             <!-- googleでログイン -->
             <%= link_to '/auth/google_oauth2', class: "btn btn-block btn-social btn-google" do %>
               <span class="fa fa-google"></span> Googleアカウントでログイン
             <% end %>
+            
+            <!-- Facebookでログイン -->
+            <%= link_to '/auth/facebook', class: "btn btn-block btn-social btn-facebook" do %>
+              <span class="fa fa-facebook"></span> Facebookアカウントでログイン
+            <% end %> 
+
+            <!-- Twitterでログイン -->
+            <%= link_to '/auth/twitter', class: "btn btn-block btn-social btn-twitter" do %>
+              <span class="fa fa-twitter"></span> Twitterアカウントでログイン
+            <% end %> 
+            
           </div>
         </div>
       </div>
