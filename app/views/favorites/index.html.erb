@@ -27,7 +27,7 @@
 							<div class="card-body">
 								<div class="img-area">
 									<% if favorite.wine.image? %>
-										<%= image_tag wine.image.to_s %>
+										<%= image_tag favorite.wine.image.to_s %>
 									<% else %>
 										<%= image_tag "no-image.png", :size =>'230x170' %>
 									<% end %>
