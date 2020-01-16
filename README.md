@@ -4,11 +4,16 @@ https://www.wine-management-app.work/
 
 <img width="1239" alt="read me" src="https://user-images.githubusercontent.com/44439885/72330829-8471dd00-36fa-11ea-8df8-73356addc125.png">
 
-※テストユーザーを用意し、簡単ログインボタンを用意していますので、すぐにログインできます
+※テストユーザーを用意し、簡単ログインボタンを用意していますので、すぐにログインできます。
 
 
 ## 概要
-ワインの登録編集削除機能、検索機能、お気に入り機能を備えたアプリ
+ワインの登録/編集/削除機能、検索機能、お気に入り機能を備えたアプリです。
+
+## 目的
+ワインがあまり詳しくない人にもこういうワインはこんな味ですと伝えたい<br>
+ユーザー自体が編集でき、共有できるようにしたい<br>
+もっとワインのこと沢山の人に知っていただき、知識を持って欲しいと思ったため開発しました。  
 
 ## 使用技術
 - Ruby 2.5.1
@@ -42,9 +47,8 @@ https://www.wine-management-app.work/
 
 - テスト周り(rails-controller-testing/factory_bot_rails/database_cleaner)
 - UI周り(materialize-sass/material_icons/font-awesome-rails/data-confirm-modal)
+- エディタ周り(VSCode/IntelliJ)
 
 git hubのissueを利用し、タスクを管理しながら開発しました。
 
-ブランチ分けてプルリクベースで本番を意識して開発しました。
-
-
+機能ごとにブランチを分けてプルリクベースで本番を意識して開発しました。
