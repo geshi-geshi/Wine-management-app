@@ -37,15 +37,23 @@ class SessionsController < ApplicationController
       session[:user_id] = user.id
       if user.provider = "twitter" || user.provider = "facebook" || user.provider = "google" 
         flash[:success] = "#{user.name}さんでログインしました。"
-      # elsif  user.provider = "facebook"
-      #   flash[:success] = "facebook連携/#{user.name}さんでログインしました"
+ 
       else
         # flash[:danger] = "このアドレスは既に登録済みです"
         redirect_to auth_failure_path
       end
       redirect_to wines_url
     else
-      redirect_to auth_failure_path
+      # redirect_to auth_failure_path
+      user = User.find_by(email: params[:session][:email].downcase)
+      if user && user.authenticate(params[:session][:password])
+        log_in user
+        params[:session][:remember_me] == '1' ? remember(user) : forget(user)
+        redirect_back_or user
+      else
+        flash.now[:danger] = 'メールアドレスとパスワードの組み合わせは有効ではありません'
+        render 'new'
+      end
     end
   end
   

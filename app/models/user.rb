@@ -6,18 +6,18 @@ class User < ApplicationRecord
   before_save :email_downcase, unless: :uid?
   validates :name, presence: true, unless: :uid?, length: { maximum: 50 }
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
-  validates :email, presence: true, unless: :uid?, length: { maximum: 100 },
+  validates :email, presence: true, length: { maximum: 100 },
                     format: { with: VALID_EMAIL_REGEX },
                     uniqueness: { case_sensitive: false }
   has_secure_password validations: false
 
-  # on: :sns_loginでパスワードのバリデーションを無視する
-  validates :password, presence: true, length: { minimum: 6 }, allow_nil: true, on: :sns_login
+  # unless: :uid?でuidデータがあればpasswordデータなしでも使えるようにする
+  validates :password, presence: true, length: { minimum: 6 }, allow_nil: true, unless: :uid?
                   
   validate(on: :update) do |record|
     record.errors.add(:password, :blank) unless record.password_digest.present?
   end
-  
+
   def self.find_or_create_from_auth(auth)
     provider = auth[:provider]
     uid = auth[:uid]
