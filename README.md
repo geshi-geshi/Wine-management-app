@@ -29,6 +29,7 @@ https://www.wine-management-app.work/
   - EC2 
   - RDS
   - S3
+- docker
 - scss
 - bootstrap
 - JQuery
