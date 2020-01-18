@@ -10,7 +10,7 @@
     <%= search_form_for @q do |f| %>
       <%= f.search_field :name_cont, placeholder: "ワイン名で検索", class: "form-control" %>
       <br/>
-      <%= f.select :color_cont, ['スパークリング', 'ロゼ', '白', '赤', 'オレンジ', '酒精強化', 'フレーヴァード'], {include_blank: '色/分類で検索'}, class: 'form-control' %>
+      <%= f.select :color_cont, ['シャンパン', 'シャンパンロゼ', 'スパークリング白', 'スパークリングロゼ', 'スパークリング赤', 'ロゼ', '白', '赤', 'オレンジ', '酒精強化', 'フレーヴァード'], {include_blank: '色/分類で検索'}, class: 'form-control' %>
       <br/>
       <%= f.select :country_cont,
       [  

@@ -14,7 +14,7 @@
 	<%= f.text_field :name, placeholder: "必須項目です", class: "form-control", maxlength: 100, required: 'required' %>
 
 	<%= f.label :color, class: "label-#{yield(:class_text)}" %>
-	<%= f.select :color, ['スパークリング', 'ロゼ', '白', '赤', 'オレンジ', '酒精強化', 'フレーヴァード', 'ノンアルコール'], {include_blank: '必須項目です'}, class: 'form-control' %>
+	<%= f.select :color, ['シャンパン', 'シャンパンロゼ', 'スパークリング白', 'スパークリングロゼ', 'スパークリング赤', 'ロゼ', '白', '赤', 'オレンジ', '酒精強化', 'フレーヴァード'], {include_blank: '必須項目です'}, class: 'form-control' %>
 
 	<%= f.label :grape_variety, class: "label-#{yield(:class_text)}" %>
 	<%= f.select :grape_variety, Wine.grape_varieties.keys.to_a, {include_blank: '必須項目です'}, class: "form-control" %>

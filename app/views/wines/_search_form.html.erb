@@ -21,7 +21,19 @@
         <%= f.label :color, "色/分類で検索", class: "control-label" %><br>
         <div class="checkbox-inline">
           <!--  { multiple: true }で復数選択できるようにする -->
-          <%= f.check_box :color_eq_any, {multiple: true}, checked_value = "スパークリング", unchecked_value = "" %>スパークリング
+          <%= f.check_box :color_eq_any, {multiple: true}, checked_value = "シャンパン", unchecked_value = "" %>シャンパン
+        </div>
+        <div class="checkbox-inline">
+          <%= f.check_box :color_eq_any, {multiple: true}, checked_value = "シャンパンロゼ", unchecked_value = "" %>シャンパンロゼ
+        </div>
+        <div class="checkbox-inline">
+          <%= f.check_box :color_eq_any, {multiple: true}, checked_value = "スパークリング白", unchecked_value = "" %>スパークリング白
+        </div>
+        <div class="checkbox-inline">
+          <%= f.check_box :color_eq_any, {multiple: true}, checked_value = "スパークリングロゼ", unchecked_value = "" %>スパークリングロゼ
+        </div>
+        <div class="checkbox-inline">
+          <%= f.check_box :color_eq_any, {multiple: true}, checked_value = "スパークリング赤", unchecked_value = "" %>スパークリング赤
         </div>
         <div class="checkbox-inline">
           <%= f.check_box :color_eq_any, {multiple: true}, checked_value = "白", unchecked_value = "" %>白
