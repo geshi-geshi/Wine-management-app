@@ -255,7 +255,7 @@ input, textarea, select, .uneditable-input {
 
 .wine-edit-btn {
   float: right;
-  margin: 10px;
+  margin: 7px;
 }
 
 
@@ -573,8 +573,8 @@ input{
   margin-top: 10px;
   margin-bottom: 10px;
   background-color: #f6f3f6;
-  max-height: 540px;
-  min-height: 540px;
+  max-height: 580px;
+  min-height: 580px;
 }
 
 .card-body {
@@ -586,8 +586,13 @@ input{
 .card-title {
   padding-left: 10px;
   padding-right: 10px;
+  padding-top: 15px;
   min-height: 55px;
+  font-weight: bold;
+  border-top: 1px solid white;
+
 }
+
 
 .card-text {
   padding-left: 10px;
@@ -604,8 +609,8 @@ input{
 }
 
 .img-area {
-  min-height: 200px;
-  margin-top: 4em;
+  min-height: 220px;
+  margin-top: 50px;
 }
 
 .text-area {
@@ -694,7 +699,8 @@ input{
 
 .favorite-btn {
   float: left;
-  margin: 10px;
+  margin: 7px;
+  padding: 9px;
   font-size: 10px;
   background-color: #f40a9d;
   border-color: #f40a9d;
@@ -703,7 +709,8 @@ input{
 
 .favorite-btn2 {
   float: left;
-  margin: 10px;
+  margin: 7px;
+  padding: 9px;
   font-size: 10px;
 }
 
