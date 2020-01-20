@@ -45,16 +45,9 @@ RSpec.describe User, type: :model do
 
   it "emailが既に存在する場合は登録できない" do
     user2 = User.create(name: "testuser2", email: "email@sample.com", password:"password", password_confirmation: "password")
-    test_user = User.new(name: user2.name, email: user2.email, password: user2.password, password_confirmation: user2.password_confirmation)
+    test_user = User.new(name: user2.name, email: user2.email, password: user2.password)
     expect(test_user).not_to be_valid
     expect(test_user.errors[:email]).to include("はすでに存在します")
-  end
-
-  it "password、password_confirmationが異なる場合は登録できない" do
-    test_user = User.new(name: "testuser", email: "email2@sample.com", password:"password", password_confirmation: "password2")
-    test_user.valid?
-    expect(test_user).not_to be_valid
-    expect(test_user.errors[:password_confirmation]).to include("とパスワードの入力が一致しません")
   end
 
 end
