@@ -44,3 +44,5 @@ doc/
 
 # Ignore .env files.
 /.env
+
+.vscode/
