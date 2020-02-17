@@ -5,12 +5,7 @@
   <h1><%= @wine.name %>の編集</h1>
   <div class="col-md-10 col-md-offset-1">
     <div class="btn-header">
-      <%= link_to "<ワイン一覧へ", wines_path, class: "btn btn-default btn-wine-index" %>
-      <%= link_to "このワインを削除する", wine_path(@wine), method: :delete,
-                        data: { confirm: "#{@wine.name}を削除して良いですか?",
-                                cancel: 'キャンセル',
-                                commit: '削除する'}, title: 'ワインの削除', 
-                        class: "btn btn-danger wine-delete-btn" %>        
+      <%= link_to "<ワイン一覧へ", wines_path, class: "btn btn-default btn-wine-index" %>      
     </div>
     <div class="panel panel-default panel-wine">
       <div class="panel-body">
@@ -20,7 +15,14 @@
           </div> 
         </div> 
       </div> 
-    </div> 
+    </div>
+    <div class="wine-delete-btn-area">
+      <%= link_to "このワインを削除する", wine_path(@wine), method: :delete,
+                        data: { confirm: "#{@wine.name}を削除して良いですか?",
+                                cancel: 'キャンセル',
+                                commit: '削除する'}, title: 'ワインの削除', 
+                        class: "btn btn-danger wine-delete-btn" %>  
+    </div>
   </div> 
 </section>
 
