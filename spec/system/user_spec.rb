@@ -1,9 +1,9 @@
 require 'rails_helper'
 
-RSpec.feature 'ログインとログアウト' do
+RSpec.feature '/login' do
   # ユーザー作成
   let(:user) { create(:user) }
-  scenario 'ログインする' do
+  scenario 'login' do
     # ログインページを開く
     visit login_path
 
