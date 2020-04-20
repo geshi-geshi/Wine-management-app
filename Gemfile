@@ -27,6 +27,7 @@ gem 'font-awesome-rails'
 gem 'data-confirm-modal'
 gem 'rakuten_web_service'
 gem 'rails-controller-testing'
+gem 'webpacker'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
