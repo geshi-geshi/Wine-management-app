@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
+  get 'home/index'
   get 'wines/new'
   get 'sessions/new'
-  root 'users#top'
+  root 'home#index'
   get '/signup', to: 'users#new'
 
   # ログイン機能
