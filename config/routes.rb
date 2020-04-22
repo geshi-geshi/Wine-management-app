@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   root 'users#top'
   get '/signup', to: 'users#new'
 
+  mount Base::API => '/'
+
   # ログイン機能
   get    '/login', to: 'sessions#new'
   post   '/login', to: 'sessions#create'
