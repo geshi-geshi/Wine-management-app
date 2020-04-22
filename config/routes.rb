@@ -4,6 +4,9 @@ Rails.application.routes.draw do
   root 'users#top'
   get '/signup', to: 'users#new'
 
+  mount Base::API => '/'
+  mount SwaggerUiEngine::Engine, at: '/v1/docs'
+
   # ログイン機能
   get    '/login', to: 'sessions#new'
   post   '/login', to: 'sessions#create'

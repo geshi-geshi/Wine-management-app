@@ -28,6 +28,10 @@ gem 'data-confirm-modal'
 gem 'rakuten_web_service'
 gem 'rails-controller-testing'
 gem 'webpacker'
+gem 'grape'
+gem 'grape-entity'
+gem 'grape-swagger'
+gem 'swagger_ui_engine'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
