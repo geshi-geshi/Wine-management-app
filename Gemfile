@@ -31,6 +31,7 @@ gem 'webpacker'
 gem 'grape'
 gem 'grape-entity'
 gem 'grape-swagger'
+gem 'swagger_ui_engine'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

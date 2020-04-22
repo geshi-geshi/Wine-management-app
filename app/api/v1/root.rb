@@ -5,6 +5,12 @@ module V1
 
     mount V1::Users
     mount V1::Wines
-    add_swagger_documentation
+    add_swagger_documentation(
+      doc_version: '1.0.0',
+      info: {
+        title: 'テストAPI',
+        description: 'APIドキュメントです'
+      }
+    )
   end
 end
