@@ -11,7 +11,7 @@ module V1
         requires :id, type: Integer
       end
       get '/:id' do
-        @user = Users.find(params[:id])
+        @user = User.find(params[:id])
       end
 
       desc 'Create an user'
@@ -19,7 +19,7 @@ module V1
         requires :name, type: String
       end
       post '/' do
-        @user = Users.create(name: params[:name])
+        @user = User.create(name: params[:name])
       end
 
       desc 'Delete an user'
@@ -27,7 +27,7 @@ module V1
         requires :id, type: Integer
       end
       delete '/:id' do
-        @user = Users.find(params[:id])
+        @user = User.find(params[:id])
         @user.destroy
       end
     end

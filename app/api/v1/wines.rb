@@ -1,33 +1,35 @@
-# # app/api/v1/books.rb
-# module V1
-#   class Books < Grape::API
-#     resources :books do
-#       desc 'returns all books'
-#       get '/' do
-#         @books = Book.all
-#       end
+module V1
+  class Wines < Grape::API
+    resources :wines do
+      desc 'returns all wines'
+      get '/' do
+        @wines = Wine.all 
+      end
 
-#       desc 'returns a book'
-#       params do
-#         requires :id, type: Integer
-#       end
-#       get '/:id' do
-#         @book = Book.find(params[:id])
-#       end
+      desc 'returns an wine'
+      params do
+        requires :id, type: Integer
+      end
+      get '/:id' do
+        @wine = Wine.find(params[:id])
+      end
 
-#       desc 'Create a book'
-#       params do
-#         requires :title, type: String
-#         requires :price, type: Integer
-#         requires :author_id, type: Integer
-#       end
-#       post '/' do
-#         @book = Book.create(
-#           title: params[:title],
-#           price: params[:price],
-#           author_id: params[:author_id]
-#         )
-#       end
-#     end
-#   end
-# end
+      desc 'Create an wine'
+      params do
+        requires :name, type: String
+      end
+      post '/' do
+        @user = Wine.create(name: params[:name])
+      end
+
+      desc 'Delete an wine'
+      params do
+        requires :id, type: Integer
+      end
+      delete '/:id' do
+        @user = Wine.find(params[:id])
+        @user.destroy
+      end
+    end
+  end
+end
