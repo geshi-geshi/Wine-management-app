@@ -53,10 +53,11 @@ https://www.wine-management-app.work/
 - SNSログイン機能(omniauth-twitter/facebook/google-oauth2/bootstrap-social-rails)
 
 ## 備考
-
 - テスト周り(rails-controller-testing/factory_bot_rails/database_cleaner)
 - UI周り(materialize-sass/material_icons/font-awesome-rails/data-confirm-modal)
+- API周り(grape/swagger)
 - エディタ周り(VSCode/IntelliJ)
+
 
 git hubのissueを利用し、タスクを管理しながら開発しました。
 
