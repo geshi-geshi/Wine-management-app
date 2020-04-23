@@ -18,7 +18,7 @@ module V1
       params do
         requires :name, type: String
       end
-      get '/:name' do
+      get '/name=:name' do
         @wine = Wine.where('name LIKE ?', "%#{params[:name]}%")
       end
 
