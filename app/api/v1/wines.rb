@@ -6,12 +6,20 @@ module V1
         @wines = Wine.all 
       end
 
-      desc 'returns an wine'
+      # desc 'returns an wine'
+      # params do
+      #   requires :id, type: Integer
+      # end
+      # get '/:id' do
+      #   @wine = Wine.find(params[:id])
+      # end
+
+      desc 'search an wine by name'
       params do
-        requires :id, type: Integer
+        requires :name, type: String
       end
-      get '/:id' do
-        @wine = Wine.find(params[:id])
+      get '/:name' do
+        @wine = Wine.where('name LIKE ?', "%#{params[:name]}%")
       end
 
       desc 'Create an wine'
