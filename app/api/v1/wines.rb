@@ -22,14 +22,14 @@ module V1
         @user = Wine.create(name: params[:name])
       end
 
-      desc 'Delete an wine'
-      params do
-        requires :id, type: Integer
-      end
-      delete '/:id' do
-        @user = Wine.find(params[:id])
-        @user.destroy
-      end
+      # desc 'Delete an wine'
+      # params do
+      #   requires :id, type: Integer
+      # end
+      # delete '/:id' do
+      #   @user = Wine.find(params[:id])
+      #   @user.destroy
+      # end
     end
   end
 end

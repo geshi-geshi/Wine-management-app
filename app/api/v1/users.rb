@@ -22,14 +22,14 @@ module V1
         @user = User.create(name: params[:name])
       end
 
-      desc 'Delete an user'
-      params do
-        requires :id, type: Integer
-      end
-      delete '/:id' do
-        @user = User.find(params[:id])
-        @user.destroy
-      end
+      # desc 'Delete an user'
+      # params do
+      #   requires :id, type: Integer
+      # end
+      # delete '/:id' do
+      #   @user = User.find(params[:id])
+      #   @user.destroy
+      # end
     end
   end
 end
