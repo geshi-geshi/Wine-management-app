@@ -14,7 +14,7 @@ class ImageUploader < CarrierWave::Uploader::Base
   # elsif Rails.env.test?
   #   storage :file
   # else
-    storage :fog
+  storage :fog
   # end
 
   # Override the directory where uploaded files will be stored.
@@ -55,45 +55,45 @@ class ImageUploader < CarrierWave::Uploader::Base
     original_filename if original_filename
   end
 
- 
- # 画像の上限を設定
+  # 画像の上限を設定
   process :resize_to_limit => [220, 220]
- 
+
   # 保存形式をJPGにする
   process :convert => 'jpg'
- 
+
   # サムネイルを生成する設定
   version :thumb do
     process :resize_to_limit => [150, 150]
   end
-   
+
   # version :thumb150 do
   #   process :resize_to_limit => [150, 150]
   # end
- 
+
   # version :thumb30 do
   #   process :resize_to_limit => [30, 30]
   # end
- 
+
   # jpg,jpeg,gif,pngしか受け付けない
   def extension_white_list
     %w(jpg jpeg gif png)
   end
- 
- # 拡張子が同じでないとGIFをJPGとかにコンバートできないので、ファイル名を変更
+
+  # 拡張子が同じでないとGIFをJPGとかにコンバートできないので、ファイル名を変更
   def filename
     super.chomp(File.extname(super)) + '.jpg' if original_filename.present?
   end
- 
- # ファイル名を日付にするとタイミングのせいでサムネイル名がずれる
- #ファイル名はランダムで一意になる
+
+  # ファイル名を日付にするとタイミングのせいでサムネイル名がずれる
+  # ファイル名はランダムで一意になる
   def filename
     "#{secure_token}.#{file.extension}" if original_filename.present?
   end
- 
+
   protected
+
   def secure_token
     var = :"@#{mounted_as}_secure_token"
-    model.instance_variable_get(var) or model.instance_variable_set(var, SecureRandom.uuid)
+    model.instance_variable_get(var) || model.instance_variable_set(var, SecureRandom.uuid)
   end
 end

@@ -2,7 +2,6 @@ class WinesController < ApplicationController
   # ログインしないとできない機能
   before_action :logged_in_user, only: [:new, :edit, :update, :destroy]
 
-
   def index
     @q = Wine.ransack(params[:q])
     @wines = @q.result(distinct: true).page(params[:page])
@@ -22,7 +21,7 @@ class WinesController < ApplicationController
     @wine = Wine.new(wine_params)
     if @wine.save
       flash[:success] = "#{@wine.name}を登録しました。"
-      redirect_to wines_url 
+      redirect_to wines_url
     else
       render :new
     end
@@ -36,7 +35,7 @@ class WinesController < ApplicationController
     @wine = Wine.find(params[:id])
     if @wine.update_attributes(wine_params)
       flash[:success] = "#{@wine.name}の情報を更新しました。"
-      redirect_to wines_url 
+      redirect_to wines_url
     else
       render :edit
     end
@@ -68,5 +67,4 @@ class WinesController < ApplicationController
       redirect_to login_url
     end
   end
-
 end

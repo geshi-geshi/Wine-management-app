@@ -3,7 +3,7 @@ module V1
     resources :wines do
       desc 'returns all wines'
       get '/' do
-        @wines = Wine.all 
+        @wines = Wine.all
       end
 
       # desc 'returns an wine'

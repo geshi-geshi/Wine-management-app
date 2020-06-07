@@ -1,0 +1,28 @@
+inherit_from:
+  - .rubocop_airbnb.yml
+Rails:
+  Enabled: true
+AllCops:
+  Exclude:
+    - 'db/**/*'
+    - 'bin/*'
+    - 'config/environments/*'
+    - 'config/application.rb'
+    - 'config/initializers/*'
+    - 'config/spring.rb'
+    - 'spec/spec_helper.rb'
+    - 'spec/rails_helper.rb'
+    - 'config/routes.rb'
+    - 'lib/tasks/*'
+    - 'vendor/**/*'
+
+Airbnb/SimpleModifierConditional:
+  Enabled: false
+LineLength:
+  Max: 120
+RSpec/BeforeAfterAll:
+  Description: Check that before/after(:all) isn't being used.
+  Enabled: false
+# 日本語のコメントを OK とする
+Style/AsciiComments:
+  Enabled: false

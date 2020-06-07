@@ -3,7 +3,7 @@ module V1
     resources :users do
       desc 'returns all users'
       get '/' do
-        @users = User.all 
+        @users = User.all
       end
 
       desc 'returns an user'
