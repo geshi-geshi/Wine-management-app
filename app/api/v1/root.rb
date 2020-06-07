@@ -9,7 +9,7 @@ module V1
       doc_version: '1.0.0',
       info: {
         title: 'テストAPI',
-        description: 'APIドキュメントです'
+        description: 'APIドキュメントです',
       }
     )
   end

@@ -3,6 +3,7 @@ require 'rails_helper'
 RSpec.feature '/wines' do
   let(:user) { create(:user) }
   let(:wine) { create(:wine) }
+
   before { login(user) }
 
   scenario 'ワイン一覧' do
@@ -47,10 +48,10 @@ RSpec.feature '/wines' do
 
     click_link "このワインを削除する", match: :first
     # モーダル表示
-    expect {
+    expect do
       page.accept_confirm "#{wine.name}を削除して良いですか?"
       expect(page).to have_content('ワインの削除')
-    }
+    end
 
     expect(page).not_to have_selector 'h4', text: wine.name
     expect(page).to have_content("#{wine.name}を削除しました。")

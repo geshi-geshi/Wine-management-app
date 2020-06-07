@@ -10,9 +10,9 @@ class SessionsController < ApplicationController
       if user.email == "testadmin@sample.com"
         flash[:success] = '管理権限のテストユーザーでログインしました。'
       elsif user.email == "test@sample.com"
-        flash[:success] = '一般権限のテストユーザーでログインしました。' 
+        flash[:success] = '一般権限のテストユーザーでログインしました。'
       else
-        flash[:success] =  "#{user.name}さんでログインしました。"
+        flash[:success] = "#{user.name}さんでログインしました。"
       end
       # params[:session][:remember_me] == '1' ? remember(user) : forget(user)
       redirect_to wines_url
@@ -29,15 +29,15 @@ class SessionsController < ApplicationController
     flash[:success] = 'ログアウトしました。'
     redirect_to root_url
   end
-  
-  def sns_login  
+
+  def sns_login
     auth = request.env['omniauth.auth']
     if auth.present?
       user = User.find_or_create_from_auth(request.env['omniauth.auth'])
       session[:user_id] = user.id
-      if user.provider = "twitter" || user.provider = "facebook" || user.provider = "google" 
+      if user.provider = "twitter" || user.provider = "facebook" || user.provider = "google"
         flash[:success] = "#{user.name}さんでログインしました。"
- 
+
       else
         # flash[:danger] = "このアドレスは既に登録済みです"
         redirect_to auth_failure_path
@@ -56,11 +56,10 @@ class SessionsController < ApplicationController
       end
     end
   end
-  
-  #認証に失敗した際の処理
-  def auth_failure 
+
+  # 認証に失敗した際の処理
+  def auth_failure
     flash[:danger] = 'ログインできませんでした。'
     redirect_to root_url
   end
-
 end

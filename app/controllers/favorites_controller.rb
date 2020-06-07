@@ -12,7 +12,7 @@ class FavoritesController < ApplicationController
   def create
     user = current_user
     wine = Wine.find(params[:id])
-    favorite = Favorite.create(user_id: user.id, wine_id:wine.id)
+    favorite = Favorite.create(user_id: user.id, wine_id: wine.id)
 
     if favorite.save
       flash[:success] = "#{wine.name}をお気に入りに追加しました"
@@ -26,7 +26,7 @@ class FavoritesController < ApplicationController
   def destroy
     user = current_user
     wine = Wine.find(params[:id])
-    if favorite=Favorite.find_by(user_id: user.id, wine_id:wine.id)
+    if favorite = Favorite.find_by(user_id: user.id, wine_id: wine.id)
       favorite.delete
       flash[:success] = "#{wine.name}をお気に入りから解除しました"
       redirect_to favorites_url

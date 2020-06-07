@@ -3,9 +3,9 @@ class UsersController < ApplicationController
   before_action :logged_in_user, only: [:index, :show, :edit, :update, :destroy]
 
   # ユーザー自身のみが情報を編集・更新できる
-  before_action :correct_user, only: [:edit,:show]
+  before_action :correct_user, only: [:edit, :show]
   # 管理者のみの機能
-  before_action :admin_user, only:  [:index, :destroy]
+  before_action :admin_user, only: [:index, :destroy]
 
   def top
   end
@@ -35,14 +35,13 @@ class UsersController < ApplicationController
   end
 
   def create_by_twitter
-    user = User.find_or_create_from_auth_hash(request.env['omniauth.auth'])#request.env['omniauth.auth']はTwitter認証で得た情報を格納するもの
+    user = User.find_or_create_from_auth_hash(request.env['omniauth.auth']) # request.env['omniauth.auth']はTwitter認証で得た情報を格納するもの
     if user
       session[:user_id] = user.id
       redirect_to '/posts/index', notice: "ログインしました。"
     else
       redirect_to root_path, notice: "失敗しました。"
     end
-
   end
 
   def edit
@@ -56,14 +55,14 @@ class UsersController < ApplicationController
         flash[:success] = "#{@user.name}さんの情報を更新しました。"
         redirect_to users_url(@user)
       else
-        render :edit      
+        render :edit
       end
     else
       if @user.update_attributes(user_params)
         flash[:success] = "ユーザー情報を更新しました。"
         redirect_to @user
       else
-        render :edit      
+        render :edit
       end
     end
   end
@@ -74,32 +73,31 @@ class UsersController < ApplicationController
     redirect_to users_url
   end
 
-
   private
 
-    def user_params
-      params.require(:user).permit(:name, :email, :password, :password_confirmation)
+  def user_params
+    params.require(:user).permit(:name, :email, :password, :password_confirmation)
+  end
+
+  # beforeフィルター
+
+  # paramsハッシュからユーザーを取得します。
+  def set_user
+    @user = User.find(params[:id])
+  end
+
+  def logged_in_user
+    unless logged_in?
+      store_location
+      flash[:danger] = "ログインしてください。"
+      redirect_to login_url
     end
+  end
 
-    # beforeフィルター
-
-    # paramsハッシュからユーザーを取得します。
-    def set_user
-      @user = User.find(params[:id])
-    end
-
-    def logged_in_user
-      unless logged_in?
-        store_location
-        flash[:danger] = "ログインしてください。"
-        redirect_to login_url
-      end
-    end
-
-   # アクセスしたユーザーが現在ログインしているユーザーか確認します。
-   def correct_user
+  # アクセスしたユーザーが現在ログインしているユーザーか確認します。
+  def correct_user
     redirect_to(root_url) unless current_user?(@user)
-   end
+  end
 
   # システム管理権限所有かどうか判定します。
   def admin_user

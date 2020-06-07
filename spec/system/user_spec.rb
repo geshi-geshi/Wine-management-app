@@ -3,6 +3,7 @@ require 'rails_helper'
 RSpec.feature '/login' do
   # ユーザー作成
   let(:user) { create(:user) }
+
   scenario 'login' do
     # ログインページを開く
     visit login_path
