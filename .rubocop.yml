@@ -16,7 +16,7 @@ AllCops:
     - 'lib/tasks/*'
     - 'vendor/**/*'
 
-    
+
 Airbnb/SimpleModifierConditional:
   Enabled: false
 LineLength:
@@ -24,6 +24,6 @@ LineLength:
 RSpec/BeforeAfterAll:
   Description: Check that before/after(:all) isn't being used.
   Enabled: false
-# 日本語のコメントを OK とする
+# 日本語のコメントを OK とする!!!
 Style/AsciiComments:
   Enabled: false
