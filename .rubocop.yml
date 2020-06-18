@@ -16,6 +16,7 @@ AllCops:
     - 'lib/tasks/*'
     - 'vendor/**/*'
 
+    
 Airbnb/SimpleModifierConditional:
   Enabled: false
 LineLength:
