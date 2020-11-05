@@ -28,7 +28,7 @@ https://www.wine-management-app.work/
 - Rspec 3.9
 - Mysql 5.7
 - GitHub
-- heroku
+- heroku（現在はAWSにて運用）
 - Nginx
 - Unicorn
 - AWS
@@ -38,6 +38,7 @@ https://www.wine-management-app.work/
   - ALB
   - ASG
   - S3
+  - Route 53
 - docker
 - scss
 - bootstrap
