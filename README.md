@@ -35,6 +35,8 @@ https://www.wine-management-app.work/
   - VPC
   - EC2 
   - RDS
+  - ALB
+  - ASG
   - S3
 - docker
 - scss
