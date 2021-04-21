@@ -1,5 +1,5 @@
 # ワイン管理アプリ
-https://www.wine-management-app.work/
+http://www.wine-management-app.work/
 
 
 <img width="1239" alt="read me" src="https://user-images.githubusercontent.com/44439885/72330829-8471dd00-36fa-11ea-8df8-73356addc125.png">
