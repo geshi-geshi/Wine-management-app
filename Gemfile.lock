@@ -262,7 +262,8 @@ GEM
     pre-commit (0.39.0)
       pluginator (~> 1.5)
     public_suffix (4.0.6)
-    puma (3.12.6)
+    puma (4.3.8)
+      nio4r (~> 2.0)
     racc (1.5.2)
     rack (2.2.3)
     rack-accept (0.4.5)
@@ -471,7 +472,7 @@ DEPENDENCIES
   omniauth-rails_csrf_protection
   omniauth-twitter
   pre-commit
-  puma (~> 3.12)
+  puma (~> 4.3)
   rails (~> 5.2.3)
   rails-controller-testing
   rails-i18n
